@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" sizes="64x64" href="../favicon.ico">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../bootstrap.min.css">
+    <title>Action Nodes List</title>
+</head>
+
+<body>
+    <img src="../Assets/Comics.png" width="100%">
+    <div class="px-lg-5 pb-lg-5 background-fade">
+        <div style="font-family: 'narcissusopensg-regular', sans-serif; text-align: center;">
+            <p style="font-size:45px;">Action Nodes List</p>
+            <p style="font-size:25px;">Special thanks to <a href="https://www.youtube.com/user/deadpoolXYZ" target="blank"><img src="../Assets/deadpoolXYZIcon.png" width="25">deadpoolXYZ</a>!</p>
+        </div>
+        <hr>
+        <li style="list-style-type: none;"><a class="active" href="../index.html">Home</a></li>
+        <div><h1 style="text-align: left;">What is an Action Node?</h1>
+            <div style="float:left">
+                <p>Arguably one of, if not the most popular thing the modding community likes to mess with.</p>
+
+                <p>In <strong>BULLY</strong>, just like many other games, characters (and even props) have a wide array of actions that can be performed.<br>
+                Something that should be mentioned is that there's a difference between animations and actions.<br>
+                The only properties that animations have are the playback speed and movement (walking, sprinting, strafing, etc).<br>
+                On the other hand, actions are animations that can have multiple properties attached to them, such as sfx, vfx, etc.<br>
+                A raw punch animation alone won't actually hit the opponent or produce noise.</p>
+
+                <p>There are files using the <strong>.cat</strong> extension inside the <strong>Act.img</strong> archive, which can be speculated that means "Compiled/Compressed Action Tree".<br>
+                The source version of these files uses the <strong>.act</strong> extension instead, which stands for "Action Tree".</p>
+
+                <p>Action trees are usually used as a way to represent the various possible actions that a ped can perform depending on the situation.<br>
+                These trees are made of action nodes, each one being a different action that a ped can do.<br>
+                All trees start from a root node and, from there, it starts to "branch" into more action nodes until they meet an end (just like a real life tree, hence the name).</p>
+                <p>Action nodes tend to have conditions on them as a way to know if the ped should or should not use that action at the moment.<br></p>
+            </div>
+            <iframe width="516" height="290" src="https://www.youtube.com/embed/VeNN-oUUt1I"
+                title="Bully - Unused C_PLAYER/DAVIS_FALL"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                style="float: right;"
+                allowfullscreen>
+            </iframe>
+            <em><div style="font-size: small; float:right; margin-left: 250px;">Video showcasing <strong>/Global/1_03/animations/FallOffBarrels/Bobble/FallOff</strong></div></em>
+            <div style="clear:left"></div>
+            <em><div style="font-size: small; float:left">Written by deadpoolXYZ.<br>Explanation of the Tree data structure in general: <a href="https://en.wikipedia.org/wiki/Tree_(data_structure)" target="blank">Tree (data structure), on Wikipedia</a></div></em>
+        </div>
+        <div style="clear:both"></div>
+        <hr>
+        <div><h2>First List Notes:</h2>
+            <p>This first list has all the Action Nodes from the <a href="https://hiddenpalace.org/Bully:_Scholarship_Edition_(Debug_Build)" target="blank">Debug Wii Build</a>.
+                As such, some might not work if you're trying to use them on a different platform. Check the second list for nodes which do not show up on Wii at all.<br>
+                <a href="Nodes_Wii.html" target="_blank" style="font-size:25px">Nodes_Wii.html</a></p>
+        </div>
+
+        <div><h2>Second List Notes:</h2>
+            <p>This list of nodes are ones which are not present on the Wii version.
+            Note that ones with <strong>LightAttacksWeapon</strong> and <strong>KnockOutChargeWeapon</strong> are exclusive to PC.<br>
+            <a href="Nodes_NotWii.html" target="_blank" style="font-size:25px">Nodes_NotWii.html</a></p>
+        </div>
+
+        <footer>
+            <div class="right-float">
+                <audio controls>
+                    <source src="../Assets/gokartmain.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+            <hr style="clear: right;">
+            Certain assets used to create the website belong to <a href="https://www.take2games.com/" target="blank">Take-Two Interactive</a>.<br>This site also uses Bootstrap.
+            <p style="padding-top:20px">Made by <a href="https://twitter.com/SimoBestia" target="blank">SimonBestia</a><br>Special thanks to <a href="https://www.youtube.com/user/deadpoolXYZ" target="blank">deadpoolXYZ</a>, <a href="https://twitter.com/derpy54320" target="blank">derpy54320</a> and <a href="https://twitter.com/EdnessTweets" target="blank">Edness</a></p>
+        </footer>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+@font-face{
+    font-family:"narcissusopensg-regular";
+    src: url("Assets/narcissusopensg.ttf");
+}
+
+:root {
+    --clr-bg: #F9FAFA;
+    --clr-bg-nav: #D7DADA;
+    background-color: #F9FAFA;
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px !important;
+    font-family: 'narcissusopensg-regular', sans-serif;
+    color: #000;
+}
+
+h2 {
+    font-size: 33px !important;
+    font-family: 'narcissusopensg-regular', sans-serif;
+    color: #000;
+    padding-top: 10px;
+}
+
+table, th, td {
+    border: 1px solid black !important;
+}
+
+th {
+    font-family: 'narcissusopensg-regular', sans-serif;
+}
+
+li a[href*="index.html"] {
+    font-family: 'narcissusopensg-regular', sans-serif;
+    font-size: 45px;
+    color: rgb(63, 63, 63);
+    float: right;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+aside {
+    float: left;
+    margin-right: 15px;
+    border-width: 4px;
+    border-style: solid;
+    border-color: #000;
+}
+
+footer {
+    margin-top: 100px;
+}
+
+.OppositeAside {
+    float: right;
+    margin-left: 15px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #000;
+}
+
+.background-fade {
+    background: linear-gradient(var(--clr-bg-nav) 0%, var(--clr-bg) 100%);
+}
+
+.quote {
+    margin-top: 10px;
+    background: rgb(187, 187, 187);
+    border-radius: 5px;
+    width: fit-content;
+    font-size: 18px;
+}
+
+.info-table th {
+    vertical-align: text-top;
+    text-align: center;
+}
+
+.right-float {
+    float: right;
+}
+
+.inlineli {
+    display: inline;
+    padding-right: 10px;
+}
