@@ -1,0 +1,53 @@
+<nav>
+    <ul>
+        <li><a href="/index.html">HOME</a></li>
+        <li class="dropdown">
+            <!-- UI breaks if href is removed, but we don't want this to feel clickable. This took forever to figure out. fml -->
+            <a href="javascript:void(0);" style="cursor: default;">RESOURCES</a>
+            <ul class="dropdown-content">
+                <li><a href="/Resources/2DFXIDs.html">2DFX IDs</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0);" style="cursor: default;">ACT-Related</a>
+                    <ul class="dropdown-content">
+                        <li><a href="/Resources/ACTRelated/ActionNodesList.html">Action Nodes List</a></li>
+                    </ul>
+                </li>
+                <li><a href="/Resources/AreaIDs.html">Area IDs</a></li>
+                <li><a href="/Resources/ChapterIDs.html">Chapter IDs</a></li>
+                <li><a href="/Resources/MissionMinigameIDs.html">Mission & Minigame IDs</a></li>
+                <li><a href="/Resources/QuoteIDs.html">Quote IDs</a></li>
+                <li><a href="/Resources/SoundFXIDs.html">SoundFX IDs</a></li>
+                <li><a href="/Resources/WeatherIDs.html">Weather IDs</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="javascript:void(0);" style="cursor: default;">HOW-TO-MOD</a>
+            <ul class="dropdown-content">
+                <li class="dropdown">
+                    <a href="javascript:void(0);" style="cursor: default;">PlayStation 2</a>
+                    <ul class="dropdown-content">
+                        <li><a href="/PS2/Differences.html">Differences</a></li>
+                        <li><a href="/PS2/Limitations.html">Limitations</a></li>
+                        <li><a href="/PS2/Misconceptions.html">Misconceptions</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    // Get the current path of the URL
+    const currentPath = window.location.pathname.toLowerCase();
+    
+    // Select all links within the nav
+    const navLinks = document.querySelectorAll("nav a");
+
+    // Loop through each link
+    navLinks.forEach(link => {
+        // Check if the href of the link matches the current path
+        if (link.getAttribute("href").toLowerCase() === currentPath) {
+            link.classList.add("active");
+        }
+    });
+</script>

@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <script src="/load.js" defer></script> <!-- Ensure this is included in the head or just before the closing body tag -->
+    <script src="/pickstyle.js" defer></script>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" sizes="64x64" href="../favicon.ico">
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="../bootstrap.min.css">
+    <link rel="icon" sizes="64x64" href="/favicon.ico">
+    <link rel="stylesheet" href="/style.css">
     <title>Quote IDs</title>
 </head>
+
 <body>
-    <img src="../Assets/Comics.png" width="100%">
-    <div class="px-lg-5 pb-lg-5 background-fade">
-        <div style="font-family: 'narcissusopensg-regular', sans-serif; text-align: center;">
-            <p style="font-size:45px;">Quote IDs</p>
-            <p style="font-size:25px;">Special thanks to <a href="https://www.youtube.com/user/deadpoolXYZ" target="blank"><img src="../Assets/deadpoolXYZIcon.png" width="25">deadpoolXYZ</a>!</p>
-        </div>
+    <header></header>
+    
+    <section class="hero">
+        <img src="/Assets/Comics.png" alt="Bully Modding Documentation">
+    </section>
+    <section class="content">
+    <h1>Quote IDs</h1>
         <hr>
-        <li style="list-style-type: none;"><a class="active" href="../index.html">Home</a></li></p>
-        <div><h2>Notes:</h2>
+        
+        <h2>Notes:</h2>
             <p>This lists Lua Quote IDs and their filename counterpart from the <strong>PC</strong> version.
                 As such, some might not work if you're trying to use them on a different platform.<br>
                 Please note that this list is old and might be incomplete.</p>
-        </div>
         <p>This small list is a collection of IDs which are the same as other ones, or trigger multiple sets of quotes:</p>
         <table>
-            <thead style="text-align:center">
+            <thead>
                 <tr>
                     <th>Quote ID</th>
                     <th>Quote ID/Filename</th>
@@ -37,12 +39,12 @@
                 <tr><td>CONVERSATION_START</td><td>Combination of other CONV</td></tr> 
             </tbody>
         </table>
-        <div><h2>General Quotes</h2>
-            <aside class="OppositeAside" style="clear:right">
-                <img src="../Assets/8BmjImZ.jpg" width="400">
+        <h2>General Quotes</h2>
+            <aside>
+                <img src="/Assets/8BmjImZ.jpg" class="float-right">
             </aside>
             <table>
-                <thead style="text-align:center">
+                <thead>
                     <tr>
                         <th>Quote ID</th>
                         <th>Quote Filename</th>
@@ -352,131 +354,120 @@
                     <tr><td>ClassShop</td><td></td></tr>
                 </tbody>
             </table>
-        </div>
+        <h2>Player-Related Quotes</h2>
+            <aside>
+                <img src="/Assets/CMssjVY.png" class="float-right">
+            </aside>
+            <table>
+                <thead style="text-align:center">
+                    <tr>
+                        <th>Quote ID</th>
+                        <th>Quote Filename</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>PLAYER_AFFIRMATIVE</td><td>PYES</td></tr> 
+                    <tr><td>PLAYER_APOLOGY_AUTHORITY_GOOD</td><td>PAPOAG</td></tr> 
+                    <tr><td>PLAYER_APOLOGY_AUTHORITY_POOR</td><td>PAPOAP</td></tr> 
+                    <tr><td>PLAYER_APOLOGY_BEG</td><td>PAPOB</td></tr> 
+                    <tr><td>PLAYER_APOLOGY_CHILL</td><td>PAPOC</td></tr> 
+                    <tr><td>PLAYER_APOLOGY_GENERIC</td><td>PAPOGEN</td></tr> 
+                    <tr><td>PLAYER_APOLOGY_GIRL</td><td>PAPOGIRL</td></tr> 
+                    <tr><td>PLAYER_APOLOGY_SMOOTH</td><td>PAPOS</td></tr> 
+                    <tr><td>PLAYER_BEATEN</td><td>PBEAT</td></tr> 
+                    <tr><td>PLAYER_BIKE_CRASH</td><td>PBIKEC</td></tr> 
+                    <tr><td>PLAYER_BIKE_STEALING</td><td>PBIKESTL</td></tr> 
+                    <tr><td>PLAYER_BIKE_STOLEN</td><td>PBIKESTLN</td></tr> 
+                    <tr><td>PLAYER_BINNING</td><td>PBIN</td></tr> 
+                    <tr><td>PLAYER_BOOT</td><td>PBOOT</td></tr> 
+                    <tr><td>PLAYER_CAMERA</td><td>PCAMERA</td></tr> 
+                    <tr><td>PLAYER_CAMERA_BAD</td><td>PCAMERA</td></tr> 
+                    <tr><td>PLAYER_CAMERA_GOOD</td><td>PCAMERA</td></tr> 
+                    <tr><td>PLAYER_DEFEAT_INDIVIDUAL</td><td>PDEFIND</td></tr> 
+                    <tr><td>PLAYER_DEFEAT_TEAM</td><td>PDEFTEAM</td></tr> 
+                    <tr><td>PLAYER_DEJECTED</td><td>PDEJ</td></tr> 
+                    <tr><td>PLAYER_DRINK</td><td>PDRINK</td></tr> 
+                    <tr><td>PLAYER_ENTER_RIDE</td><td>PENTERIDE</td></tr> 
+                    <tr><td>PLAYER_EXCUSE</td><td>PEXC</td></tr> 
+                    <tr><td>PLAYER_EXIT_RIDE</td><td>PEXRIDE</td></tr> 
+                    <tr><td>PLAYER_FLIRT_DEFAULT</td><td>PFLIRTG/PFLIRTP</td></tr> 
+                    <tr><td>PLAYER_FLIRT_GOOD</td><td>PFLIRTG</td></tr> 
+                    <tr><td>PLAYER_FLIRT_POOR</td><td>PFLIRTP</td></tr> 
+                    <tr><td>PLAYER_GET_COLLECTIBLE</td><td>PGETC</td></tr> 
+                    <tr><td>PLAYER_GET_MONEY</td><td>PGETM</td></tr> 
+                    <tr><td>PLAYER_GET_WEAPON</td><td>PGETW</td></tr> 
+                    <tr><td>PLAYER_GIFT_GENERAL</td><td>PGIFTGEN</td></tr> 
+                    <tr><td>PLAYER_GIFT_GIVE_DOG</td><td>PGIFTGDOG</td></tr> 
+                    <tr><td>PLAYER_GIFT_GIVE_EXTORTION</td><td>PGIFTGEX</td></tr> 
+                    <tr><td>PLAYER_GIFT_GIVE_GIRL</td><td>PGIFTGG</td></tr> 
+                    <tr><td>PLAYER_GREET_ADULT_FEMALE</td><td>PGREEAF</td></tr> 
+                    <tr><td>PLAYER_GREET_ADULT_MALE</td><td>PGREEAM</td></tr> 
+                    <tr><td>PLAYER_GREET_ASSIST</td><td>PGREEASS</td></tr> 
+                    <tr><td>PLAYER_GREET_FRIENDLY_DOG</td><td>PGREEFD</td></tr> 
+                    <tr><td>PLAYER_GREET_GENERIC</td><td>PGREEGEN</td></tr> 
+                    <tr><td>PLAYER_GREET_GENERIC_BOY</td><td>PGREEGENB</td></tr> 
+                    <tr><td>PLAYER_GREET_GENERIC_GIRL</td><td>PGREEGENG</td></tr> 
+                    <tr><td>PLAYER_GREET_HARASS</td><td>PGREEH</td></tr> 
+                    <tr><td>--PLAYER_GREET_S...</td><td>PGREESC</td></tr> 
+                    <tr><td>PLAYER_HIT_SWITCH</td><td>PHITSW</td></tr> 
+                    <tr><td>PLAYER_IDLE</td><td>PIDLE</td></tr> 
+                    <tr><td>PLAYER_IDLE_CLASS</td><td>PIDLEC</td></tr> 
+                    <tr><td>PLAYER_IDLE_RAIN</td><td>PIDLER</td></tr> 
+                    <tr><td>PLAYER_IDLE_SHIVER</td><td>PIDLEW</td></tr> 
+                    <tr><td>PLAYER_IDLE_TIRED</td><td>PIDLET</td></tr> 
+                    <tr><td>PLAYER_IDLE_WINTER</td><td>PIDLEW</td></tr> 
+                    <tr><td>PLAYER_INFIRMARY</td><td>PINFIRM</td></tr> 
+                    <tr><td>PLAYER_JEER</td><td>PJEER</td></tr> 
+                    <tr><td>PLAYER_LAUGH_CRUEL</td><td>PLAFFC</td></tr> 
+                    <tr><td>PLAYER_LAUGH_FRIENDLY</td><td>PLAFFF</td></tr> 
+                    <tr><td>PLAYER_LOCKED</td><td>PLOCKED</td></tr> 
+                    <tr><td>PLAYER_LOCKERING</td><td>PLOCKING</td></tr> 
+                    <tr><td>PLAYER_MAKE_OUT</td><td>PMAKEO</td></tr> 
+                    <tr><td>PLAYER_MISCHIEVOUS</td><td>PMISCH</td></tr> 
+                    <tr><td>PLAYER_MISSION_SUCCESS</td><td>PMSUCC</td></tr> 
+                    <tr><td>PLAYER_NEGATIVE</td><td>PNO</td></tr> 
+                    <tr><td>PLAYER_OFFICE</td><td>POFFICE</td></tr> 
+                    <tr><td>PLAYER_PRIZE_TICKETS</td><td>PPRZTIX</td></tr> 
+                    <tr><td>PLAYER_STEALTH</td><td>PSTLTH</td></tr> 
+                    <tr><td>PLAYER_STEALTH_POTTY</td><td>PSTLPOT</td></tr> 
+                    <tr><td>PLAYER_SUCCESS</td><td>PSUCC</td></tr> 
+                    <tr><td>PLAYER_TAG_COMPLETE</td><td>PTAGC</td></tr> 
+                    <tr><td>PLAYER_TAUNT</td><td>PTAUN</td></tr> 
+                    <tr><td>PLAYER_TAUNT_AUTHORITY</td><td>PTAUNA</td></tr> 
+                    <tr><td>PLAYER_TAUNT_BURN</td><td>PTAUNBURN</td></tr> 
+                    <tr><td>PLAYER_TAUNT_COMBAT</td><td>PTAUNCOM</td></tr> 
+                    <tr><td>PLAYER_TAUNT_COMBAT_SHOVE</td><td>PTAUNCSH</td></tr> 
+                    <tr><td>PLAYER_TAUNT_CONTINUED</td><td>PTAUNCON</td></tr> 
+                    <tr><td>PLAYER_TAUNT_DOG</td><td>PTAUNDOG</td></tr> 
+                    <tr><td>PLAYER_TAUNT_DROPOUT</td><td>PTAUND</td></tr> 
+                    <tr><td>--PLAYER_TAUNT_FACTION</td><td>?</td></tr> 
+                    <tr><td>PLAYER_TAUNT_FLEE</td><td>PTAUNFLEE</td></tr> 
+                    <tr><td>PLAYER_TAUNT_FLIRT_INSULT</td><td>PTAUNFIN</td></tr> 
+                    <tr><td>PLAYER_TAUNT_GIRL</td><td>PTAUNG</td></tr> 
+                    <tr><td>PLAYER_TAUNT_GREASER</td><td>PTAUNGR</td></tr> 
+                    <tr><td>PLAYER_TAUNT_HARASS</td><td>PTAUNH</td></tr> 
+                    <tr><td>PLAYER_TAUNT_HARASS_FEMALE</td><td>PTAUNHF</td></tr> 
+                    <tr><td>PLAYER_TAUNT_HARASS_MALE</td><td>PTAUNHM</td></tr> 
+                    <tr><td>PLAYER_TAUNT_HUMILIATE</td><td>PTAUNHUM</td></tr> 
+                    <tr><td>PLAYER_TAUNT_HUMILIATE_HIT</td><td>PTAUNHUMH</td></tr> 
+                    <tr><td>PLAYER_TAUNT_JOCK</td><td>PTAUNJ</td></tr> 
+                    <tr><td>PLAYER_TAUNT_KO</td><td>PTAUNKO</td></tr> 
+                    <tr><td>PLAYER_TAUNT_NERD</td><td>PTAUNN</td></tr> 
+                    <tr><td>PLAYER_TAUNT_PREP</td><td>PTAUNP</td></tr> 
+                    <tr><td>PLAYER_TAUNT_VICTIM</td><td>PTAUNVIC</td></tr> 
+                    <tr><td>PLAYER_THROW_BALL</td><td>PTHROWB</td></tr> 
+                    <tr><td>PLAYER_TIRED</td><td>PTIRED</td></tr> 
+                    <tr><td>PLAYER_TOILET_DUNK</td><td>PTOILD</td></tr> 
+                    <tr><td>PLAYER_TRASH_TALK</td><td>PTRASHT</td></tr> 
+                    <tr><td>PLAYER_URINATING</td><td>PURI</td></tr> 
+                    <tr><td>PLAYER_VICTORY_INDIVIDUAL</td><td>PVICIND</td></tr> 
+                    <tr><td>PLAYER_VICTORY_TEAM</td><td>PVICTEAM</td></tr> 
+                    <tr><td>PLAYER_WHEE</td><td>PWHEE</td></tr>
+                </tbody>
+            </table>
+    </section>
 
-        <div><h2>Player-Related Quotes</h2>
-                <aside class="OppositeAside" style="clear:right">
-                    <img src="../Assets/CMssjVY.png" width="400">
-                </aside>
-                <table>
-                    <thead style="text-align:center">
-                        <tr>
-                            <th>Quote ID</th>
-                            <th>Quote Filename</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>PLAYER_AFFIRMATIVE</td><td>PYES</td></tr> 
-                        <tr><td>PLAYER_APOLOGY_AUTHORITY_GOOD</td><td>PAPOAG</td></tr> 
-                        <tr><td>PLAYER_APOLOGY_AUTHORITY_POOR</td><td>PAPOAP</td></tr> 
-                        <tr><td>PLAYER_APOLOGY_BEG</td><td>PAPOB</td></tr> 
-                        <tr><td>PLAYER_APOLOGY_CHILL</td><td>PAPOC</td></tr> 
-                        <tr><td>PLAYER_APOLOGY_GENERIC</td><td>PAPOGEN</td></tr> 
-                        <tr><td>PLAYER_APOLOGY_GIRL</td><td>PAPOGIRL</td></tr> 
-                        <tr><td>PLAYER_APOLOGY_SMOOTH</td><td>PAPOS</td></tr> 
-                        <tr><td>PLAYER_BEATEN</td><td>PBEAT</td></tr> 
-                        <tr><td>PLAYER_BIKE_CRASH</td><td>PBIKEC</td></tr> 
-                        <tr><td>PLAYER_BIKE_STEALING</td><td>PBIKESTL</td></tr> 
-                        <tr><td>PLAYER_BIKE_STOLEN</td><td>PBIKESTLN</td></tr> 
-                        <tr><td>PLAYER_BINNING</td><td>PBIN</td></tr> 
-                        <tr><td>PLAYER_BOOT</td><td>PBOOT</td></tr> 
-                        <tr><td>PLAYER_CAMERA</td><td>PCAMERA</td></tr> 
-                        <tr><td>PLAYER_CAMERA_BAD</td><td>PCAMERA</td></tr> 
-                        <tr><td>PLAYER_CAMERA_GOOD</td><td>PCAMERA</td></tr> 
-                        <tr><td>PLAYER_DEFEAT_INDIVIDUAL</td><td>PDEFIND</td></tr> 
-                        <tr><td>PLAYER_DEFEAT_TEAM</td><td>PDEFTEAM</td></tr> 
-                        <tr><td>PLAYER_DEJECTED</td><td>PDEJ</td></tr> 
-                        <tr><td>PLAYER_DRINK</td><td>PDRINK</td></tr> 
-                        <tr><td>PLAYER_ENTER_RIDE</td><td>PENTERIDE</td></tr> 
-                        <tr><td>PLAYER_EXCUSE</td><td>PEXC</td></tr> 
-                        <tr><td>PLAYER_EXIT_RIDE</td><td>PEXRIDE</td></tr> 
-                        <tr><td>PLAYER_FLIRT_DEFAULT</td><td>PFLIRTG/PFLIRTP</td></tr> 
-                        <tr><td>PLAYER_FLIRT_GOOD</td><td>PFLIRTG</td></tr> 
-                        <tr><td>PLAYER_FLIRT_POOR</td><td>PFLIRTP</td></tr> 
-                        <tr><td>PLAYER_GET_COLLECTIBLE</td><td>PGETC</td></tr> 
-                        <tr><td>PLAYER_GET_MONEY</td><td>PGETM</td></tr> 
-                        <tr><td>PLAYER_GET_WEAPON</td><td>PGETW</td></tr> 
-                        <tr><td>PLAYER_GIFT_GENERAL</td><td>PGIFTGEN</td></tr> 
-                        <tr><td>PLAYER_GIFT_GIVE_DOG</td><td>PGIFTGDOG</td></tr> 
-                        <tr><td>PLAYER_GIFT_GIVE_EXTORTION</td><td>PGIFTGEX</td></tr> 
-                        <tr><td>PLAYER_GIFT_GIVE_GIRL</td><td>PGIFTGG</td></tr> 
-                        <tr><td>PLAYER_GREET_ADULT_FEMALE</td><td>PGREEAF</td></tr> 
-                        <tr><td>PLAYER_GREET_ADULT_MALE</td><td>PGREEAM</td></tr> 
-                        <tr><td>PLAYER_GREET_ASSIST</td><td>PGREEASS</td></tr> 
-                        <tr><td>PLAYER_GREET_FRIENDLY_DOG</td><td>PGREEFD</td></tr> 
-                        <tr><td>PLAYER_GREET_GENERIC</td><td>PGREEGEN</td></tr> 
-                        <tr><td>PLAYER_GREET_GENERIC_BOY</td><td>PGREEGENB</td></tr> 
-                        <tr><td>PLAYER_GREET_GENERIC_GIRL</td><td>PGREEGENG</td></tr> 
-                        <tr><td>PLAYER_GREET_HARASS</td><td>PGREEH</td></tr> 
-                        <tr><td>--PLAYER_GREET_S...</td><td>PGREESC</td></tr> 
-                        <tr><td>PLAYER_HIT_SWITCH</td><td>PHITSW</td></tr> 
-                        <tr><td>PLAYER_IDLE</td><td>PIDLE</td></tr> 
-                        <tr><td>PLAYER_IDLE_CLASS</td><td>PIDLEC</td></tr> 
-                        <tr><td>PLAYER_IDLE_RAIN</td><td>PIDLER</td></tr> 
-                        <tr><td>PLAYER_IDLE_SHIVER</td><td>PIDLEW</td></tr> 
-                        <tr><td>PLAYER_IDLE_TIRED</td><td>PIDLET</td></tr> 
-                        <tr><td>PLAYER_IDLE_WINTER</td><td>PIDLEW</td></tr> 
-                        <tr><td>PLAYER_INFIRMARY</td><td>PINFIRM</td></tr> 
-                        <tr><td>PLAYER_JEER</td><td>PJEER</td></tr> 
-                        <tr><td>PLAYER_LAUGH_CRUEL</td><td>PLAFFC</td></tr> 
-                        <tr><td>PLAYER_LAUGH_FRIENDLY</td><td>PLAFFF</td></tr> 
-                        <tr><td>PLAYER_LOCKED</td><td>PLOCKED</td></tr> 
-                        <tr><td>PLAYER_LOCKERING</td><td>PLOCKING</td></tr> 
-                        <tr><td>PLAYER_MAKE_OUT</td><td>PMAKEO</td></tr> 
-                        <tr><td>PLAYER_MISCHIEVOUS</td><td>PMISCH</td></tr> 
-                        <tr><td>PLAYER_MISSION_SUCCESS</td><td>PMSUCC</td></tr> 
-                        <tr><td>PLAYER_NEGATIVE</td><td>PNO</td></tr> 
-                        <tr><td>PLAYER_OFFICE</td><td>POFFICE</td></tr> 
-                        <tr><td>PLAYER_PRIZE_TICKETS</td><td>PPRZTIX</td></tr> 
-                        <tr><td>PLAYER_STEALTH</td><td>PSTLTH</td></tr> 
-                        <tr><td>PLAYER_STEALTH_POTTY</td><td>PSTLPOT</td></tr> 
-                        <tr><td>PLAYER_SUCCESS</td><td>PSUCC</td></tr> 
-                        <tr><td>PLAYER_TAG_COMPLETE</td><td>PTAGC</td></tr> 
-                        <tr><td>PLAYER_TAUNT</td><td>PTAUN</td></tr> 
-                        <tr><td>PLAYER_TAUNT_AUTHORITY</td><td>PTAUNA</td></tr> 
-                        <tr><td>PLAYER_TAUNT_BURN</td><td>PTAUNBURN</td></tr> 
-                        <tr><td>PLAYER_TAUNT_COMBAT</td><td>PTAUNCOM</td></tr> 
-                        <tr><td>PLAYER_TAUNT_COMBAT_SHOVE</td><td>PTAUNCSH</td></tr> 
-                        <tr><td>PLAYER_TAUNT_CONTINUED</td><td>PTAUNCON</td></tr> 
-                        <tr><td>PLAYER_TAUNT_DOG</td><td>PTAUNDOG</td></tr> 
-                        <tr><td>PLAYER_TAUNT_DROPOUT</td><td>PTAUND</td></tr> 
-                        <tr><td>--PLAYER_TAUNT_FACTION</td><td>?</td></tr> 
-                        <tr><td>PLAYER_TAUNT_FLEE</td><td>PTAUNFLEE</td></tr> 
-                        <tr><td>PLAYER_TAUNT_FLIRT_INSULT</td><td>PTAUNFIN</td></tr> 
-                        <tr><td>PLAYER_TAUNT_GIRL</td><td>PTAUNG</td></tr> 
-                        <tr><td>PLAYER_TAUNT_GREASER</td><td>PTAUNGR</td></tr> 
-                        <tr><td>PLAYER_TAUNT_HARASS</td><td>PTAUNH</td></tr> 
-                        <tr><td>PLAYER_TAUNT_HARASS_FEMALE</td><td>PTAUNHF</td></tr> 
-                        <tr><td>PLAYER_TAUNT_HARASS_MALE</td><td>PTAUNHM</td></tr> 
-                        <tr><td>PLAYER_TAUNT_HUMILIATE</td><td>PTAUNHUM</td></tr> 
-                        <tr><td>PLAYER_TAUNT_HUMILIATE_HIT</td><td>PTAUNHUMH</td></tr> 
-                        <tr><td>PLAYER_TAUNT_JOCK</td><td>PTAUNJ</td></tr> 
-                        <tr><td>PLAYER_TAUNT_KO</td><td>PTAUNKO</td></tr> 
-                        <tr><td>PLAYER_TAUNT_NERD</td><td>PTAUNN</td></tr> 
-                        <tr><td>PLAYER_TAUNT_PREP</td><td>PTAUNP</td></tr> 
-                        <tr><td>PLAYER_TAUNT_VICTIM</td><td>PTAUNVIC</td></tr> 
-                        <tr><td>PLAYER_THROW_BALL</td><td>PTHROWB</td></tr> 
-                        <tr><td>PLAYER_TIRED</td><td>PTIRED</td></tr> 
-                        <tr><td>PLAYER_TOILET_DUNK</td><td>PTOILD</td></tr> 
-                        <tr><td>PLAYER_TRASH_TALK</td><td>PTRASHT</td></tr> 
-                        <tr><td>PLAYER_URINATING</td><td>PURI</td></tr> 
-                        <tr><td>PLAYER_VICTORY_INDIVIDUAL</td><td>PVICIND</td></tr> 
-                        <tr><td>PLAYER_VICTORY_TEAM</td><td>PVICTEAM</td></tr> 
-                        <tr><td>PLAYER_WHEE</td><td>PWHEE</td></tr>
-                    </tbody>
-                </table>
-        </div>
-
-        <footer>
-            <div class="right-float">
-                <audio controls>
-                    <source src="../Assets/gokartmain.mp3" type="audio/mpeg">
-                </audio>
-            </div>
-            <hr style="clear: right;">
-            Certain assets used to create the website belong to <a href="https://www.take2games.com/" target="blank">Take-Two Interactive</a>.<br>This site also uses Bootstrap.
-            <p style="padding-top:20px">Made by <a href="https://twitter.com/SimoBestia" target="blank">SimonBestia</a><br>Special thanks to <a href="https://www.youtube.com/user/deadpoolXYZ" target="blank">deadpoolXYZ</a>, <a href="https://twitter.com/derpy54320" target="blank">derpy54320</a> and <a href="https://twitter.com/EdnessTweets" target="blank">Edness</a></p>
-        </footer>
-    </div>
+    <footer></footer>
 </body>
+
 </html>
