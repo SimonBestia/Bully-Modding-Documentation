@@ -2,37 +2,34 @@
 <html lang="en">
 
 <head>
-    <script src="./load.js" defer></script>
-    <script src="./pickstyle.js" defer></script>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" sizes="64x64" href="/favicon.ico">
-    <link rel="stylesheet" href="/style.css">
-    <title>Version Differences: PS2</title>
+    <link rel="icon" sizes="64x64" href="../favicon.ico">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../bootstrap.min.css">
+    <title>Version Differences</title>
 </head>
 
 <body>
-    <header></header>
-
-    <section class="hero">
-        <img src="./Assets/Comics.png" alt="Bully Modding Documentation">
-    </section>
-
-    <section class="content">
-        <h1>Version Differences: PS2</h1>
+    <img src="../Assets/Comics.png" width="100%">
+    <div class="px-lg-5 pb-lg-5 background-fade">
+        <h1>Version Differences</h1>
+        <img src="../Assets/bully_logos.png" width="500" style="display: block; margin-left: auto; margin-right: auto;">
         <hr>
-        <h2>IDs</h2>
+        <li style="list-style-type: none;"><a class="active" href="../index.html">Home</a></li>
+        <div><h2>IDs</h2>
         <aside>
-            <img src="./Assets/268_-_lYP1Qh3.jpg" onmouseover="this.src='/Assets/436_-_Oruz6Ht.jpg';"
-                onmouseout="this.src='/Assets/268_-_lYP1Qh3.jpg';" width="310" height="240" class="float-left">
+            <img src="../Assets/268_-_lYP1Qh3.jpg" onmouseover="this.src='../Assets/436_-_Oruz6Ht.jpg';"
+                onmouseout="this.src='../Assets/268_-_lYP1Qh3.jpg';" width="270" height="200">
         </aside>
-        On the <strong>PS2</strong> version, there is a difference with IDs for vehicles, weapons and items. More specifically:
-        <br>Vehicles start with the ID 248 on the <strong>PS2</strong>, but with the ID 272 on
+        On the <strong>PS2</strong> version, there is a difference with IDs for vehicles, weapons and items.
+        <br>More specifically, vehicles start with the ID 248 on the <strong>PS2</strong>, but with the ID 272 on
         <strong>Scholarship Edition</strong>. This is due to the new characters and items added.
-        <br>This means that, if you want to get the <strong>PS2</strong> counterpart of an ID from <strong>Scholarship Edition</strong>
-        , you'll have to subtract 24 for vehicles, 22 for weapons, and 34 for items.
+        <br>This means that, if you want to get the <strong>PS2</strong> counterpart of an ID from <strong>Scholarship
+            Edition</strong>, you'll have to subtract 24 for vehicles, 22 for weapons, and 34 for items.
         <br>Examples:<br>
-        <table style="width:20%">
+        <table class="info-table" style="width:20%">
             <tr>
                 <th>PS2</th>
                 <th>Scholarship Edition</th>
@@ -50,10 +47,19 @@
                 <td>462 coin_dollar</td>
             </tr>
         </table>
-        <p>Here is the <strong>PS2</strong>'s <a href="https://pastebin.com/raw/KWD4s4i4" target="blank">default.ide</a>, which contains all the IDs.</p>
-    </section>
+        <p style="padding-top: 10px;">Here is the PS2's <a href="https://pastebin.com/raw/KWD4s4i4" target="blank">default.ide</a>, which contains all the IDs.</p>
+        </div>
 
-    <footer></footer>
+        <footer>
+            <div class="right-float">
+                <audio controls>
+                    <source src="../Assets/gokartmain.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+            <hr style="clear: right;">
+            Certain assets used to create the website belong to <a href="https://www.take2games.com/" target="blank">Take-Two Interactive</a>.<br>This site also uses Bootstrap.
+            <p style="padding-top:20px">Made by <a href="https://twitter.com/SimoBestia" target="blank">SimonBestia</a><br>Special thanks to <a href="https://www.youtube.com/user/deadpoolXYZ" target="blank">deadpoolXYZ</a>, <a href="https://twitter.com/derpy54320" target="blank">derpy54320</a> and <a href="https://twitter.com/EdnessTweets" target="blank">Edness</a></p>
+        </footer>
 </body>
 
 </html>
