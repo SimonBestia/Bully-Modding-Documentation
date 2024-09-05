@@ -1,5 +1,18 @@
+// Function to dynamically calculate the relative path to the root
+function getRootPath() {
+  // This counts the number of slashes in the current pathname
+  const depth = window.location.pathname.split('/').length - 2;
+  
+  // Add '../' based on how deep the user is
+  let path = '';
+  for (let i = 0; i < depth; i++) {
+    path += '../';
+  }
+  return path;
+}
+
 // Load header
-fetch('./header.html')
+fetch(getRootPath() + 'header.html')
   .then(response => response.text())
   .then(data => {
     document.querySelector('header').innerHTML = data;
@@ -17,7 +30,7 @@ fetch('./header.html')
   });
 
 // Load footer
-fetch('./footer.html')
+fetch(getRootPath() + 'footer.html')
   .then(response => response.text())
   .then(data => {
     document.querySelector('footer').innerHTML = data;
