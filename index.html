@@ -2,77 +2,32 @@
 <html lang="en">
 
 <head>
+    <!-- head stuff -->
+    <script src="/load.js" defer></script>
+    <script src="/pickstyle.js" defer></script>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A site with a bunch of things you'll need for modding the videogame Bully.">
-    <link rel="icon" sizes="64x64" href="favicon.ico">
-    <!--Social Media stuff-->
-    <meta property="og:url" content="https://example.com/page.html">
-    <meta property="og:title" content="Main Page">
-    <meta property="og:image" content="Assets/289_-_Px9eVKW.jpg">
-    <meta property="og:description" content="A site with a bunch of things you'll need for modding the videogame Bully.">
-    <meta property="og:site_name" content="Bully Modding Documentation">
-    <meta property="og:locale" content="en_UK">
-    <meta property="article:author" content="SimonBestia">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:creator" content="@SimoBestia">
-    <meta name="twitter:url" content="index.html">
-    <meta name="twitter:title" content="Bully Modding Documentation">
-    <meta name="twitter:description" content="A site with a bunch of things you'll need for modding the videogame Bully.">
-
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="bootstrap.min.css">
-    <title>BULLY Modding Documentation</title>
+    <title>Bully Modding Documentation</title>
+    <link rel="stylesheet" href="/localstyle.css">
 </head>
-
 <body>
-    <img src="Assets/Comics.png" width="100%" alt="Bully Modding Documentation">
-    <div class="px-lg-5 pb-lg-5 background-fade">
-        <div><h1 style="text-align: left; padding-top: 20px;">What is this?</h1>
+    <!-- Main body stuff -->
+    <header></header> <!-- Header will be loaded here -->
+    
+    <section class="hero">
+        <img src="/Assets/Comics.png" alt="Bully Modding Documentation">
+    </section>
+
+    <div class="wrapper">
+        <section class="content">
+            <h1>What is this?</h1>
             <p>Just a place to store some data you'll inevitably need when modding the game.<br>
                 I also always wanted to create a blog like <a href="https://dreamcastify.unreliable.network" target="blank">Dreamcastify</a>, but for <strong>BULLY</strong>.<br>It's not a thing yet, but I might add more info over time.<br>Note that some stuff might be incomplete.</p>
-        </div>
-        <hr>
-
-        <div><h2>Modding Resources</h2>
-            <ul style="padding:0%">
-                <li class="inlineli"><a href="Resources/ActionNodesList.html">Action Nodes List</a></li>
-                <li class="inlineli"><a href="Resources/AreaIDs.html">Area IDs</a></li>
-                <li class="inlineli"><a href="Resources/ChapterIDs.html">Chapter IDs</a></li>
-                <li class="inlineli"><a href="Resources/MissionMinigameIDs.html">Mission & Minigame IDs</a></li>
-                <li class="inlineli"><a href="Resources/SoundFXIDsList.html">SoundFX IDs</a></li>
-                <li class="inlineli"><a href="Resources/WeatherIDs.html">Weather IDs</a></li>
-                <li class="inlineli"><a href="Resources/2DFXIDs.html">2DFX IDs</a></li>
-                <li class="inlineli"><a href="Resources/QuoteIDs.html">Quote IDs</a></li>
-            </ul>
-        </div>
-        <hr>
-
-        <div><h2>Modding Process</h2>
-            <aside>
-                <img src="Assets/289_-_Px9eVKW.jpg" width="237">
-            </aside>
-            <h3>Original - PS2</h3>
-            <p>Many people are surprised to see me modding the original <strong>BULLY</strong>.
-            <br>The truth is, it’s not really <em>THAT</em> much different, but there are things to keep in mind:
-            <ul>
-                <li class="inlineli"><a href="PS2/Limitations.html">Limitations</a></li>
-                <li class="inlineli"><a href="PS2/Differences.html">Differences</a></li>
-            </ul>
-        </div>
-
-        <footer>
-            <div class="right-float">
-                <audio controls>
-                    <source src="Assets/gokartmain.mp3" type="audio/mpeg">
-                </audio>
-            </div>
-            <hr style="clear: right;">
-            Certain assets used to create the website belong to <a href="https://www.take2games.com/" target="blank">Take-Two Interactive</a>.<br>This site also uses Bootstrap.
-            <p style="padding-top:20px">Made by <a href="https://twitter.com/SimoBestia" target="blank">SimonBestia</a><br>Special thanks to <a href="https://www.youtube.com/user/deadpoolXYZ" target="blank">deadpoolXYZ</a>, <a href="https://twitter.com/derpy54320" target="blank">derpy54320</a> and <a href="https://twitter.com/EdnessTweets" target="blank">Edness</a></p>
-        </footer>
+            <hr>
+        </section>
     </div>
+    
+    <footer></footer> <!-- Footer will be loaded here -->
 
 </body>
 

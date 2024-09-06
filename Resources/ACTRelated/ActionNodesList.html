@@ -2,25 +2,25 @@
 <html lang="en">
 
 <head>
+    <script src="/load.js" defer></script> <!-- Ensure this is included in the head or just before the closing body tag -->
+    <script src="/pickstyle.js" defer></script>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" sizes="64x64" href="../favicon.ico">
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="../bootstrap.min.css">
     <title>Action Nodes List</title>
+    <link rel="stylesheet" href="/localstyle.css">
 </head>
 
 <body>
-    <img src="../Assets/Comics.png" width="100%">
-    <div class="px-lg-5 pb-lg-5 background-fade">
-        <div style="font-family: 'narcissusopensg-regular', sans-serif; text-align: center;">
-            <p style="font-size:45px;">Action Nodes List</p>
-            <p style="font-size:25px;">Special thanks to <a href="https://www.youtube.com/user/deadpoolXYZ" target="blank"><img src="../Assets/deadpoolXYZIcon.png" width="25">deadpoolXYZ</a>!</p>
-        </div>
+    <header></header>
+    
+    <section class="hero">
+        <img src="/Assets/Comics.png" alt="Bully Modding Documentation">
+    </section>
+    
+    <section class="content">
+        <h1>Action Nodes List</h1>
         <hr>
-        <li style="list-style-type: none;"><a class="active" href="../index.html">Home</a></li>
-        <div><h1 style="text-align: left;">What is an Action Node?</h1>
+        <h2>What is an Action Node?</h2>
             <div style="float:left">
                 <p>Arguably one of, if not the most popular thing the modding community likes to mess with.</p>
 
@@ -47,7 +47,6 @@
             <em><div style="font-size: small; float:right; margin-left: 250px;">Video showcasing <strong>/Global/1_03/animations/FallOffBarrels/Bobble/FallOff</strong></div></em>
             <div style="clear:left"></div>
             <em><div style="font-size: small; float:left">Written by deadpoolXYZ.<br>Explanation of the Tree data structure in general: <a href="https://en.wikipedia.org/wiki/Tree_(data_structure)" target="blank">Tree (data structure), on Wikipedia</a></div></em>
-        </div>
         <div style="clear:both"></div>
         <hr>
         <div><h2>First List Notes:</h2>
@@ -61,18 +60,18 @@
             Note that ones with <strong>LightAttacksWeapon</strong> and <strong>KnockOutChargeWeapon</strong> are exclusive to PC.<br>
             <a href="Nodes_NotWii.html" target="_blank" style="font-size:25px">Nodes_NotWii.html</a></p>
         </div>
+    </section>
 
-        <footer>
-            <div class="right-float">
-                <audio controls>
-                    <source src="../Assets/gokartmain.mp3" type="audio/mpeg">
-                </audio>
-            </div>
-            <hr style="clear: right;">
-            Certain assets used to create the website belong to <a href="https://www.take2games.com/" target="blank">Take-Two Interactive</a>.<br>This site also uses Bootstrap.
-            <p style="padding-top:20px">Made by <a href="https://twitter.com/SimoBestia" target="blank">SimonBestia</a><br>Special thanks to <a href="https://www.youtube.com/user/deadpoolXYZ" target="blank">deadpoolXYZ</a>, <a href="https://twitter.com/derpy54320" target="blank">derpy54320</a> and <a href="https://twitter.com/EdnessTweets" target="blank">Edness</a></p>
-        </footer>
-    </div>
+    <footer>
+        <div class="right-float">
+            <audio controls>
+                <source src="/Assets/gokartmain.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        <hr style="clear: right;">
+        Certain assets used to create the website belong to <a href="https://www.take2games.com/" target="blank">Take-Two Interactive</a>.<br>This site also uses Bootstrap.
+        <p style="padding-top:20px">Made by <a href="https://twitter.com/SimoBestia" target="blank">SimonBestia</a><br>Special thanks to <a href="https://www.youtube.com/user/deadpoolXYZ" target="blank">deadpoolXYZ</a>, <a href="https://twitter.com/derpy54320" target="blank">derpy54320</a> and <a href="https://twitter.com/EdnessTweets" target="blank">Edness</a></p>
+    </footer>
 
 </body>
 
