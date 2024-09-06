@@ -7,21 +7,15 @@ fetch(`${baseURL}/header.html`)
   .then(data => {
     document.querySelector('header').innerHTML = data;
 
-    // Update href attributes to include the base URL
+    // Update href attributes to include the base URL, but skip 'javascript:void(0)' links
     var navLinks = document.querySelectorAll('nav ul li a');
     navLinks.forEach(link => {
         const relativeHref = link.getAttribute("href");
-        if (!relativeHref.startsWith("http")) { // Ensure we don't modify absolute URLs
+        
+        // Ensure we don't modify absolute URLs or 'javascript:void(0)' links
+        if (!relativeHref.startsWith("http") && relativeHref !== 'javascript:void(0);') {
             link.setAttribute("href", `${baseURL}/${relativeHref}`);
         }
-    });
-
-    // Prevent default action for non-clickable links
-    var nonClickableLinks = document.querySelectorAll('a[href="javascript:void(0);"]');
-    nonClickableLinks.forEach(link => {
-        link.addEventListener('click', function(event) {
-            event.preventDefault();
-        });
     });
 
     // Run the active link logic after updating the href attributes
