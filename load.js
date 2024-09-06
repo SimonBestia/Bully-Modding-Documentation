@@ -1,5 +1,8 @@
+// Get the base URL
+const baseURL = window.location.origin;
+
 // Load header
-fetch('header.html')
+fetch(`${baseURL}/header.html`)
   .then(response => response.text())
   .then(data => {
     document.querySelector('header').innerHTML = data;
@@ -17,7 +20,7 @@ fetch('header.html')
   });
 
 // Load footer
-fetch('footer.html')
+fetch(`${baseURL}/footer.html`)
   .then(response => response.text())
   .then(data => {
     document.querySelector('footer').innerHTML = data;
