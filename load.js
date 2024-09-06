@@ -16,6 +16,14 @@ fetch(`${baseURL}/header.html`)
         }
     });
 
+    // Prevent default action for non-clickable links
+    var nonClickableLinks = document.querySelectorAll('a[href="javascript:void(0);"]');
+    nonClickableLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+        });
+    });
+
     // Run the active link logic after updating the href attributes
     var currentPath = window.location.pathname.split('/').pop();
     navLinks.forEach(function(link) {
