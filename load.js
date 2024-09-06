@@ -7,10 +7,17 @@ fetch(`${baseURL}/header.html`)
   .then(data => {
     document.querySelector('header').innerHTML = data;
 
-    // Run the active link logic after loading the header
-    var currentPath = window.location.pathname.split('/').pop();
+    // Update href attributes to include the base URL
     var navLinks = document.querySelectorAll('nav ul li a');
+    navLinks.forEach(link => {
+        const relativeHref = link.getAttribute("href");
+        if (!relativeHref.startsWith("http")) { // Ensure we don't modify absolute URLs
+            link.setAttribute("href", `${baseURL}/${relativeHref}`);
+        }
+    });
 
+    // Run the active link logic after updating the href attributes
+    var currentPath = window.location.pathname.split('/').pop();
     navLinks.forEach(function(link) {
         var href = link.getAttribute('href').split('/').pop();
         if (href === currentPath) {
