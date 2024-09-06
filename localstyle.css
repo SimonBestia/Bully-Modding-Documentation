@@ -1,7 +1,7 @@
 /* Import Font */
 @font-face {
     font-family: 'NarcissusOpenSG';
-    src: url('/Assets/narcissusopensg.ttf') format('truetype');
+    src: url('./Assets/narcissusopensg.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
