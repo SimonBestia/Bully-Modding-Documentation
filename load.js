@@ -1,5 +1,5 @@
 // Get the base URL
-const baseURL = window.location.origin;
+const baseURL = window.location.origin + "/Bully-Modding-Documentation";
 
 // Load header
 fetch(`${baseURL}/header.html`)
