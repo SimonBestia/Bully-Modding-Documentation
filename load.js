@@ -22,8 +22,19 @@ fetch(`${baseURL}/header.html`)
     var currentPath = window.location.pathname.split('/').pop();
     navLinks.forEach(function(link) {
         var href = link.getAttribute('href').split('/').pop();
+        
+        // If the current link is active
         if (href === currentPath) {
             link.classList.add('active');
+
+            // Find parent elements (if inside dropdown) and mark them as active
+            let parentDropdown = link.closest('.dropdown-content');
+            if (parentDropdown) {
+                let parentLink = parentDropdown.previousElementSibling;
+                if (parentLink) {
+                    parentLink.classList.add('active');
+                }
+            }
         }
     });
   });
