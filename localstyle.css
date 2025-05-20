@@ -173,6 +173,11 @@ nav > ul > li.dropdown > a.active {
     color: var(--nav-link-text-active-color);
 }
 
+/* External links in dropdowns */
+.dropdown-content a[target="_blank"] {
+    color: var(--dropdown-text-color);
+}
+
 /* Hover state for external links */
 .dropdown-content a[target="_blank"]:hover {
     background-color: var(--dropdown-hover-background-color);

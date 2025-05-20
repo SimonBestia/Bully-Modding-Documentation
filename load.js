@@ -27,6 +27,7 @@ fetch(`${baseURL}/header.html`)
     navLinks.forEach(function(link) {
         const href = link.getAttribute('href');
         if (href === 'javascript:void(0);') return; // Skip dropdown toggles
+        if (link.getAttribute('target') === '_blank') return; // Skip external links
         
         if (currentPath.endsWith(href.split('/').pop())) {
             // Add active class to the current link
