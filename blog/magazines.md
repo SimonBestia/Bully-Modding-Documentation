@@ -1,5 +1,5 @@
 <figure style="float: right; margin: 0 0 10px 20px; max-width: 315px; text-align: center;">
-    <img src="../../Assets/JimmyCrabblesnitch3D.png" style="max-width: 100%;">
+    <img src="../Assets/JimmyCrabblesnitch3D.png" style="max-width: 100%;">
     <figcaption style="font-size: 0.85em; color: var(--sidebar-text-color);">
         An official, yet funny-looking 3D render of Jimmy and Dr. Crabblesnitch, from
         <a href="https://www.retromags.com/files/file/5932-psm-issue-116-november-2006/" target="_blank">PSM #116</a>.
