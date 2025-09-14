@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="../../../load.js" defer></script>
+    <script src="../../../pickstyle.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" sizes="64x64" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../localstyle.css" />
+    <title>Weather IDs</title>
+    <script defer>
+      document.addEventListener('DOMContentLoaded', () => {
+        const target = document.querySelector('section.content');
+        target.innerHTML = document.getElementById('preloaded-content').innerHTML;
+      });
+    </script>
+  </head>
+  <body>
+    <header></header>
+    <section class="hero">
+      <img alt="Bully Modding Documentation" src="../../../Assets/Comics.png" />
+    </section>
+    <div class="wrapper">
+      <!-- Placeholder -->
+      <section class="content">
+        <h1>Loading…</h1>
+      </section>
+    </div>
+    <!-- Hidden real content -->
+    <template id="preloaded-content">
+      <h1>Weather IDs</h1>
+      <hr />
+      <div>
+        <aside>
+          <img alt="Weather Screenshot" class="float-left" src="../../../Assets/CCE_Screen_06.JPG" />
+        </aside>
+        <table>
+          <thead>
+            <tr>
+              <th>Weather ID</th>
+              <th>Weather Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>0</td><td>Sunny</td></tr>
+            <tr><td>1</td><td>Cloudy</td></tr>
+            <tr><td>2</td><td>Rainy*</td></tr>
+            <tr><td>3</td><td>Foggy</td></tr>
+            <tr><td>4</td><td>Extra Sunny</td></tr>
+            <tr><td>5</td><td>Hurricane*</td></tr>
+          </tbody>
+        </table>
+        <p>*During Chapter III, rain is replaced by snow.</p>
+      </div>
+    </template>
+    <footer></footer>
+  </body>
+</html>

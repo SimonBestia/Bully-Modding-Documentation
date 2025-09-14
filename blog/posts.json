@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "welcome",
+    "title": "Blog Introduction",
+    "date": "2025-09-04",
+    "author": "SimonBestia",
+    "tags": ["site", "updates"],
+    "file": "welcome.md"
+  },
+  {
+    "slug": "magazines",
+    "title": "Who Still Reads Magazines?",
+    "date": "2025-09-04",
+    "author": "SimonBestia",
+    "tags": ["magazines", "preservation"],
+    "file": "magazines.md"
+  },
+  {
+    "slug": "lostmedia",
+    "title": "Lost Media",
+    "date": "2025-09-04",
+    "author": "SimonBestia",
+    "tags": ["lost media"],
+    "file": "lostmedia.md"
+  }
+]

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="../../../load.js" defer></script>
+    <script src="../../../pickstyle.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" sizes="64x64" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../localstyle.css">
+    <title>Version Differences: PS2</title>
+    </head>
+
+<body>
+    <header></header>
+
+    <section class="hero">
+        <img src="../../../Assets/Comics.png" alt="Bully Modding Documentation">
+    </section>
+
+    <div class="wrapper">
+        <section class="content">
+            <h1>Version Differences: PS2</h1>
+            <hr>
+            <aside>
+                <img src="../../../Assets/268_-_lYP1Qh3.jpg" onmouseover="this.src='../../../Assets/436_-_Oruz6Ht.jpg';"
+                    onmouseout="this.src='../../../Assets/268_-_lYP1Qh3.jpg';" width="310" height="240" class="float-right">
+            </aside>
+            <h2>IDs</h2>
+            On the <strong>PS2</strong> version, there is a difference with IDs for vehicles, weapons and items. More specifically:
+            <br>Vehicles start with the ID 248 on the <strong>PS2</strong>, but with the ID 272 on
+            <strong>Scholarship Edition</strong>. This is due to the new characters and items added.
+            <br>This means that, if you want to get the <strong>PS2</strong> counterpart of an ID from <strong>Scholarship Edition</strong>,
+            you'll have to subtract 24 for vehicles, 22 for weapons, and 34 for items.
+            <br>Examples:<br>
+            <table style="width:20%">
+                <tr>
+                    <th>PS2</th>
+                    <th>Scholarship Edition</th>
+                </tr>
+                <tr>
+                    <td>248 bmxrace</td>
+                    <td>272 bmxrace</td>
+                </tr>
+                <tr>
+                    <td>277 yardstick</td>
+                    <td>299 yardstick</td>
+                </tr>
+                <tr>
+                    <td>428 coin_dollar</td>
+                    <td>462 coin_dollar</td>
+                </tr>
+            </table>
+            <p>Here is the <strong>PS2</strong>'s <a href="https://pastebin.com/raw/KWD4s4i4" target="blank">default.ide</a>, which contains all the IDs.</p>
+            <h2>Large Files</h2>
+            <hr style="clear:left">
+            Browse the files for a bit and you'll notice how certain ones have clones. This was likely done to spread data across the disk and improve loading times.<br>
+            Make sure they all match in size/content, otherwise <a href="https://www.youtube.com/watch?v=m-mAENSFoko&t=196s" target="blank">this will happen</a>.
+        </section>
+    </div>
+
+    <footer></footer>
+</body>
+
+</html>
+
+

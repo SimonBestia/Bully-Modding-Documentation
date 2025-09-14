@@ -3,6 +3,29 @@ const baseURL = window.location.hostname === 'localhost' || window.location.host
     ? '' // Empty string for local development
     : window.location.origin + "/Bully-Modding-Documentation"; // Full path for GitHub Pages
 
+// Centralized title management
+function updatePageTitle() {
+    const currentTitle = document.title;
+    const currentPath = window.location.pathname;
+    
+    // Don't modify the title if:
+    // 1. It's already the full site title
+    // 2. It's the main index page
+    // 3. It already has the suffix
+    if (currentTitle === 'Bully Modding Documentation' || 
+        currentPath === '/' || 
+        currentPath === '/index.html' ||
+        currentTitle.includes(' - Bully Modding Documentation')) {
+        return;
+    }
+    
+    // Append site suffix
+    document.title = `${currentTitle} - Bully Modding Documentation`;
+}
+
+// Update title when DOM is loaded
+document.addEventListener('DOMContentLoaded', updatePageTitle);
+
 // Load header
 fetch(`${baseURL}/header.html`)
   .then(response => response.text())
@@ -20,6 +43,9 @@ fetch(`${baseURL}/header.html`)
         }
     });
 
+    // Add hover delay functionality to dropdowns
+    setupDropdownDelays();
+
     // Run the active link logic after updating the href attributes
     var currentPath = window.location.pathname;
     
@@ -28,8 +54,10 @@ fetch(`${baseURL}/header.html`)
         const href = link.getAttribute('href');
         if (href === 'javascript:void(0);') return; // Skip dropdown toggles
         if (link.getAttribute('target') === '_blank') return; // Skip external links
-        
-        if (currentPath.endsWith(href.split('/').pop())) {
+
+        // Compare full pathname for accuracy across nested paths
+        const linkPathname = new URL(href, window.location.origin).pathname;
+        if (currentPath === linkPathname) {
             // Add active class to the current link
             link.classList.add('active');
             
@@ -47,6 +75,12 @@ fetch(`${baseURL}/header.html`)
         }
     });
 
+    // Ensure BLOG is highlighted on all blog routes (index and post pages)
+    if (currentPath.includes('/blog/')) {
+        const blogNav = document.getElementById('nav-blog');
+        if (blogNav) blogNav.classList.add('active');
+    }
+
   });
 
 // Load footer
@@ -54,8 +88,9 @@ fetch(`${baseURL}/footer.html`)
   .then(response => response.text())
   .then(data => {
     document.querySelector('footer').innerHTML = data;
-    // Update the last modified date
-    document.getElementById('last-modified').innerText = "Last Edit: " + document.lastModified;
+    
+    // Update the last modified date - handle blog posts differently
+    updateLastModified();
 
     // Back to top button functionality
     const backToTopButton = document.getElementById('back-to-top');
@@ -77,3 +112,67 @@ fetch(`${baseURL}/footer.html`)
         });
     });
   });
+
+// Table Body Toggle Functionality
+function toggleTableBody(tbodyId) {
+    const tbody = document.getElementById(tbodyId);
+    const headerRow = tbody.previousElementSibling.querySelector('tr');
+    const toggleLink = headerRow.querySelector('.table-toggle');
+    
+    if (tbody.style.display === 'none') {
+        tbody.style.display = 'table-row-group';
+        toggleLink.textContent = 'collapse';
+    } else {
+        tbody.style.display = 'none';
+        toggleLink.textContent = 'expand';
+    }
+}
+
+// Dropdown Hover Delay Functionality
+function setupDropdownDelays() {
+    const dropdowns = document.querySelectorAll('.dropdown');
+    const delay = 200; // hover delay ms
+    
+    dropdowns.forEach(dropdown => {
+        let showTimeout;
+        let hideTimeout;
+        
+        // Mouse enter - show dropdown after delay
+        dropdown.addEventListener('mouseenter', () => {
+            clearTimeout(hideTimeout);
+            showTimeout = setTimeout(() => {
+                const dropdownContent = dropdown.querySelector('.dropdown-content');
+                if (dropdownContent) {
+                    dropdownContent.style.display = 'block';
+                }
+            }, delay);
+        });
+        
+        // Mouse leave - hide dropdown after delay
+        dropdown.addEventListener('mouseleave', () => {
+            clearTimeout(showTimeout);
+            hideTimeout = setTimeout(() => {
+                const dropdownContent = dropdown.querySelector('.dropdown-content');
+                if (dropdownContent) {
+                    dropdownContent.style.display = 'none';
+                }
+            }, delay);
+        });
+    });
+}
+
+// Update Last Modified Date
+async function updateLastModified() {
+    const lastModifiedEl = document.getElementById('last-modified');
+    if (!lastModifiedEl) return;
+    
+    // Check if we're on a blog post page
+    if (window.location.pathname.includes('/blog/post.html')) {
+        // Hide the footer date on blog pages
+        lastModifiedEl.style.display = 'none';
+        return;
+    }
+    
+    // Default behavior for non-blog pages
+    lastModifiedEl.innerText = "Last Edit: " + document.lastModified;
+}

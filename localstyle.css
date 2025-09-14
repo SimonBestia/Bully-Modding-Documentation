@@ -26,9 +26,10 @@
     --content-background-color: #ffffff;
     --image-border-color: #000000;
     --table-header-background-color: #dbdbdb;
-    --table-border-color: #ddd;
+    --table-border-color: #c0c0c0;
     --footer-background-color: #3f3f3f;
     --footer-text-color: #fff;
+    --sidebar-text-color: #5c5c5c;
 }
 
 /* Dark Theme Variables */
@@ -44,16 +45,30 @@
     --dropdown-hover-background-color: #e0e0e0;
     --dropdown-text-color: #5c5c5c;
     --dropdown-text-hover-color: #6b5bff;
-    --dropdown-text-active-color: #6b5bff;
+    --dropdown-text-active-color: #8375fd;
     --link-color: #3593ff;
     --link-hover-color: #186ad6;
     --hero-background-color: #2e2e2e;
     --content-background-color: #424242;
     --image-border-color: #e9e9e9;
-    --table-header-background-color: #acacac;
+    --table-header-background-color: #8a8a8a;
     --table-border-color: #ffffff;
     --footer-background-color: #292929;
     --footer-text-color: #fff;
+    --sidebar-text-color: #e0e0e0;
+}
+
+
+
+/* Table Toggle Link Styling */
+.table-toggle {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+.table-toggle:hover {
+    color: var(--link-hover-color);
+    text-decoration: underline;
 }
 
 html, body {
@@ -78,7 +93,7 @@ h1, h2 {
     font-weight: normal;
     font-family: 'NarcissusOpenSG', serif;
     color: var(--text-color);
-    margin-bottom: 1px; /* Space below the title */
+    margin-bottom: -10px; /* Space below the title */
 }
 
 h1 {
@@ -143,6 +158,19 @@ nav > ul {
     color: #ffbd5b;
 }
 
+/* Theme toggle button */
+.theme-toggle {
+    margin-left: 1px;
+    display: flex;
+    align-items: center;
+}
+
+.theme-toggle > a {
+    padding: 6px 24px; /* match other top-level items */
+    font-size: 14px;   /* match nav items */
+    line-height: 1;    /* prevent extra height */
+}
+
 nav ul li {
     position: relative;
 }
@@ -150,7 +178,7 @@ nav ul li {
 nav ul li a { /* Top-level items */
     font-family: 'Verdana', sans-serif;
     font-size: 14px;
-    padding: 6px 24px;
+    padding: 6px 20px;
     color: var(--nav-link-text-color);
     text-decoration: none;
 }
@@ -203,11 +231,6 @@ nav ul li a:hover {
     padding: 0; /* Remove default padding */
 }
 
-/* Main Dropdown Display */
-.dropdown:hover > .dropdown-content {
-    display: block;
-}
-
 /* Sub-dropdown for items with another dropdown */
 .dropdown-content ul {
     display: none; /* Hide sub-menu by default */
@@ -218,10 +241,10 @@ nav ul li a:hover {
     padding: 0; /* Remove default padding */
 }
 
-/* Show the sub-menu when hovering over the parent item */
-.dropdown-content li:hover > ul {
+/* Show the sub-menu when hovering over the parent item - Now handled by JavaScript */
+/* .dropdown-content li:hover > ul {
     display: block;
-}
+} */
 
 /* Down arrow for the main dropdown */
 nav ul li.dropdown > a::after {
@@ -272,6 +295,8 @@ a:hover { /* Link hover state */
     text-align: center;
     padding: 0; /* Remove padding */
     background-color: var(--hero-background-color);
+    position: relative; /* Ensure z-index applies */
+    box-shadow: 0 1px 40px rgba(0, 0, 0, 0.2); /* Bottom shadow similar to footer */
 }
 
 .hero img {
@@ -320,6 +345,116 @@ a:hover { /* Link hover state */
     padding: 20px 120px 100px 120px; /* This sets top padding to 20px, and left, right, bottom padding to 120px */
     background-color: var(--content-background-color);
     border-radius: 10px;
+}
+
+/* Blog stuff */
+.blog-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.blog-list li {
+    margin-bottom: 14px;
+}
+
+.blog-list a {
+    font-size: 18px;
+}
+
+.post-meta {
+    color: var(--sidebar-text-color);
+    font-size: 12px;
+}
+
+.post-content {
+    line-height: 1.8;
+}
+
+.post-image {
+    border: 4px solid var(--image-border-color);
+    max-width: 100%;
+    height: auto;
+}
+
+/* Sidebar stuff */
+.blog-layout {
+    display: flex;
+    gap: 24px;
+    flex-direction: row-reverse; /* Remove for it left sidebar */
+}
+
+/* Collapsible years */
+.year-header {
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+}
+
+/* Arrow indicator */
+.year-header::before {
+    content: "▼"; /* expanded by default */
+    font-size: 12px;
+    margin-right: 6px;
+    color: #ffbd5b; /* match your nav arrows */
+}
+  
+/* When collapsed  */
+.year-header.collapsed::before {
+    content: "►";
+}
+
+.year-posts.collapsed {
+    display: none;
+}
+
+.blog-sidebar {
+    width: 260px;
+}
+
+.blog-sidebar .year {
+    font-weight: bold;
+    margin: 12px 0 6px 0;
+}
+
+.blog-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 10px 0;
+}
+
+.blog-sidebar a {
+    display: block;
+    padding: 4px 6px;
+    color: var(--sidebar-text-color);
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.blog-sidebar a:hover {
+    background-color: var(--dropdown-hover-background-color);
+    color: var(--dropdown-text-hover-color);
+}
+
+.blog-sidebar a.active {
+    color: var(--dropdown-text-active-color);
+    font-weight: bold;
+}
+
+.blog-main {
+    flex: 1;
+}
+
+@media (max-width: 900px) {
+    .blog-layout {
+        flex-direction: column;
+    }
+    .blog-sidebar {
+        width: 100%;
+    }
 }
 
 /* Table styles */

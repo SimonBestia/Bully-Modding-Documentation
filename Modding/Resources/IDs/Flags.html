@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="../../../load.js" defer></script>
+    <script src="../../../pickstyle.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" sizes="64x64" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../localstyle.css" />
+    <title>Flag IDs</title>
+    <script defer>
+      document.addEventListener('DOMContentLoaded', () => {
+        const target = document.querySelector('section.content');
+        target.innerHTML = document.getElementById('preloaded-content').innerHTML;
+      });
+    </script>
+  </head>
+  <body>
+    <header></header>
+    <section class="hero">
+      <img alt="Bully Modding Documentation" src="../../../Assets/Comics.png" />
+    </section>
+    <div class="wrapper">
+      <!-- Placeholder -->
+      <section class="content">
+        <h1>Loading…</h1>
+      </section>
+    </div>
+    <!-- Hidden real content -->
+    <template id="preloaded-content">
+      <h1>Flag IDs</h1> Special thanks to <a href="https://www.youtube.com/@Chillaxowo" target="blank">Chillax</a>!
+      <hr />
+      <div>
+        <h2>Entity Flags</h2>
+        <aside>
+          <img class="float-right" src="../../../Assets/f3zRsx8.png" />
+        </aside>
+        <table>
+          <thead>
+            <tr>
+              <th>Flag ID</th>
+              <th>Flag Name</th>
+              <th>Flag Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>0</td><td>UsesCollisionScripted</td><td></td></tr>
+            <tr><td>1</td><td>UsesCollision</td><td></td></tr>
+            <tr><td>2</td><td>CollisionProcessed</td><td></td></tr>
+            <tr><td>3</td><td>IsStatic</td><td></td></tr>
+            <tr><td>4</td><td>HasContacted</td><td></td></tr>
+            <tr><td>5</td><td>UsesSlideCollision</td><td></td></tr>
+            <tr><td>6</td><td>IsStuck</td><td></td></tr>
+            <tr><td>7</td><td>IsInSafePosition</td><td></td></tr>
+            <tr><td>8</td><td>UsesCollisionRecords</td><td></td></tr>
+            <tr><td>9</td><td>WasPostponed</td><td></td></tr>
+            <tr><td>10</td><td>IgnoresExplosions</td><td></td></tr>
+            <tr><td>11</td><td>IsVisible</td><td></td></tr>
+            <tr><td>12</td><td>CollidedThisFrame</td><td></td></tr>
+            <tr><td>13</td><td>RenderScorched</td><td></td></tr>
+            <tr><td>14</td><td>RenderFlashy</td><td></td></tr>
+            <tr><td>15</td><td>IsBIGBuilding</td><td></td></tr>
+            <tr><td>16</td><td>StreamBIGBuilding</td><td></td></tr>
+            <tr><td>17</td><td>AllowCollisionResponse</td><td></td></tr>
+            <tr><td>18</td><td>NotDamagedByFlames</td><td></td></tr>
+            <tr><td>19</td><td>NotDamagedByCollisions</td><td></td></tr>
+            <tr><td>20</td><td>NotDamagedByMelee</td><td></td></tr>
+            <tr><td>21</td><td>OnlyDamagedByPlayer</td><td></td></tr>
+            <tr><td>22</td><td>StreamingDontDelete</td><td></td></tr>
+            <tr><td>23</td><td>RemoveFromWorld</td><td></td></tr>
+            <tr><td>24</td><td>HasHitWall</td><td></td></tr>
+            <tr><td>25</td><td>ImBeingRendered</td><td></td></tr>
+            <tr><td>26</td><td>ForceFullWaterCheck</td><td></td></tr>
+            <tr><td>27</td><td>IsSubway</td><td></td></tr>
+            <tr><td>28</td><td>DrawLast</td><td></td></tr>
+            <tr><td>29</td><td>IsInvisiblePlayerCar</td><td></td></tr>
+            <tr><td>30</td><td>DoPreRenderButDontRender</td><td></td></tr>
+            <tr><td>31</td><td>DistanceFade</td><td></td></tr>
+            <tr><td>32</td><td>RenderBlack</td><td></td></tr>
+            <tr><td>33</td><td>DontCastShadowsOn</td><td></td></tr>
+            <tr><td>34</td><td>Offscreen</td><td></td></tr>
+            <tr><td>35</td><td>WasOffscreenNowOnscreen</td><td></td></tr>
+            <tr><td>36</td><td>IsStaticWaitingForCollision</td><td></td></tr>
+            <tr><td>37</td><td>IsStaticButInMovingList</td><td></td></tr>
+            <tr><td>38</td><td>DontStream</td><td></td></tr>
+            <tr><td>39</td><td>Underwater</td><td></td></tr>
+            <tr><td>40</td><td>HasPreRenderEffects</td><td></td></tr>
+            <tr><td>41</td><td>IgnoredByTargetSystem</td><td></td></tr>
+            <tr><td>42</td><td>IsProjectile</td><td></td></tr>
+            <tr><td>43</td><td>IsLight</td><td></td></tr>
+            <tr><td>44</td><td>BrokenLight</td><td></td></tr>
+            <tr><td>45</td><td>HideEntity</td><td></td></tr>
+            <tr><td>46</td><td>WeaponEntity</td><td></td></tr>
+            <tr><td>47</td><td>CheckedForDead</td><td></td></tr>
+            <tr><td>48</td><td>HasBeenRendered</td><td></td></tr>
+            <tr><td>49</td><td>DetailTexture</td><td></td></tr>
+            <tr><td>50</td><td>AlwaysUpdateAnim</td><td></td></tr>
+            <tr><td>51</td><td>CameraFade</td><td></td></tr>
+            <tr><td>52</td><td>IsCutscene</td><td></td></tr>
+            <tr><td>53</td><td>IsCPhysical</td><td></td></tr>
+            <tr><td>54</td><td>FakeCollisionModel</td><td></td></tr>
+            <tr><td>55</td><td>IgnoredByCrosshairSystem</td><td></td></tr>
+            <tr><td>56</td><td>IgnoreProjectiles</td><td></td></tr>
+            <tr><td>57</td><td>ForceAttackCollision</td><td></td></tr>
+            <tr><td>58</td><td>IgnoreTargetingByPed</td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h2>Ped Flags</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Flag ID</th>
+              <th>Flag Name</th>
+              <th>Flag Description</th>
+              <th>Ped Only?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>0</td><td>Nothing</td><td></td><td></td></tr>
+            <tr><td>1</td><td>IsStanding</td><td>Is the ped standing?</td><td></td></tr>
+            <tr><td>2</td><td>IsCrouching</td><td>Is the ped crouching?</td><td></td></tr>
+            <tr><td>3</td><td>IsCrawling</td><td>Is the ped crawling?</td><td></td></tr>
+            <tr><td>4</td><td>IsInTheAir</td><td>Is the ped in air?</td><td></td></tr>
+            <tr><td>5</td><td>DisableFallingCode</td><td>Disable gravity?</td><td></td></tr>
+            <tr><td>6</td><td>UpdateAnimPosition</td><td></td><td></td></tr>
+            <tr><td>7</td><td>RestorePathNodes</td><td></td><td></td></tr>
+            <tr><td>8</td><td>AnimationMove</td><td>Ignores any movement embedded in animations.</td><td></td></tr>
+            <tr><td>9</td><td>FadeOut</td><td>Disapear (and deletes peds).</td><td></td></tr>
+            <tr><td>10</td><td>CollidableToPeds</td><td></td><td></td></tr>
+            <tr><td>11</td><td>StrafeMode</td><td></td><td></td></tr>
+            <tr><td>12</td><td>Invulnerable</td><td></td><td></td></tr>
+            <tr><td>13</td><td>UnInteruptable</td><td></td><td></td></tr>
+            <tr><td>14</td><td>HitByPlayer</td><td></td><td></td></tr>
+            <tr><td>15</td><td>HitByPlayerAgain</td><td></td><td></td></tr>
+            <tr><td>16</td><td>PlayerSeen</td><td></td><td></td></tr>
+            <tr><td>17</td><td>AISleep</td><td>Disable AI.</td><td></td></tr>
+            <tr><td>18</td><td>ShowHealthBar</td><td></td><td>Yes</td></tr>
+            <tr><td>19</td><td>IgnoreAttacks</td><td></td><td>Yes</td></tr>
+            <tr><td>20</td><td>InvulnerableToPlayer</td><td></td><td>Yes</td></tr>
+            <tr><td>21</td><td>CanDropWeapon</td><td></td><td></td></tr>
+            <tr><td>22</td><td>Cheering</td><td></td><td></td></tr>
+            <tr><td>23</td><td>IgnoreAmbientStimuli</td><td></td><td></td></tr>
+            <tr><td>24</td><td>UnlimitedAmmo</td><td>Does the ped have infinite ammo?</td><td></td></tr>
+            <tr><td>25</td><td>HangingOut</td><td></td><td></td></tr>
+            <tr><td>26</td><td>Warned</td><td></td><td></td></tr>
+            <tr><td>27</td><td>IgnoreAttackCone</td><td></td><td>Yes</td></tr>
+            <tr><td>28</td><td>FadeOutLock</td><td>Prevents changes to Flag 9.</td><td></td></tr>
+            <tr><td>29</td><td>ForceDesiredWeapon</td><td></td><td></td></tr>
+            <tr><td>30</td><td>Undamageable</td><td></td><td></td></tr>
+            <tr><td>31</td><td>JustSpawned</td><td></td><td>Yes?</td></tr>
+            <tr><td>32</td><td>RemoveOwnedProj</td><td></td><td></td></tr>
+            <tr><td>33</td><td>StealthMissionPed</td><td></td><td>Yes</td></tr>
+            <tr><td>34</td><td>DisableAttackCone</td><td></td><td></td></tr>
+            <tr><td>35</td><td>GroundFeetContraint</td><td></td><td></td></tr>
+            <tr><td>36</td><td>GroundOrientContraint</td><td></td><td></td></tr>
+            <tr><td>37</td><td>WallHitConstraint</td><td></td><td></td></tr>
+            <tr><td>38</td><td>WallHitProcessing</td><td>Should the ped detect walls?</td><td>Yes?</td></tr>
+            <tr><td>39</td><td>CameraFollowPed</td><td></td><td></td></tr>
+            <tr><td>40</td><td>CollisionWithTarget</td><td>Similar to 10.</td><td></td></tr>
+            <tr><td>41</td><td>CollisionWithObjectiveVehicle</td><td></td><td></td></tr>
+            <tr><td>42</td><td>CanDriveCars</td><td></td><td></td></tr>
+            <tr><td>43</td><td>DoHorizontalCollision</td><td></td><td></td></tr>
+            <tr><td>44</td><td>CollidingWithRail</td><td></td><td></td></tr>
+            <tr><td>45</td><td>InfiniteSprint</td><td></td><td></td></tr>
+            <tr><td>46</td><td>CameraFollowPedPelvis</td><td></td><td></td></tr>
+            <tr><td>47</td><td>CameraMixedPerson</td><td></td><td></td></tr>
+            <tr><td>48</td><td>Spectator</td><td></td><td></td></tr>
+            <tr><td>49</td><td>Warned2</td><td></td><td></td></tr>
+            <tr><td>50</td><td>OnTree</td><td></td><td></td></tr>
+            <tr><td>51</td><td>CameraFollowPedPelvisAll</td><td></td><td></td></tr>
+            <tr><td>52</td><td>InDodgeball</td><td></td><td></td></tr>
+            <tr><td>53</td><td>UseFullBodyCollision</td><td></td><td></td></tr>
+            <tr><td>54</td><td>UseSimpleLineCollision</td><td></td><td></td></tr>
+            <tr><td>55</td><td>HasArrested</td><td></td><td></td></tr>
+            <tr><td>56</td><td>KnockedDown</td><td></td><td></td></tr>
+            <tr><td>57</td><td>HaveCompletedScenarioObj</td><td></td><td></td></tr>
+            <tr><td>58</td><td>Immortal</td><td>Can&#39;t get busted.</td><td></td></tr>
+            <tr><td>59</td><td>HasTurf</td><td></td><td></td></tr>
+            <tr><td>60</td><td>AttackWarning</td><td>Point finger and insult.</td><td>Yes</td></tr>
+            <tr><td>61</td><td>ForceR1Lock</td><td></td><td></td></tr>
+            <tr><td>62</td><td>ForceFPHud</td><td></td><td></td></tr>
+            <tr><td>63</td><td>AllowFlashLightOn</td><td></td><td></td></tr>
+            <tr><td>64</td><td>OnLadder</td><td></td><td></td></tr>
+            <tr><td>65</td><td>LockActiveProp</td><td></td><td></td></tr>
+            <tr><td>66</td><td>IsMissionCritical</td><td></td><td></td></tr>
+            <tr><td>67</td><td>NoViolence</td><td></td><td></td></tr>
+            <tr><td>68</td><td>LowPriorityTarget</td><td></td><td></td></tr>
+            <tr><td>69</td><td>UsingOldGiftTree</td><td></td><td>Yes</td></tr>
+            <tr><td>70</td><td>AimMode</td><td></td><td></td></tr>
+            <tr><td>71</td><td>ForceGiftOption</td><td></td><td></td></tr>
+            <tr><td>72</td><td>FaceTossTarget</td><td></td><td></td></tr>
+            <tr><td>73</td><td>BranchHanging</td><td></td><td></td></tr>
+            <tr><td>74</td><td>CheckForInterruptedSounds</td><td></td><td></td></tr>
+            <tr><td>75</td><td>DisableAllSocialCommands</td><td></td><td></td></tr>
+            <tr><td>76</td><td>SocialSpeechPreloadStage</td><td></td><td></td></tr>
+            <tr><td>77</td><td>ClosingAttack</td><td></td><td>Yes</td></tr>
+            <tr><td>78</td><td>UseSpineControl</td><td></td><td></td></tr>
+            <tr><td>79</td><td>AllowOffsetCam</td><td></td><td></td></tr>
+            <tr><td>80</td><td>TakeDamageWhenAttachedToVehicle</td><td></td><td></td></tr>
+            <tr><td>81</td><td>AllowTakePicture</td><td></td><td></td></tr>
+            <tr><td>82</td><td>Beefing</td><td></td><td>Yes</td></tr>
+            <tr><td>83</td><td>???</td><td>???</td><td></td></tr>
+            <tr><td>84</td><td>CanBeKissedNow</td><td></td><td>Yes</td></tr>
+            <tr><td>85</td><td>DisableSocialGrappleAnims</td><td></td><td></td></tr>
+            <tr><td>86</td><td>NonCombatStrafeMode</td><td></td><td></td></tr>
+            <tr><td>87</td><td>Skateboarding</td><td></td><td></td></tr>
+            <tr><td>88</td><td>PhysicsPed</td><td></td><td></td></tr>
+            <tr><td>89</td><td>DisableGroundOrientSmoothing</td><td></td><td></td></tr>
+            <tr><td>90</td><td>PhysicsPedPowerSlide</td><td></td><td></td></tr>
+            <tr><td>91</td><td>PedRelativeControls</td><td></td><td></td></tr>
+            <tr><td>92</td><td>PhysicsPedWithAnimatedRotation</td><td></td><td></td></tr>
+            <tr><td>93</td><td>GoofyFoot</td><td></td><td></td></tr>
+            <tr><td>94</td><td>AnchoredToVehicle</td><td>Is holding from a vehicle? Crashes if there is no vehicle</td><td></td></tr>
+            <tr><td>95</td><td>PhysicsPedGoingUpStairs</td><td></td><td></td></tr>
+            <tr><td>96</td><td>AISocialActionStarted</td><td></td><td></td></tr>
+            <tr><td>97</td><td>IgnoreExcluders</td><td>Can access locked locations of ../Data/excluder.dat.</td><td></td></tr>
+            <tr><td>98</td><td>CanPickup</td><td></td><td></td></tr>
+            <tr><td>99</td><td>ChasingTarget</td><td></td><td></td></tr>
+            <tr><td>100</td><td>HideHealthBar</td><td></td><td>Yes</td></tr>
+            <tr><td>101</td><td>SeenByPunisher</td><td></td><td></td></tr>
+            <tr><td>102</td><td>Trespassing</td><td></td><td></td></tr>
+            <tr><td>103</td><td>SkippingClass</td><td></td><td></td></tr>
+            <tr><td>104</td><td>ViolatingCurfew</td><td></td><td></td></tr>
+            <tr><td>105</td><td>CombatTaunted</td><td></td><td></td></tr>
+            <tr><td>106</td><td>FactionSensitive</td><td></td><td></td></tr>
+            <tr><td>107</td><td>ForceRedArrow</td><td></td><td></td></tr>
+            <tr><td>108</td><td>CannotBeAttacked</td><td></td><td></td></tr>
+            <tr><td>109</td><td>CanCarryBannedWeapon</td><td></td><td></td></tr>
+            <tr><td>110</td><td>IsScenarioPed</td><td>Authority doesn&#39;t chase you and you get an errand icon.</td><td></td></tr>
+            <tr><td>111</td><td>CanBeBumped</td><td></td><td></td></tr>
+            <tr><td>112</td><td>NoDamageNextFall</td><td></td><td></td></tr>
+            <tr><td>113</td><td>DisableSpeech</td><td>Should the ped be able to talk? (Social)</td><td></td></tr>
+            <tr><td>114</td><td>DisableLipSync</td><td>Disable facial animations.</td><td></td></tr>
+            <tr><td>115</td><td>Threaten</td><td></td><td></td></tr>
+            <tr><td>116</td><td>SkateboardBraking</td><td></td><td></td></tr>
+            <tr><td>117</td><td>CanBeBusted</td><td>Can the ped be chased by authority?</td><td></td></tr>
+            <tr><td>118</td><td>HandHoldingDesired</td><td></td><td></td></tr>
+            <tr><td>119</td><td>Obstructing</td><td></td><td></td></tr>
+            <tr><td>120</td><td>NotScriptedAmbient</td><td></td><td></td></tr>
+            <tr><td>121</td><td>LockToBalanceBeam</td><td></td><td></td></tr>
+            <tr><td>122</td><td>IgnoreTagging</td><td></td><td></td></tr>
+            <tr><td>123</td><td>AllowGrappleTargetCollision</td><td></td><td></td></tr>
+            <tr><td>124</td><td>Sneaking</td><td></td><td></td></tr>
+            <tr><td>125</td><td>StayOnBike</td><td></td><td></td></tr>
+            <tr><td>126</td><td>SpeechFilter1</td><td></td><td></td></tr>
+            <tr><td>127</td><td>SpeechFilter2</td><td></td><td></td></tr>
+            <tr><td>128</td><td>NeedsAccurateHeading</td><td></td><td></td></tr>
+            <tr><td>129</td><td>DisableAmbientSpeech</td><td>Should the ped be able to talk? (Idle noises)</td><td>Yes</td></tr>
+            <tr><td>130</td><td>ActivatePlayerCombatSphere</td><td></td><td></td></tr>
+            <tr><td>131</td><td>IgnoreOtherPedCollision</td><td></td><td></td></tr>
+            <tr><td>132</td><td>NoSocialHud</td><td>Disable social interactions.</td><td>Yes</td></tr>
+            <tr><td>133</td><td>AllowVisionCone</td><td></td><td></td></tr>
+            <tr><td>134</td><td>OverrideWeaponDropStats</td><td></td><td></td></tr>
+            <tr><td>135</td><td>DisableSliding</td><td></td><td></td></tr>
+            <tr style="background-color:var(--dropdown-text-active-color); color:white;">
+              <td>136</td>
+              <td>StartReadOnlyFlags</td>
+              <td><u>FROM HERE ON, THEY CAN ONLY BE READ, NOT SET</u></td>
+              <td></td>
+            </tr>
+            <tr><td>137</td><td>UsingDoor</td><td>Is the ped using a door?</td><td></td></tr>
+            <tr><td>138</td><td>HandHolding</td><td>Is the ped holding hands with another ped?</td><td></td></tr>
+            <tr><td>139</td><td>HandHoldingRightHandLead</td><td>Is the ped the lead of holding hands?</td><td></td></tr>
+            <tr><td>140</td><td>AvoidBlocked</td><td></td><td></td></tr>
+            <tr><td>141</td><td>OnBalanceBeam</td><td>Is the ped balancing on something?</td><td></td></tr>
+            <tr><td>142</td><td>LateForClass</td><td>Is the ped late for class?</td><td></td></tr>
+            <tr><td>143</td><td>RunningFleeTrack</td><td></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h2>Weapon Flags</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Flag ID</th>
+              <th>Flag Name</th>
+              <th>Flag Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>0</td><td>AlternateWeaponMode</td><td>Two-handed (cafeteria tray)</td></tr>
+            <tr><td>1</td><td>Rocket1</td><td></td></tr>
+            <tr><td>2</td><td>Rocket2</td><td></td></tr>
+            <tr><td>3</td><td>Rocket3</td><td></td></tr>
+            <tr><td>4</td><td>ExtraPropsAttached</td><td></td></tr>
+            <tr><td>5</td><td>LeftHanded</td><td></td></tr>
+            <tr><td>6</td><td>MustBeDropped</td><td></td></tr>
+            <tr><td>7</td><td>AutoFire</td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </template>
+    <footer></footer>
+  </body>
+</html>

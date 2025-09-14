@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="../../../load.js" defer></script>
+    <script src="../../../pickstyle.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" sizes="64x64" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../localstyle.css" />
+    <title>Chapter IDs</title>
+    <script defer>
+      document.addEventListener('DOMContentLoaded', () => {
+        const target = document.querySelector('section.content');
+        target.innerHTML = document.getElementById('preloaded-content').innerHTML;
+      });
+    </script>
+  </head>
+  <body>
+    <header></header>
+    <section class="hero">
+      <img alt="Bully Modding Documentation" src="../../../Assets/Comics.png" />
+    </section>
+    <div class="wrapper">
+      <!-- Placeholder -->
+      <section class="content">
+        <h1>Loading…</h1>
+      </section>
+    </div>
+    <!-- Hidden real content -->
+    <template id="preloaded-content">
+      <h1>Chapter IDs</h1>
+      <hr />
+      <aside>
+        <img class="float-left" src="../../../Assets/p14-3.jpg" />
+      </aside>
+      <table>
+        <thead>
+          <tr>
+            <th>Chapter ID</th>
+            <th>Chapter Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>0</td><td>Chapter I (Making New Friends and Enemies)</td></tr>
+          <tr><td>1</td><td>Chapter II (Rich Kid Blues)</td></tr>
+          <tr><td>2</td><td>Chapter III (Love Makes the World Go Around)</td></tr>
+          <tr><td>3</td><td>Chapter IV (A Healthy Mind In a Healthy Body, and Other Lies)</td></tr>
+          <tr><td>4</td><td>Chapter V (The Fall and Rise of Jimmy Hopkins, Aged 15)</td></tr>
+          <tr><td>5</td><td>Chapter 6 (Endless Summer)</td></tr>
+          <tr><td>6</td><td>CHAPTER SEVEN</td></tr>
+        </tbody>
+      </table>
+    </template>
+    <footer></footer>
+  </body>
+</html>
