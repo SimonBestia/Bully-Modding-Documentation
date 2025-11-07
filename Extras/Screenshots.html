@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- head stuff -->
+	<script src="../load.js" defer></script>
+	<script src="../pickstyle.js" defer></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="referrer" content="no-referrer">
+	<link rel="icon" sizes="64x64" href="../favicon.ico">
+	<link rel="stylesheet" href="../localstyle.css">
+	<title>All Screenshots</title>
+	<style>
+		/* Some styling just for this page just because */
+		hr:last-of-type {
+			margin-top: 32px;
+		}
+		/* make grid items size to their content instead of stretching */
+		.gallery {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+			gap: 14px;
+			align-items: start; /* keep each grid item at its natural height */
+		}
+		/* ensure the anchor is a proper box that wraps the image */
+		.gallery a {
+			display: block;    /* make the anchor a block-level grid item */
+			height: auto;
+		}
+		/* make the image itself a block so there is no inline-gap/whitespace */
+		.gallery img {
+			display: block;    /* prevents baseline gaps under images */
+			width: 100%;
+			height: auto;
+			border: 4px solid var(--image-border-color);
+			background: #000;
+			transition: transform 0.18s cubic-bezier(.32,.72,.33,1), box-shadow 0.18s cubic-bezier(.32,.72,.33,1);
+		}
+		.gallery img:hover, .gallery img:focus {
+			transform: scale(1.03);
+			box-shadow: 0 4px 32px rgba(0,0,0,0.25), 0 0 0 2.5px var(--image-hover-border-color);
+			z-index: 10;
+		}
+		.section-title {
+			margin-top: 24px;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+		}
+		.section-title::before {
+			content: "►";
+			font-size: 14px;
+			margin-right: 6px;
+			color: #ffbd5b;
+		}
+		.section-title.expanded::before {
+			content: "▼";
+		}
+		.platform-content.collapsed {
+			display: none;
+		}
+		.gallery-note {
+			text-align: center;
+			font-size: 16px;
+			margin: 6px 0 10px 0;
+		}
+		.gallery-note a {
+			display: inline;
+			white-space: nowrap; /* keeps “Check here.” on one line */
+		}
+	</style>
+</head>
+
+<body>
+	<header></header>
+
+    <section class="hero">
+        <img src="../Assets/Comics.png" alt="Bully Modding Documentation">
+    </section>
+
+	<div class="wrapper">
+		<section class="content">
+			<h1>All Screenshots</h1>
+			<p>Archival project originally started on <a href="https://www.youtube.com/@SWEGTA" target="blank">SWEGTA</a>'s <a href="https://web.archive.org/web/20171022042735/http://forum.bullymods.net/viewtopic.php?f=31&t=56" target="blank">BullyMods</a> forum, then moved to <a href="https://bully-board.com/index.php?topic=24273" target="blank">Bully-Board</a>, and finally, here.<br>
+            Without having to worry about other sites going down, here's hoping this one lasts forever!</p>
+			<p>Most of the screenshots are hosted on <a href="https://imgur.com/a/bully-preservation-of-every-single-pre-release-screenshot-updating-over-time-GuWwJ7A" target="blank">Imgur</a>, in case you want to download them.<br>Note that some are not included and are grabbed from elsewhere, like IGN's website.</p>
+			<p>Only digitally-released screenshots will be included.
+				<br>Including ones available only in magazines is impractical as various scans differ in colour, quality, size...</p>
+            <p>This will take a long time and will probably never be completed due to the sheer number of screenshots Rockstar Games released.<br>
+                Any help on finding more would be greatly appreciated!</p>
+			<hr>
+
+			<div id="screens-container"></div>
+
+			<!-- ><p style="margin-top: 24px; color: var(--sidebar-text-color); font-size: 12px;">Note: These are externally hosted images and may be subject to availability.</p> <!-->
+             <hr>
+
+             <h2>Long-term Goals:</h2>
+             <p><ul><li> There are (probably) WAY more to find, still.</ul></li>
+                <ul><li> Replace every watermarked screenshot with its original, watermark-less and uncompressed version.</ul></li>
+                <blockquote class="quote"><i>"Patience Hopkins. You can't rush science!"</i></blockquote class="quote">
+                    <strong>- Dr. Slawter</strong></p>
+		</section>
+	</div>
+
+	<footer></footer>
+
+	<script>
+		const screenshotData = {
+			"PlayStation 2": [
+				{ title: "Rockstar Games' site screenshots:", images: [
+					"https://imgur.com/3DfqUTu.jpeg",
+					"https://imgur.com/BvY5ct8.jpg",
+					"https://imgur.com/46Z8M52.png",
+					"https://imgur.com/cfDuFxC.jpg",
+					"https://imgur.com/bhpL1O9.jpg",
+					"https://imgur.com/UbZPzQg.png",
+					"https://imgur.com/DbmyBg4.jpg",
+					"https://imgur.com/kOJusko.jpg",
+					"https://imgur.com/HJu5gfT.jpg",
+					"https://imgur.com/jlq077X.jpg",
+					"https://imgur.com/NmshY3C.jpg",
+					"https://imgur.com/1dNWGPG.jpg",
+					"https://imgur.com/PaSWd3d.jpg",
+					"https://imgur.com/saF4mCw.jpg",
+					"https://imgur.com/JRBJpCP.jpg",
+					"https://imgur.com/GFcWPJ7.jpg",
+					"https://imgur.com/GufZmNr.jpg",
+					"https://imgur.com/Ojxzsph.jpg",
+					"https://imgur.com/JnWohIq.jpg",
+					"https://imgur.com/ukJ8P9I.png",
+					"https://imgur.com/pjUvtE4.jpg",
+					"https://imgur.com/vSd7mUd.png",
+					"https://imgur.com/iHs24Uq.png",
+					"https://imgur.com/3BMpJk6.jpg",
+					"https://imgur.com/59LJ5lp.png",
+					"https://imgur.com/JYS9WdC.jpg",
+					"https://imgur.com/tBXwEIy.png",
+					"https://imgur.com/CMssjVY.png",
+					"https://imgur.com/9pLz3JJ.png",
+					"https://imgur.com/Vil4HqH.png",
+					"https://imgur.com/XAJJKhP.png",
+					"https://imgur.com/0zpgVes.png",
+					"https://imgur.com/uxL0clw.png",
+					"https://imgur.com/NLPQ160.jpg",
+					"https://imgur.com/OG3OWs2.jpg",
+					"https://imgur.com/q8OXyP3.jpeg",
+					"https://imgur.com/w8Dp20O.jpg",
+					"https://imgur.com/YieCnXa.jpeg",
+					"https://imgur.com/Kj0KV7o.jpg",
+					"https://imgur.com/e4U5xRJ.jpg",
+					"https://imgur.com/CJ6wL82.jpg",
+					"https://imgur.com/ZCkhvTX.jpg",
+					"https://imgur.com/ynFLQ9E.jpg",
+					"https://imgur.com/bSy01Dr.jpg",
+					"https://imgur.com/dbW4pZK.jpg",
+					"https://imgur.com/FgQwT5r.jpg",
+					"https://imgur.com/fkMuus5.jpg",
+					"https://imgur.com/Trb3wVM.jpg",
+					"https://imgur.com/LuevyR7.jpg",
+					"https://imgur.com/0Ak6cGY.jpg",
+					"https://imgur.com/IoMtE6c.jpg",
+					"https://imgur.com/twoiyOp.jpg",
+					"https://imgur.com/nqMhfqQ.jpg",
+					"https://imgur.com/6sLwjD1.jpg",
+					"https://imgur.com/xIqwN00.jpg",
+					"https://imgur.com/VZJZyHb.jpg",
+					"https://imgur.com/wAAufBj.jpg",
+					"https://imgur.com/mQctRzX.jpg",
+					"https://imgur.com/UgTtTz3.jpg",
+					"https://imgur.com/Sn1VpJg.jpg",
+					"https://imgur.com/EKCeLFh.jpg",
+					"https://imgur.com/gJN1kQ5.jpg",
+					"https://imgur.com/4p3ZQgJ.jpg",
+					"https://imgur.com/LD97pTy.jpg",
+					"https://imgur.com/SP5RKsz.jpg",
+					"https://imgur.com/LIeqOV7.jpg",
+					"https://imgur.com/KNl6yzY.jpg",
+					"https://imgur.com/pkwM78P.jpg",
+					"https://imgur.com/bs1DXBY.jpg",
+					"https://imgur.com/sSvIogd.jpg",
+					"https://imgur.com/kydBJYZ.jpg",
+					"https://imgur.com/E2ccJiE.jpeg",
+					"https://imgur.com/mrW5lee.jpg",
+					"https://imgur.com/uJuOdLd.jpg",
+					"https://imgur.com/evoMEmN.jpg",
+					"https://imgur.com/PQYi2QM.jpg",
+					"https://imgur.com/qNtC5fd.jpg",
+					"https://imgur.com/0DGzIzz.jpg",
+					"https://imgur.com/PKbEkrY.jpg",
+					"https://imgur.com/HVF3AWC.jpg",
+					"https://imgur.com/rU5ysNW.jpg",
+					"https://imgur.com/r0mvDxE.jpg",
+					"https://imgur.com/DoHAOAM.jpg",
+					"https://imgur.com/3AwRItr.jpg",
+					"https://imgur.com/Boy6hTm.jpg",
+					"https://imgur.com/gkT2ma1.jpg",
+					"https://imgur.com/BPSv3YD.jpg",
+					"https://imgur.com/E2rTqXb.jpg",
+					"https://imgur.com/UkHivJ5.jpg",
+					"https://imgur.com/vcDSFbE.jpg",
+					"https://imgur.com/H9HuPpT.jpg",
+					"https://imgur.com/zMdWbu2.jpg",
+					"https://imgur.com/NzalA7N.jpg",
+					"https://imgur.com/cEYhwvr.jpg",
+					"https://imgur.com/nvsPu0r.jpg",
+					"https://imgur.com/aN2oxzg.jpg",
+					"https://imgur.com/458FngH.jpg",
+					"https://imgur.com/Gyd2e6R.jpg",
+					"https://imgur.com/vBkI1Nu.jpg",
+					"https://imgur.com/ggKGQv6.jpg",
+					"https://imgur.com/DDaGyvh.jpg",
+					"https://imgur.com/ri8afLI.jpg",
+					"https://imgur.com/rgxQHbg.jpg",
+					"https://imgur.com/WZfEpVj.jpg",
+					"https://imgur.com/bqOmHdr.jpg",
+					"https://imgur.com/8sRRx6e.jpg",
+					"https://imgur.com/ZPmKArT.jpg",
+					"https://imgur.com/GmydiRx.jpg",
+					"https://imgur.com/g8clInj.jpg",
+					"https://imgur.com/FoHWZNR.jpg",
+					"https://imgur.com/MD8hWLZ.jpg",
+					"https://imgur.com/V6A4Weq.jpg",
+					"https://imgur.com/7zjezFo.jpg",
+					"https://imgur.com/s1OG2ks.jpg",
+					"https://imgur.com/u1HHzab.jpg",
+					"https://imgur.com/3q2R8iD.jpg",
+					"https://imgur.com/1lMXGal.jpg",
+					"https://imgur.com/1XP198L.jpg",
+					"https://imgur.com/DSuFkNS.jpg",
+					"https://imgur.com/1f8MPd6.jpg",
+					"https://imgur.com/3ExdxUy.jpg",
+					"https://imgur.com/0yScCQX.jpg",
+					"https://imgur.com/NwImWRT.jpg",
+					"https://imgur.com/qVxlAiM.jpg",
+					"https://imgur.com/gnqho4C.jpg",
+					"https://imgur.com/cZ4PCVO.jpg",
+					"https://imgur.com/gnyfIup.jpg",
+					"https://imgur.com/RWrCf3u.jpg"
+				]},
+                { note: "These screenshots were hidden and only viewable by changing URLs:", images: [
+                    "https://imgur.com/Dh9CB48.png",
+                    "https://imgur.com/zUpPeB3.png",
+                    "https://imgur.com/HNRRka9.png",
+                    "https://imgur.com/aivjvXW.png",
+                    "https://imgur.com/OOdNh0o.png",
+                    "https://imgur.com/07OWz5t.png",
+                    "https://imgur.com/t8kbcvH.png",
+                    "https://imgur.com/SRHhNRK.png",
+                ]},
+				{ title: "IGN/Gamespy screenshots:", images: [
+					"http://assets1.ignimgs.com/2006/10/16/bully-20061016000513058-1711123_640w.jpg",
+					"http://assets2.ignimgs.com/2006/10/16/bully-20061016000511480-1711121_640w.jpg",
+					"http://assets2.ignimgs.com/2006/10/14/bully-20061013072856128-1710192_640w.jpg",
+					"http://assets2.ignimgs.com/2006/10/14/bully-20061013072857065-1710193_640w.jpg",
+					"http://assets2.ignimgs.com/2006/10/14/bully-20061013072855237-1710191_640w.jpg",
+					"http://assets2.ignimgs.com/2006/10/14/bully-20061013072854425-1710190_640w.jpg",
+					"http://assets2.ignimgs.com/2006/10/14/bully-20061013072853612-1710189_640w.jpg",
+					"http://assets1.ignimgs.com/2006/10/14/bully-20061013072852862-1710188_640w.jpg",
+					"http://assets2.ignimgs.com/2006/10/14/bully-20061013072851237-1710186_640w.jpg",
+					"http://assets2.ignimgs.com/2006/10/14/bully-20061013072852175-1710187_640w.jpg",
+					"http://assets1.ignimgs.com/2006/10/12/bully-20061012011131505-1706526_640w.jpg",
+					"http://assets2.ignimgs.com/2006/10/12/bully-20061012011130130-1706524_640w.jpg",
+					"http://assets2.ignimgs.com/2006/10/12/bully-20061012011130912-1706525_640w.jpg",
+					"http://assets1.ignimgs.com/2006/10/12/bully-20061012011129084-1706523_640w.jpg",
+					"http://assets1.ignimgs.com/2006/10/12/bully-20061012011128256-1706522_640w.jpg",
+					"http://assets1.ignimgs.com/2006/10/12/bully-20061012011127427-1706521_640w.jpg",
+					"http://assets1.ignimgs.com/2006/10/12/bully-20061012011126427-1706520_640w.jpg",
+					"https://imgur.com/e5Xs9kC.png",
+					"http://assets2.ignimgs.com/2006/09/29/bully-20060929005955171-1689827_640w.jpg",
+					"http://assets2.ignimgs.com/2006/09/29/bully-20060929005955671-1689828_640w.jpg",
+					"http://assets1.ignimgs.com/2006/09/29/bully-20060929005954187-1689825_640w.jpg",
+					"http://assets2.ignimgs.com/2006/09/29/bully-20060929005954671-1689826_640w.jpg",
+					"http://assets2.ignimgs.com/2006/09/29/bully-20060929005953218-1689824_640w.jpg",
+					"http://assets2.ignimgs.com/2006/09/29/bully-20060929005952281-1689823_640w.jpg",
+					"http://assets2.ignimgs.com/2006/09/29/bully-20060929005951577-1689822_640w.jpg",
+					"http://assets2.ignimgs.com/2006/09/29/bully-20060929005950593-1689820_640w.jpg",
+					"http://assets1.ignimgs.com/2006/09/29/bully-20060929005951077-1689821_640w.jpg",
+					"http://assets1.ignimgs.com/2006/09/29/bully-20060929005949578-1689818_640w.jpg",
+					"http://assets1.ignimgs.com/2006/09/29/bully-20060929005949093-1689817_640w.jpg",
+					"http://assets2.ignimgs.com/2006/09/29/bully-20060929005948499-1689816_640w.jpg",
+					"http://assets1.ignimgs.com/2006/09/15/bully-20060915001830356-1671770_640w.jpg",
+					"http://assets2.ignimgs.com/2006/09/15/bully-20060915001827169-1671765_640w.jpg",
+					"http://assets1.ignimgs.com/2006/09/13/bully-20060913025233471-1668968_640w.jpg",
+					"http://assets2.ignimgs.com/2006/09/13/bully-20060913025221003-1668963_640w.jpg",
+					"http://assets2.ignimgs.com/2006/09/01/bully-20060901021314022-1655697_640w.jpg",
+					"http://assets1.ignimgs.com/2006/09/01/bully-20060901021314507-1655698_640w.jpg"
+				]},
+				{ title: "Various:", images: [
+					"https://imgur.com/NiksnCf.jpg",
+					"https://imgur.com/enjYn0D.png",
+					"https://imgur.com/Jdp7jrq.png",
+					"https://imgur.com/3Ywe65t.png",
+					"https://imgur.com/LHiXOja.png",
+					"https://imgur.com/jCE6nQh.png",
+					"https://imgur.com/Ht8G4z1.png",
+					"https://imgur.com/AnRaoSo.png",
+					"https://imgur.com/q3vaFxL.png",
+					"https://imgur.com/aAdhJar.png",
+					"https://imgur.com/8szqVWj.png",
+					"https://imgur.com/n8T8Rdn.png",
+					"https://imgur.com/vs4aDm5.png",
+					"https://imgur.com/UupMH8X.png",
+					"https://imgur.com/WGNxGP0.jpg",
+					"https://imgur.com/wXmaIdy.png",
+					"https://imgur.com/Hfm3pWC.png",
+					"https://imgur.com/fCut2P3.png",
+					"https://imgur.com/9TxVnsB.jpg",
+					"https://imgur.com/r6B7lQH.png",
+					"https://imgur.com/LH9Ni6K.jpg",
+					"https://imgur.com/nk6Xjk1.png",
+					"https://imgur.com/2y38WIZ.png",
+					"https://imgur.com/jbnuzHf.png",
+					"https://imgur.com/M5jenJL.png",
+					"https://imgur.com/wjtlLwi.png",
+					"https://imgur.com/zDeLTSe.png",
+					"https://imgur.com/fHGNlgm.png",
+					"https://imgur.com/Y8EkRqW.png",
+					"https://imgur.com/zqDb9PG.png",
+					"https://imgur.com/NWfpWm1.jpg",
+					"https://imgur.com/6pBofBJ.png",
+					"https://imgur.com/9O9GX6s.png",
+					"https://imgur.com/gTYpzzr.jpg",
+					"https://imgur.com/5KTWXP0.png",
+					"https://imgur.com/Gt7kYoI.png",
+					"https://imgur.com/W2DXMz2.png",
+					"https://imgur.com/DdetOh5.jpg",
+					"https://imgur.com/2hwMcrz.jpg",
+					"https://imgur.com/KgfmnrD.png",
+					"https://imgur.com/q56Lh1W.png",
+					"https://imgur.com/UeuaJiW.jpg",
+					"https://imgur.com/Dx4ZaIo.png",
+					"https://imgur.com/rn9H3OQ.png",
+					"https://imgur.com/aUCbvrA.png",
+					"https://imgur.com/w2DSCHR.jpg",
+					"https://imgur.com/RHiVqt7.jpg",
+					"https://imgur.com/rmv3JxY.png",
+					"https://imgur.com/NlAtwZq.png",
+					"https://imgur.com/snSPM0N.png",
+					"https://imgur.com/APhICnz.jpg",
+					"https://imgur.com/JsOYnmF.jpg",
+					"https://imgur.com/Px9eVKW.jpg",
+					"https://imgur.com/ShuTV6a.png",
+					"https://imgur.com/gBSaAwc.jpg",
+					"https://imgur.com/QkFp7TT.png",
+					"https://imgur.com/TkzAHAR.jpg",
+					"https://imgur.com/VRWZvKE.jpg",
+					"https://imgur.com/iuzYZYW.jpg",
+					"https://imgur.com/SSf25Ru.jpg",
+					"https://imgur.com/Only0BI.jpg",
+					"https://imgur.com/1DQsse0.jpg",
+					"https://imgur.com/TQmHiaO.jpg",
+					"https://imgur.com/BOYRUMm.png",
+					"https://imgur.com/CpFlxud.jpg",
+					"https://imgur.com/BNX6t6D.jpg",
+					"https://imgur.com/XaVeZGr.png",
+					"https://imgur.com/upeYsT0.jpg",
+					"https://imgur.com/qs7niwP.jpg",
+					"https://imgur.com/cqhdVj2.jpg",
+					"https://imgur.com/j1AUhxZ.jpg",
+					"https://imgur.com/6XmMc52.png",
+					"https://imgur.com/bLRcuhg.jpg",
+					"https://imgur.com/geSYvO8.jpeg",
+					"https://imgur.com/7WR7S0C.jpg",
+					"http://imgur.com/oXx63UI.jpg",
+					"http://imgur.com/iEBrqZ6.jpg",
+					"http://imgur.com/nmmfVTy.jpg",
+					"http://imgur.com/7oALaAU.jpg",
+					"http://imgur.com/9M6JeZ0.jpg",
+					"https://imgur.com/SYFnrJl.jpg",
+					"https://imgur.com/f2eFz1p.png",
+					"https://imgur.com/n4KrO8t.png",
+					"https://imgur.com/gutAQRU.png",
+					"https://imgur.com/gwwFHSy.jpg",
+					"https://imgur.com/8972vGz.png",
+					"https://imgur.com/xHDKnDf.png",
+					"https://imgur.com/dGe3Kgg.jpg",
+					"https://imgur.com/aCgYM6u.jpg",
+					"https://imgur.com/HL4knoV.png",
+					"https://imgur.com/ubNua7F.png",
+					"https://imgur.com/ggyzpyS.jpg",
+					"https://imgur.com/FJZfc2F.png",
+					"https://imgur.com/pTvgfBc.png",
+					"https://imgur.com/p63zY1W.png",
+					"https://imgur.com/MmFl79B.png",
+					"https://imgur.com/1EPSpc7.png",
+					"https://imgur.com/W6rsKdO.png",
+					"https://imgur.com/Qtvs2V2.png",
+					"https://imgur.com/bdNc9Lo.png",
+					"https://imgur.com/KhmdgYz.png",
+					"https://imgur.com/1lmU92q.jpg",
+					"https://imgur.com/O6tqf5a.png",
+					"https://imgur.com/zH5ifUS.png",
+					"https://imgur.com/RFxminB.jpg",
+					"https://imgur.com/68F82ig.png",
+					"https://imgur.com/gTp4ZRh.png",
+					"https://imgur.com/da8QiLX.png",
+					"https://imgur.com/X5r9N21.png",
+					"https://imgur.com/qAAcJGC.png",
+					"https://imgur.com/mNltK4P.png",
+					"https://imgur.com/o2dSZRc.png",
+					"https://imgur.com/yQ6fBtL.jpg",
+					"https://imgur.com/7bE21eZ.png",
+					"https://imgur.com/b8Nq5tx.jpg",
+					"https://imgur.com/TufbKPU.png",
+					"https://imgur.com/WAot63X.jpg",
+					"https://imgur.com/30gBGFX.jpg",
+					"https://imgur.com/pgWuLtY.jpg",
+					"https://imgur.com/ZUqgTmo.jpg",
+					"https://imgur.com/L3qwyRW.png",
+					"https://imgur.com/00haGLc.jpg",
+					"https://imgur.com/32rSbes.jpg",
+					"https://imgur.com/IKqdono.jpg",
+					"https://imgur.com/8Snj4vg.png",
+					"https://imgur.com/jZm15ff.png",
+					"https://imgur.com/JhASDfV.png",
+					"https://imgur.com/1fs0Hqv.png",
+					"https://imgur.com/fwcvrm8.png",
+					"https://imgur.com/ZpikEgD.png",
+					"https://imgur.com/vs0J5yA.jpg",
+					"https://imgur.com/45Yex2A.png",
+					"https://imgur.com/cvFJ9PK.jpg",
+					"https://imgur.com/4M2QM9z.jpg",
+					"https://imgur.com/gE1DR9j.jpg",
+					"https://imgur.com/AcFfhJg.png",
+					"https://imgur.com/Qxdk4A6.png",
+					"https://imgur.com/fmT16wF.png",
+					"https://imgur.com/zYuEZM9.png",
+					"https://imgur.com/isCDSdl.png",
+					"https://imgur.com/lYP1Qh3.jpg",
+					"https://imgur.com/qHbK4ZZ.jpg",
+					"https://imgur.com/lVaKXWu.png",
+					"https://imgur.com/jZoi3pQ.jpg",
+					"https://imgur.com/maCFtZq.jpg",
+					"https://imgur.com/8BmjImZ.jpg",
+					"https://imgur.com/j7T17Af.png",
+					"https://imgur.com/TpXydQg.jpg",
+					"https://imgur.com/ui9oqlb.png",
+					"https://imgur.com/0Cwuqvw.jpg",
+					"https://imgur.com/b3is2S6.png",
+					"https://imgur.com/gsafReO.jpg",
+					"https://imgur.com/iHysMnI.jpg",
+					"https://imgur.com/KPsZjP1.jpg",
+					"https://imgur.com/MTR1mQu.png",
+					"https://imgur.com/SqTNafE.png",
+					"https://imgur.com/9WQVJgc.jpg",
+					"https://imgur.com/juSyAUi.jpg",
+					"https://imgur.com/escJBkz.jpg",
+					"https://imgur.com/zdCW9hQ.jpg",
+					"https://imgur.com/JOjipVF.jpg",
+					"https://imgur.com/yhqELOA.jpg",
+					"https://imgur.com/paeTFRP.jpg",
+					"https://imgur.com/Uzw5h39.png",
+					"https://imgur.com/oYb5iYJ.png",
+					"https://imgur.com/TgAsVO0.png"
+				]},
+                { title: "Early screenshots:", images: [
+                    "https://imgur.com/eqHPBPj.jpg",
+                    "https://imgur.com/nwbEH9z.jpg",
+                    "https://imgur.com/CISZtUx.jpg",
+                    "https://imgur.com/QTtE8Oi.jpg",
+                    "https://imgur.com/lkCUKUp.jpg",
+					{ url: "https://imgur.com/oL4Jzdj.jpg", note: "Original version is <a href='https://x.com/SimoBestia/status/879990514170441728' target='blank'>lost media</a>." },
+                    "https://imgur.com/JHGEqdh.jpg",
+                    "https://imgur.com/fipVN5s.jpg",
+                    "https://imgur.com/YevDyLh.jpg",
+                    "https://imgur.com/qUTcyPg.jpg",
+                    "https://imgur.com/kJ3NzK6.jpg",
+                    "https://imgur.com/2gC0YZu.jpg",
+                    "http://imgur.com/hRwm13d.jpg",
+                    "http://imgur.com/qBn2dzH.jpg",
+                    "http://imgur.com/RV72RNQ.jpg",
+                    "http://imgur.com/APo9qbC.jpg",
+                    "http://imgur.com/grNm221.jpg",
+                    "http://imgur.com/YVOXCIu.jpg",
+					{ url: "https://imgur.com/yi62YH2.jpg", note: "Found on the <a href='https://web.archive.org/web/20210924184425/www.jp.playstation.com/software/title/jp0230npjd00051_000000000000000000.html' target='blank'>JP PlayStation</a> site." },
+				]},
+                { note: "Some unreleased screenshots can be seen here:", images: [
+                    "https://tcrf.net/images/1/11/Bully_Prerelease_Bully_FE01.jpg",
+                    "http://imgur.com/t7Onw7H.jpg",
+				]},
+                { title: "Electronic Press Kit:", note: "Available <a href='https://archive.org/details/electronic-press-kit' target='blank'>here</a>.", images: [
+                    "https://imgur.com/aF07K5Q.jpg",
+                    "https://imgur.com/QU2kK9L.jpg",
+                    "https://imgur.com/WtGVha1.jpg",
+                    "https://imgur.com/L4eMDNw.jpg",
+                    "https://imgur.com/lLH7xXh.jpg",
+                    "https://imgur.com/ns3fWgp.jpg",
+                    "https://imgur.com/iAkS5jQ.jpg",
+                    "https://imgur.com/mpCAPYI.jpg",
+                    "https://imgur.com/R1WnMNs.jpg",
+                    "https://imgur.com/Q7gPkQ3.jpg",
+                    "https://imgur.com/KqTxuEJ.jpg",
+                    "https://imgur.com/u1DrW5e.jpg",
+                    "https://imgur.com/iOzMpcU.jpg",
+                    "https://imgur.com/xkXPixi.jpg",
+                    "https://imgur.com/i7N9q5b.jpg",
+                    "https://imgur.com/jYP0WkH.jpg",
+                    "https://imgur.com/BryMVNQ.jpg",
+                    "https://imgur.com/Ktem0ns.jpg",
+                    "https://imgur.com/DXSSnvv.jpg",
+                    "https://imgur.com/gpwTxQ7.jpg",
+				]},
+            ],
+			"Xbox 360": [
+				{ title: "Rockstar Games' site screenshots:", images: [
+                    "http://web.archive.org/web/20160910232413/http://www.rockstargames.com/bully/home/scenery/360/images/36001big.jpg",
+                    "http://web.archive.org/web/20160910230600/http://www.rockstargames.com/bully/home/scenery/360/images/36002big.jpg",
+                    "http://web.archive.org/web/20160910231446/http://www.rockstargames.com/bully/home/scenery/360/images/36003big.jpg",
+                    "http://web.archive.org/web/20200112091708/https://www.rockstargames.com/bully/home/scenery/360/images/36008big.jpg",
+				]},
+				{ note: "These screenshots were released on Valentine's Day 2008:", images: [
+					"https://imgur.com/Qh8V4ke.jpg",
+					"https://imgur.com/lUiTAQi.jpg",
+					"https://imgur.com/18XmVDT.png",
+					"https://imgur.com/R1zcKPr.png",
+					"https://imgur.com/WxT0xsn.jpg",
+					"https://imgur.com/zroA67K.jpg",
+					"https://imgur.com/7ZpEdUI.jpg",
+					"https://imgur.com/rP0BFyW.jpg"
+				]},
+				{ title: "IGN/Gamespy screenshots:", images: [
+					"https://xbox360media.ign.com/xbox360/image/article/855/855791/bully-scholarship-edition-20080228041255164.jpg",
+					"https://xbox360media.ign.com/xbox360/image/article/855/855791/bully-scholarship-edition-20080228041239445.jpg",
+					"https://xbox360media.ign.com/xbox360/image/article/854/854866/bully-scholarship-edition-20080225053413968.jpg",
+					"https://imgur.com/EoHkJ6c.png",
+					"https://imgur.com/pSxqIfA.png",
+					"https://imgur.com/zCiRA9z.png",
+					"https://imgur.com/scSX1Ga.png",
+					"https://imgur.com/ANFmdG7.png",
+					"https://imgur.com/d961lst.jpg",
+					"https://imgur.com/zhhl1wK.png",
+					"https://imgur.com/6pRmGNo.png",
+					"https://imgur.com/LlozhBA.png",
+					"https://imgur.com/zzTKo2B.jpg",
+					"https://imgur.com/kqCP6dQ.jpg",
+					"https://imgur.com/veiyTg9.jpg",
+					"https://imgur.com/BZyS8Hc.jpg",
+					"https://imgur.com/GnkMZk2.jpg",
+					"https://imgur.com/9IUqzvB.jpg",
+					"https://imgur.com/7OnGbVE.jpg"
+				]},
+				{ title: "Various:", images: [
+					"https://imgur.com/bpg5zCx.png",
+					"https://imgur.com/MK1Os9b.png",
+					"https://imgur.com/T5t3npQ.png",
+					"https://imgur.com/KTsGqlJ.png",
+					"https://imgur.com/nhcEYrh.png",
+					"https://imgur.com/4mkQM1n.png",
+					"https://imgur.com/um1g7dE.png",
+					"https://imgur.com/SuhAO5O.png",
+					"https://imgur.com/mlscpiq.png",
+					"https://imgur.com/4cEQYtq.png",
+					"https://imgur.com/w63hilg.png",
+					"https://imgur.com/nFywZKs.png",
+					"https://imgur.com/Bf3J70a.png",
+					"https://imgur.com/n3QQpFc.png",
+					"https://imgur.com/d1U6Vhg.png",
+					"https://imgur.com/rAbvjAD.png",
+					"https://imgur.com/MmxTJSr.png",
+					"https://imgur.com/Sh5KUZ5.png",
+					"https://imgur.com/UqdrU3t.png",
+					"https://imgur.com/kuftULg.png",
+					"https://imgur.com/J73PigO.png",
+					"https://imgur.com/u9LhAs8.png",
+					"https://imgur.com/YLLgMXR.png",
+					"https://imgur.com/P6SPHRH.jpg",
+					"https://imgur.com/xID6cUR.png",
+					"https://imgur.com/KIV6t0E.png",
+					"https://imgur.com/T2YN1DR.png",
+					"https://imgur.com/0RoiecE.png",
+					"https://imgur.com/6lsMFkG.png",
+					"https://imgur.com/efmHMld.jpg",
+					"https://imgur.com/3KMX6He.png",
+					"https://imgur.com/3tRX7oB.png",
+					"https://imgur.com/IohPAH7.png",
+					"https://imgur.com/OCykOjp.png",
+					"https://imgur.com/MwXsn5J.png",
+					"https://imgur.com/BYNV2si.png",
+					"https://imgur.com/ktWGMVF.png",
+					"https://download-ssl.xbox.com/content/images/66acd000-77fe-1000-9115-d8025454081a/1033/screenlg4.jpg",
+					"https://imgur.com/fsIisQT.png",
+					"https://imgur.com/281McAm.png",
+					"https://i.jeuxactus.com/datas/jeux/b/u/bully-scholarship-edition/xl/bully-scholarship-4e260aca78407.jpg",
+					"https://i.jeuxactus.com/datas/jeux/b/u/bully-scholarship-edition/xl/bully-scholarship-4e2611d9a44a8.jpg",
+					"https://imgur.com/gn3B08l.png"
+				]},
+                { title: "Early screenshots:", images: [
+                    "https://imgur.com/wjnnLqo.jpg",
+                    "https://imgur.com/jKowo5N.jpg",
+                    "https://imgur.com/tAEal6T.jpg",
+                    "https://imgur.com/iuDBFXp.jpg",
+                    "https://imgur.com/6LlLTrA.jpeg",
+                    "https://imgur.com/X28EvfD.jpg",
+                    "https://imgur.com/sImhPgD.png",
+				]},
+                { note: "Exclusive to Rockstar's Japanese website:", images: [
+                    "https://imgur.com/GpQyfCH.jpg",
+				]},
+			],
+			"Nintendo Wii": [
+				{ title: "Rockstar Games' site screenshots:", images: [
+					"http://web.archive.org/web/20141113204654im_/http://www.rockstargames.com/bully/scholarshipedition/images/wii/images/wii_02.jpg",
+					"http://web.archive.org/web/20141113205002im_/http://www.rockstargames.com/bully/scholarshipedition/images/wii/images/wii_03.jpg",
+					"http://web.archive.org/web/20141113205240im_/http://www.rockstargames.com/bully/scholarshipedition/images/wii/images/wii_05.jpg",
+					"http://web.archive.org/web/20141113205315im_/http://www.rockstargames.com/bully/scholarshipedition/images/wii/images/wii_06.jpg",
+					"http://web.archive.org/web/20141113205315im_/http://www.rockstargames.com/bully/scholarshipedition/images/wii/images/wii_08.jpg",
+					"http://web.archive.org/web/20141113205240im_/http://www.rockstargames.com/bully/scholarshipedition/images/wii/images/wii_09.jpg",
+					"http://web.archive.org/web/20141113205127im_/http://www.rockstargames.com/bully/scholarshipedition/images/wii/images/wii_10.jpg"
+				]},
+				{ title: "IGN/Gamespy screenshots:", images: [
+					"http://1.bp.blogspot.com/_AtIpNJfEq_8/S9nDBBctGGI/AAAAAAAAABY/6ZMzWonsPqw/s1600/bully-scholarship-edition-20080225054234165_640w.jpg",
+					"http://wiimedia.ign.com/wii/image/article/854/854871/bully-scholarship-edition-20080225054238290_640w.jpg",
+					"http://wiimedia.ign.com/wii/image/article/855/855219/bully-scholarship-edition-20080226044837595_640w.jpg",
+					"http://assets2.ignimgs.com/2008/02/14/bully-scholarship-edition-20080214041340722-2286193_640w.jpg",
+					"http://assets1.ignimgs.com/2008/02/14/bully-scholarship-edition-20080214041408362-2286194_640w.jpg",
+					"https://imgur.com/GG4rAfI.png",
+					"https://imgur.com/cC67QNN.jpg",
+					"https://imgur.com/jupPgu5.jpg",
+					"https://imgur.com/dqOynEv.jpg",
+					"https://imgur.com/hwA5I0v.jpg",
+					"https://imgur.com/IaSj1Wl.png",
+					"https://imgur.com/oM24IMb.png",
+					"https://imgur.com/oixDC6S.png",
+					"https://imgur.com/MlNZVEJ.png",
+					"https://imgur.com/xJf3wB3.png",
+					"https://imgur.com/avR1y61.png"
+				]},
+				{ title: "Various:", images: [
+					"http://web.archive.org/web/20130328082502if_/http://bully.gta-series.com/media/galleries/bully/wii/0001.jpg",
+					"http://web.archive.org/web/20130326203937if_/http://bully.gta-series.com/media/galleries/bully/wii/0002.jpg",
+					"http://web.archive.org/web/20130406152147/http://bully.gta-series.com/media/galleries/bully/wii/0006.jpg",
+					"https://imgur.com/oS59pBp.jpg",
+					"https://imgur.com/lq69iOH.jpg",
+					"https://imgur.com/zncdE6e.jpg",
+					"https://imgur.com/ww5JzsH.jpg",
+					"https://imgur.com/izqBnLt.jpg",
+					"https://imgur.com/e4B03bD.jpg",
+					"https://imgur.com/3bE5bRm.jpg",
+					"https://imgur.com/e1vPibZ.jpg",
+					"https://imgur.com/Oruz6Ht.jpg",
+					"https://imgur.com/7vqZyGr.jpg",
+					"https://imgur.com/QXyBA1D.jpg",
+					"https://imgur.com/ROEI2P5.jpg",
+					"https://imgur.com/eYxE34Y.jpg",
+					"https://imgur.com/1JfVRkO.jpg",
+					"https://imgur.com/lbfRnR2.jpg",
+					"https://imgur.com/J6dMnWv.jpg",
+					"https://imgur.com/3kB90P3.jpg",
+					"https://imgur.com/4lKPEEB.jpg",
+					"https://imgur.com/dXPJ2kS.jpg",
+					"https://imgur.com/iKZaEXn.jpg",
+					"https://imgur.com/pdFLjV8.jpg",
+					"https://imgur.com/OHQEhB8.png",
+					"https://imgur.com/ohnO1Fy.jpg",
+					"https://imgur.com/nm13NiM.jpg",
+					"https://imgur.com/lRLTZX4.png",
+					"https://imgur.com/MjWt5XD.png",
+					"https://imgur.com/X6XeBei.png",
+					"https://imgur.com/BhbRGtM.png",
+					"https://imgur.com/nEgUTZt.png",
+					"https://imgur.com/JFXUpES.png",
+					"https://imgur.com/EjvV8G1.png",
+					"https://imgur.com/9UEKg5C.png",
+					"https://imgur.com/JkedAJY.png",
+					"https://imgur.com/QxvBPKo.png",
+					"https://imgur.com/8uqs9C8.png",
+					"https://imgur.com/BPrKwUs.png",
+					"https://imgur.com/6X4r1dm.png",
+					"https://imgur.com/PL1OIIJ.png",
+					"https://imgur.com/4Bv6zpt.png",
+					"https://imgur.com/z3ZIboS.png"
+				]}
+			],
+			"PC": [
+				{ title: "Rockstar Games' site screenshots:", images: [
+					"https://imgur.com/gWvoOMV.jpg",
+					"https://imgur.com/blNWzlH.jpg",
+					"https://imgur.com/qqENXUn.png",
+					"https://imgur.com/ohnu6CW.png",
+					"https://imgur.com/xfszXqg.png",
+					"https://imgur.com/yRb2zkV.png",
+					"https://imgur.com/95MirBk.png",
+					"https://imgur.com/SZOzafk.png",
+					"https://imgur.com/NFXI8Rp.png",
+					"https://imgur.com/p1VXYko.png",
+					"https://imgur.com/J5Uik3p.png",
+					"https://imgur.com/W86uv3r.png",
+					"https://imgur.com/b9g1vlu.png",
+					"https://imgur.com/DREUT4t.png",
+					"https://imgur.com/pG3prk8.png"
+				]}
+			],
+			"Android/iOS": [
+				{ title: "Rockstar Games' site screenshots:", images: [
+					"https://imgur.com/tSZGpeJ.jpg",
+					"https://imgur.com/0nAmtEn.jpg",
+					"https://imgur.com/6hkA8lj.jpg",
+					"https://imgur.com/uwaePtY.jpg",
+					"https://imgur.com/7DlVP6K.jpg",
+                    "https://imgur.com/OuJqNtI.jpg",
+					"https://imgur.com/DUIQNRq.jpg",
+					"https://imgur.com/gyXUyjq.jpg",
+					"https://imgur.com/6OqUEoL.jpg",
+					"https://imgur.com/slv28rO.jpg",
+					"https://imgur.com/b7XsZGN.jpg",
+					"https://imgur.com/wudmvzI.jpg",
+					"https://imgur.com/hlR81ba.jpg",
+				]}
+			],
+            "Non-native Resolution (Various)": [
+            { note: "Essentially ones that became lost media.", images: [
+                    "https://imgur.com/A4lwcXJ.png",
+                    "https://imgur.com/c84xehx.png",
+                    "https://imgur.com/UYa9KNH.jpg",
+                    "https://imgur.com/atPyKad.jpg",
+                    "https://imgur.com/yksmMUb.jpg",
+                    "https://imgur.com/hXaajVa.jpg",
+                    "https://imgur.com/KiYABEN.jpg",
+                    "http://imgur.com/7HG9ZCw.jpg",
+                    "http://imgur.com/3Z99gWD.jpg",
+                    "https://imgur.com/ABL1dPi.jpg",
+                    "https://imgur.com/f3zRsx8.png",
+                    "https://imgur.com/dlprSFI.jpg",
+                    "https://imgur.com/ctqAGn3.jpg",
+                    "https://imgur.com/LiMNtfE.png",
+                    "https://imgur.com/LRoPIB0.png",
+                    "https://imgur.com/IVAVHwc.png",
+                    "https://imgur.com/q0kV9ga.png",
+                    "https://imgur.com/AnPgppv.png",
+                    "http://imgur.com/gB1XGtP.jpg",
+                    "http://4.bp.blogspot.com/_AtIpNJfEq_8/S-BIERrAn4I/AAAAAAAAAB4/nmC4zaktTLw/s1600/bully-scholarship-edition-20080229033156431_640w.jpg",
+                    "https://download-ssl.xbox.com/content/images/66acd000-77fe-1000-9115-d8025454081a/1033/screenlg2.jpg",
+                    "https://download-ssl.xbox.com/content/images/66acd000-77fe-1000-9115-d8025454081a/1033/screenlg3.jpg",
+                    "https://download-ssl.xbox.com/content/images/66acd000-77fe-1000-9115-d8025454081a/1033/screenlg7.jpg",
+                    "https://download-ssl.xbox.com/content/images/66acd000-77fe-1000-9115-d8025454081a/1033/screenlg13.jpg",
+                    "https://download-ssl.xbox.com/content/images/66acd000-77fe-1000-9115-d8025454081a/1033/screenlg15.jpg",
+                ]}
+            ],
+		};
+
+		function renderScreens(containerId, data) {
+			const root = document.getElementById(containerId);
+			Object.entries(data).forEach(([platform, groups]) => {
+				const h2 = document.createElement('h2');
+				h2.className = 'section-title';
+				h2.textContent = platform;
+				root.appendChild(h2);
+
+				const platformContent = document.createElement('div');
+				platformContent.className = 'platform-content collapsed';
+				root.appendChild(platformContent);
+
+				groups.forEach(group => {
+					if (group.title && group.title.trim() !== '') {
+						const h3 = document.createElement('h3');
+						h3.textContent = group.title;
+						platformContent.appendChild(h3);
+					}
+					if (group.note && group.note.trim() !== '') {
+						const note = document.createElement('div');
+						note.className = 'gallery-note';
+						note.innerHTML = group.note;
+						platformContent.appendChild(note);
+					}
+
+					const grid = document.createElement('div');
+					grid.className = 'gallery';
+
+					group.images.forEach(item => {
+						let url, noteText;
+						if (typeof item === "string") {
+							url = item;
+						} else {
+							url = item.url;
+							noteText = item.note;
+						}
+
+						const wrapper = document.createElement('div');
+						wrapper.style.display = 'block';
+
+						const link = document.createElement('a');
+						link.href = url;
+						link.target = '_blank';
+						link.rel = 'noopener noreferrer';
+
+						const img = document.createElement('img');
+						img.loading = 'lazy';
+						img.alt = `${platform} Screenshot`;
+						img.src = url;
+
+						link.appendChild(img);
+						wrapper.appendChild(link);
+
+						if (noteText) {
+							const imgNote = document.createElement('div');
+							imgNote.className = 'gallery-note';
+							imgNote.innerHTML = noteText;
+							wrapper.appendChild(imgNote);
+						}
+
+						grid.appendChild(wrapper);
+					});
+
+
+					platformContent.appendChild(grid);
+				});
+
+				// Add collapse functionality
+				h2.addEventListener('click', () => {
+					platformContent.classList.toggle('collapsed');
+					h2.classList.toggle('expanded');
+				});
+			});
+		}
+
+		document.addEventListener('DOMContentLoaded', function() {
+			renderScreens('screens-container', screenshotData);
+		});
+	</script>
+</body>
+
+</html>
+

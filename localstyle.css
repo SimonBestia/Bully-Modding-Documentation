@@ -25,6 +25,7 @@
     --hero-background-color: #e7e7e7; /* No clue. Using it for quotes */
     --content-background-color: #ffffff;
     --image-border-color: #000000;
+    --image-hover-border-color: #ffd47d;
     --table-header-background-color: #dbdbdb;
     --table-border-color: #c0c0c0;
     --footer-background-color: #3f3f3f;
@@ -51,7 +52,8 @@
     --hero-background-color: #2e2e2e;
     --content-background-color: #424242;
     --image-border-color: #e9e9e9;
-    --table-header-background-color: #8a8a8a;
+    --image-hover-border-color: #000000;
+    --table-header-background-color: #ffffff;
     --table-border-color: #ffffff;
     --footer-background-color: #292929;
     --footer-text-color: #fff;
@@ -98,6 +100,7 @@ h1, h2 {
 
 h1 {
     font-size: 50px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* X-offset, Y-offset, blur radius, color */
 }
 h2 {
     font-size: 35px;
@@ -278,6 +281,17 @@ nav ul li.dropdown > a::after {
 
 .dropdown-content li a.active {
     color: var(--dropdown-text-active-color); /* Blue text */
+}
+
+/* Non-clickable centered separator label inside dropdowns */
+.dropdown-content li.dropdown-separator {
+    text-align: center;
+    font-family: 'NarcissusOpenSG', serif;
+    font-weight: bold;
+    font-size: 18px;
+    color: var(--dropdown-text-color);
+    padding: 6px 8px;
+    cursor: default;
 }
 
 /* Global link style (for regular links, not navigation or dropdown) */

@@ -7,7 +7,7 @@ I'll only discuss ones that I feel are most relevant to **BULLY**, not just rela
 <hr>
 
 ### 1) Screenshots
-One thing I do is try to keep an archive of every pre-release screenshot of the game ever released digitally. It is currently available on [Bully-Board](https://bully-board.com/index.php?topic=24273).<br>
+One thing I do is try to keep an archive of every pre-release screenshot of the game ever released digitally. You can find it in the Extra Resources section, or [here](../Extras/Screenshots.html).<br>
 Given that the game released {{years-ago:2006-10-27}} years ago and screenshots were sent to various news outlets, over time some of those outlets would eventually and inevitably go offline or go through some significant rebrand involving the removal of past content, leading to a loss of all of its hosted screenshots forever. While some of them are found in multiple sites, quality may vary across each site in regards to resolution, colours, watermarks...<br>
 As time goes on, I will eventually stop finding new screenshots. I might have already updated the collection for the last time, as its last update was (at the time of writing) more than a year ago!
 Current best hope is someone happens to have contacts with some news outlets. (I know GamesRadar still has several screenshots buried on their site, just inaccessible)
@@ -25,7 +25,7 @@ Examples:
     <img src="../Assets/7HG9ZCw.jpeg" alt="A screenshot of Jimmy on a bike riding away from Bullworth Academy and heading towards Old Bullworth Vale." style="width: 240px; margin: 0 5px; border: 4px solid var(--image-border-color);">
     <img src="../Assets/hXaajVa.jpg" alt="A screenshot in Bullworth Town featuring a car driving by and some peds around." style="width: 200px; margin: 0 5px; border: 4px solid var(--image-border-color);">
     <figcaption style="font-size: 0.85em; color: var(--sidebar-text-color); margin-top: 5px;">
-        See more screenshots at the aforementioned Bully-Board link.
+        See more screenshots in the All Screenshots page.
     </figcaption>
 </figure>
 
