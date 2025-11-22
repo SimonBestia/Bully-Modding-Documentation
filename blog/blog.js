@@ -1,6 +1,6 @@
 // Lightweight blog loader: lists posts and renders a single post
 
-const blogBase = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+const blogBase = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.hostname.startsWith('192.168.'))
   ? ''
   : window.location.origin + '/Bully-Modding-Documentation';
 
@@ -78,7 +78,7 @@ function markdownToHtml(md) {
   // Add target="_blank" to all links
   const renderer = new marked.Renderer();
   const origLink = renderer.link;
-  renderer.link = function(href, title, text) {
+  renderer.link = function (href, title, text) {
     let html = origLink.call(this, href, title, text);
     return html.replace(/^<a /, '<a target="_blank" rel="noopener noreferrer" ');
   };
@@ -118,11 +118,11 @@ async function renderPost() {
     if (!post) throw new Error('Post not found');
     const md = await fetchText(post.file);
     titleEl.textContent = post.title;
-    
+
     // Build metadata with last modified date
     let metaText = 'Published on: ' + formatDate(post.date);
     if (post.author) metaText += ' · Author: ' + post.author;
-    
+
     // Add last modified date based on file modification time
     try {
       const fileResponse = await fetch(post.file, { method: 'HEAD' });
@@ -130,10 +130,10 @@ async function renderPost() {
         const lastModified = fileResponse.headers.get('last-modified');
         if (lastModified) {
           const lastModifiedDate = new Date(lastModified);
-          const formattedLastModified = lastModifiedDate.toLocaleDateString(undefined, { 
-            year: 'numeric', 
-            month: 'short', 
-            day: 'numeric' 
+          const formattedLastModified = lastModifiedDate.toLocaleDateString(undefined, {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
           });
           metaText += ' · Last modified: ' + formattedLastModified;
         }
@@ -142,7 +142,7 @@ async function renderPost() {
       // If we can't get file modification time, skip it
       console.log('Could not fetch file modification time');
     }
-    
+
     metaEl.textContent = metaText;
     contentEl.innerHTML = markdownToHtml(md);
     updateYearsAgo(contentEl);
@@ -166,7 +166,7 @@ async function renderSidebar() {
       return acc;
     }, {});
     const years = Object.keys(groups).sort((a, b) => Number(b) - Number(a));
-    
+
     sidebar.innerHTML = years.map(y => {
       const items = groups[y].map(p => {
         const active = p.slug === currentSlug ? ' class="active"' : '';
@@ -185,7 +185,7 @@ async function renderSidebar() {
         ul.classList.toggle('collapsed');
         header.classList.toggle('collapsed');
       });
-    });    
+    });
   } catch (e) {
     sidebar.textContent = 'Failed to load posts list.';
   }

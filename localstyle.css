@@ -8,7 +8,8 @@
 
 /* Light Theme Variables */
 :root {
-    --background-color: #ffffff; /* Colour under footer */
+    --background-color: #ffffff;
+    /* Colour under footer */
     --text-color: #333;
     --header-background-color: #1a4092;
     --nav-link-text-color: #f1f1f1;
@@ -22,7 +23,8 @@
     --dropdown-text-active-color: #6b5bff;
     --link-color: #1a73e8;
     --link-hover-color: #145dbf;
-    --hero-background-color: #e7e7e7; /* No clue. Using it for quotes */
+    --hero-background-color: #e7e7e7;
+    /* No clue. Using it for quotes */
     --content-background-color: #ffffff;
     --image-border-color: #000000;
     --image-hover-border-color: #ffd47d;
@@ -73,7 +75,8 @@
     text-decoration: underline;
 }
 
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     height: 100%;
@@ -91,103 +94,127 @@ body {
     min-height: 100vh;
 }
 
-h1, h2 {
+h1,
+h2 {
     font-weight: normal;
     font-family: 'NarcissusOpenSG', serif;
     color: var(--text-color);
-    margin-bottom: -10px; /* Space below the title */
+    margin-bottom: -0.625rem;
+    /* Space below the title */
 }
 
 h1 {
-    font-size: 50px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* X-offset, Y-offset, blur radius, color */
+    font-size: 3.125rem;
+    text-shadow: 0.125rem 0.125rem 0.3125rem rgba(0, 0, 0, 0.5);
+    /* X-offset, Y-offset, blur radius, color */
 }
+
 h2 {
-    font-size: 35px;
+    font-size: 2.1875rem;
     margin-top: 0;
 }
 
 header {
     background-color: var(--header-background-color);
-    padding: 10px 0;
+    padding: 0.625rem 0;
 }
 
 /* NAV BAR STUFF */
 nav {
-    margin-left: 100px; /* Matches the padding of the page */
-    margin-right: 100px; /* Add right margin to match left */
+    margin-left: 6.25rem;
+    /* Matches the padding of the page */
+    margin-right: 6.25rem;
+    /* Add right margin to match left */
     display: flex;
-    justify-content: space-between; /* Space between main nav and right nav */
+    justify-content: space-between;
+    /* Space between main nav and right nav */
+    align-items: center;
+    /* Vertically center items */
 }
 
-nav > ul {
+.menu-toggle {
+    display: none;
+    /* Hidden on desktop */
+}
+
+nav>ul {
     list-style: none;
     display: flex;
     margin: 0;
     padding: 0;
-    flex: 1; /* Take up available space */
+    flex: 1;
+    /* Take up available space */
 }
 
 /* Site options specific styles */
 .site-options {
-    margin-left: auto; /* Push to the right */
-    position: relative; /* Ensure proper dropdown positioning */
+    margin-left: auto;
+    /* Push to the right */
+    position: relative;
+    /* Ensure proper dropdown positioning */
 }
 
-.site-options > a {
+.site-options>a {
     font-family: 'Verdana', sans-serif;
-    font-size: 14px;
-    padding: 6px 24px;
+    font-size: 0.875rem;
+    padding: 0.375rem 1.5rem;
     color: var(--nav-link-text-color);
     text-decoration: none;
 }
 
 .site-options .dropdown-content {
-    right: 0; /* Align dropdown to the right */
-    left: auto; /* Override default left alignment */
-    min-width: 200px; /* Make dropdown wider for better readability */
+    right: 0;
+    /* Align dropdown to the right */
+    left: auto;
+    /* Override default left alignment */
+    min-width: 12.5rem;
+    /* Make dropdown wider for better readability */
 }
 
 /* Ensure site options dropdown shows on hover */
-.site-options:hover > .dropdown-content {
+.site-options:hover>.dropdown-content {
     display: block;
 }
 
 /* Add down arrow for site options */
-.site-options > a::after {
+.site-options>a::after {
     content: "▼";
-    font-size: 12px;
-    margin-left: 8px;
+    font-size: 0.75rem;
+    margin-left: 0.5rem;
     color: #ffbd5b;
 }
 
 /* Theme toggle button */
 .theme-toggle {
-    margin-left: 1px;
+    margin-left: 0.0625rem;
     display: flex;
     align-items: center;
 }
 
-.theme-toggle > a {
-    padding: 6px 24px; /* match other top-level items */
-    font-size: 14px;   /* match nav items */
-    line-height: 1;    /* prevent extra height */
+.theme-toggle>a {
+    padding: 0.375rem 1.5rem;
+    /* match other top-level items */
+    font-size: 0.875rem;
+    /* match nav items */
+    line-height: 1;
+    /* prevent extra height */
 }
 
 nav ul li {
     position: relative;
 }
 
-nav ul li a { /* Top-level items */
+nav ul li a {
+    /* Top-level items */
     font-family: 'Verdana', sans-serif;
-    font-size: 14px;
-    padding: 6px 20px;
+    font-size: 0.875rem;
+    padding: 0.375rem 1.25rem;
     color: var(--nav-link-text-color);
     text-decoration: none;
 }
 
 /* Active state for top-level navigation */
-nav > ul > li > a.active {
+nav>ul>li>a.active {
     font-weight: bold;
     color: var(--nav-link-text-active-color);
 }
@@ -199,7 +226,7 @@ nav > ul > li > a.active {
 }
 
 /* Active state for parent dropdowns when a child is active */
-nav > ul > li.dropdown > a.active {
+nav>ul>li.dropdown>a.active {
     font-weight: bold;
     color: var(--nav-link-text-active-color);
 }
@@ -219,29 +246,38 @@ nav ul li a:hover {
     background-color: var(--nav-link-hover-background);
     color: var(--nav-link-text-hover-color);
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 0.3125rem;
 }
 
 /* Styles for Sub-dropdown */
 .dropdown-content {
-    display: none; /* Hide by default */
+    display: none;
+    /* Hide by default */
     position: absolute;
-    background-color: var(--dropdown-background-color); /* Non-hover BG color */
-    min-width: 180px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1; /* Ensure dropdown appears above other elements */
-    list-style: none; /* Remove bullet points */
-    padding: 0; /* Remove default padding */
+    background-color: var(--dropdown-background-color);
+    /* Non-hover BG color */
+    min-width: 11.25rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    /* Ensure dropdown appears above other elements */
+    list-style: none;
+    /* Remove bullet points */
+    padding: 0;
+    /* Remove default padding */
 }
 
 /* Sub-dropdown for items with another dropdown */
 .dropdown-content ul {
-    display: none; /* Hide sub-menu by default */
+    display: none;
+    /* Hide sub-menu by default */
     position: absolute;
     top: 0;
-    left: 100%; /* Position the sub-menu to the right of the parent menu */
-    list-style: none; /* Remove bullet points */
-    padding: 0; /* Remove default padding */
+    left: 100%;
+    /* Position the sub-menu to the right of the parent menu */
+    list-style: none;
+    /* Remove bullet points */
+    padding: 0;
+    /* Remove default padding */
 }
 
 /* Show the sub-menu when hovering over the parent item - Now handled by JavaScript */
@@ -250,37 +286,44 @@ nav ul li a:hover {
 } */
 
 /* Down arrow for the main dropdown */
-nav ul li.dropdown > a::after {
-    content: "▼"; /* Down arrow for main dropdown */
-    font-size: 12px;
-    margin-left: 8px;
+nav ul li.dropdown>a::after {
+    content: "▼";
+    /* Down arrow for main dropdown */
+    font-size: 0.75rem;
+    margin-left: 0.5rem;
     color: #ffbd5b;
 }
 
 /* Right arrow for items with a sub-dropdown */
-.dropdown-content li.dropdown > a::after {
-    content: "►"; /* Right arrow for sub-dropdowns */
-    font-size: 12px;
-    margin-left: 8px;
+.dropdown-content li.dropdown>a::after {
+    content: "►";
+    /* Right arrow for sub-dropdowns */
+    font-size: 0.75rem;
+    margin-left: 0.5rem;
     color: #ffbd5b;
 }
 
 .dropdown-content li a {
-    padding: 8px 12px;
+    padding: 0.5rem 0.75rem;
     font-family: 'Verdana', sans-serif;
-    font-size: 13px;
-    color: var(--dropdown-text-color); /* Non-active Text color */
+    font-size: 0.8125rem;
+    color: var(--dropdown-text-color);
+    /* Non-active Text color */
     text-decoration: none;
-    display: block; /* Ensure full-width hover area */
+    display: block;
+    /* Ensure full-width hover area */
 }
 
 .dropdown-content li a:hover {
-    background-color: var(--dropdown-hover-background-color); /* Light gray background on hover */
-    color: var(--dropdown-text-hover-color); /* Keep text color as the original */
+    background-color: var(--dropdown-hover-background-color);
+    /* Light gray background on hover */
+    color: var(--dropdown-text-hover-color);
+    /* Keep text color as the original */
 }
 
 .dropdown-content li a.active {
-    color: var(--dropdown-text-active-color); /* Blue text */
+    color: var(--dropdown-text-active-color);
+    /* Blue text */
 }
 
 /* Non-clickable centered separator label inside dropdowns */
@@ -288,77 +331,98 @@ nav ul li.dropdown > a::after {
     text-align: center;
     font-family: 'NarcissusOpenSG', serif;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 1.125rem;
     color: var(--dropdown-text-color);
-    padding: 6px 8px;
+    padding: 0.375rem 0.5rem;
     cursor: default;
 }
 
 /* Global link style (for regular links, not navigation or dropdown) */
 a {
     color: var(--link-color);
-    text-decoration: none; /* Remove underline */
+    text-decoration: none;
+    /* Remove underline */
 }
 
-a:hover { /* Link hover state */
+a:hover {
+    /* Link hover state */
     color: var(--link-hover-color);
-    text-decoration: underline; /* Add underline */
+    text-decoration: underline;
+    /* Add underline */
 }
 
 .hero {
     text-align: center;
-    padding: 0; /* Remove padding */
+    padding: 0;
+    /* Remove padding */
     background-color: var(--hero-background-color);
-    position: relative; /* Ensure z-index applies */
-    box-shadow: 0 1px 40px rgba(0, 0, 0, 0.2); /* Bottom shadow similar to footer */
+    position: relative;
+    /* Ensure z-index applies */
+    box-shadow: 0 0.0625rem 2.5rem rgba(0, 0, 0, 0.2);
+    /* Bottom shadow similar to footer */
 }
 
 .hero img {
     width: 100%;
-    display: block; /* Ensure the image is displayed as a block element */
-    margin: 0; /* Remove any default margin */
+    display: block;
+    /* Ensure the image is displayed as a block element */
+    margin: 0;
+    /* Remove any default margin */
 }
 
 .hero h1 {
     font-size: 2.5em;
-    margin-bottom: 10px; /* Reduce the space below the h1 in the hero section */
+    margin-bottom: 0.625rem;
+    /* Reduce the space below the h1 in the hero section */
 }
 
 .hero p {
     font-size: 1.2em;
-    margin-top: 10px; /* Reduce the space above the p element */
-    margin-bottom: 20px;
+    margin-top: 0.625rem;
+    /* Reduce the space above the p element */
+    margin-bottom: 1.25rem;
 }
 
 .quote {
     font-family: 'Verdana', sans-serif;
-    background-color: var(--hero-background-color); /* Use the hero background color for a nice contrast */
-    border-left: 5px solid var(--link-color); /* Add a left border with the link color for distinction */
-    padding: 10px 10px; /* Add padding inside the quote box */
-    border-radius: 5px; /* Slight rounding of corners */
-    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    max-width: fit-content; /* Make the box only as wide as the content */
+    background-color: var(--hero-background-color);
+    /* Use the hero background color for a nice contrast */
+    border-left: 0.3125rem solid var(--link-color);
+    /* Add a left border with the link color for distinction */
+    padding: 0.625rem 0.625rem;
+    /* Add padding inside the quote box */
+    border-radius: 0.3125rem;
+    /* Slight rounding of corners */
+    box-shadow: 0 0.25rem 0.3125rem rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+    max-width: fit-content;
+    /* Make the box only as wide as the content */
 }
 
 /* Image floating styles */
 .float-right {
     float: right;
-    margin: 0 0 10px 20px; /* Margin to avoid text overlap */
-    border: 4px solid var(--image-border-color); /* Image Border */
-    max-width: 400px; /* Set max width for responsiveness */
+    margin: 0 0 0.625rem 1.25rem;
+    /* Margin to avoid text overlap */
+    border: 0.25rem solid var(--image-border-color);
+    /* Image Border */
+    max-width: 25rem;
+    /* Set max width for responsiveness */
 }
 
 .float-left {
     float: left;
-    margin: 0 20px 10px 0; /* Margin to avoid text overlap */
-    border: 4px solid var(--image-border-color);
-    max-width: 400px;
+    margin: 0 1.25rem 0.625rem 0;
+    /* Margin to avoid text overlap */
+    border: 0.25rem solid var(--image-border-color);
+    max-width: 25rem;
 }
 
 .content {
-    padding: 20px 120px 100px 120px; /* This sets top padding to 20px, and left, right, bottom padding to 120px */
+    padding: 1.25rem 7.5rem 6.25rem 7.5rem;
+    /* This sets top padding to 20px, and left, right, bottom padding to 120px */
     background-color: var(--content-background-color);
-    border-radius: 10px;
+    border-radius: 0.625rem;
 }
 
 /* Blog stuff */
@@ -369,16 +433,16 @@ a:hover { /* Link hover state */
 }
 
 .blog-list li {
-    margin-bottom: 14px;
+    margin-bottom: 0.875rem;
 }
 
 .blog-list a {
-    font-size: 18px;
+    font-size: 1.125rem;
 }
 
 .post-meta {
     color: var(--sidebar-text-color);
-    font-size: 12px;
+    font-size: 0.75rem;
 }
 
 .post-content {
@@ -386,7 +450,7 @@ a:hover { /* Link hover state */
 }
 
 .post-image {
-    border: 4px solid var(--image-border-color);
+    border: 0.25rem solid var(--image-border-color);
     max-width: 100%;
     height: auto;
 }
@@ -394,27 +458,30 @@ a:hover { /* Link hover state */
 /* Sidebar stuff */
 .blog-layout {
     display: flex;
-    gap: 24px;
-    flex-direction: row-reverse; /* Remove for it left sidebar */
+    gap: 1.5rem;
+    flex-direction: row-reverse;
+    /* Remove for it left sidebar */
 }
 
 /* Collapsible years */
 .year-header {
     cursor: pointer;
     font-weight: bold;
-    margin-top: 8px;
+    margin-top: 0.5rem;
     display: flex;
     align-items: center;
 }
 
 /* Arrow indicator */
 .year-header::before {
-    content: "▼"; /* expanded by default */
-    font-size: 12px;
-    margin-right: 6px;
-    color: #ffbd5b; /* match your nav arrows */
+    content: "▼";
+    /* expanded by default */
+    font-size: 0.75rem;
+    margin-right: 0.375rem;
+    color: #ffbd5b;
+    /* match your nav arrows */
 }
-  
+
 /* When collapsed  */
 .year-header.collapsed::before {
     content: "►";
@@ -425,27 +492,27 @@ a:hover { /* Link hover state */
 }
 
 .blog-sidebar {
-    width: 260px;
+    width: 16.25rem;
 }
 
 .blog-sidebar .year {
     font-weight: bold;
-    margin: 12px 0 6px 0;
+    margin: 0.75rem 0 0.375rem 0;
 }
 
 .blog-sidebar ul {
     list-style: none;
     padding: 0;
-    margin: 0 0 10px 0;
+    margin: 0 0 0.625rem 0;
 }
 
 .blog-sidebar a {
     display: block;
-    padding: 4px 6px;
+    padding: 0.25rem 0.375rem;
     color: var(--sidebar-text-color);
     text-decoration: none;
-    border-radius: 4px;
-    font-size: 14px;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
 }
 
 .blog-sidebar a:hover {
@@ -462,10 +529,11 @@ a:hover { /* Link hover state */
     flex: 1;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 56.25rem) {
     .blog-layout {
         flex-direction: column;
     }
+
     .blog-sidebar {
         width: 100%;
     }
@@ -474,38 +542,142 @@ a:hover { /* Link hover state */
 /* Table styles */
 .content table {
     width: auto;
-    border-collapse: collapse; /* Ensure borders are collapsed */
-    margin-top: 10px; /* Add some margin above the table */
+    border-collapse: collapse;
+    /* Ensure borders are collapsed */
+    margin-top: 0.625rem;
+    /* Add some margin above the table */
 }
 
-.content table th, .content table td {
-    border: 1px solid var(--table-border-color); /* Light border around cells */
-    padding: 3px; /* Padding inside cells */
-    text-align: left; /* Center text inside cells */
-    font-size: 16px;
+.content table th,
+.content table td {
+    border: 0.0625rem solid var(--table-border-color);
+    /* Light border around cells */
+    padding: 0.1875rem;
+    /* Padding inside cells */
+    text-align: left;
+    /* Center text inside cells */
+    font-size: 1rem;
 }
 
-.content table th { /* Header */
+.content table th {
+    /* Header */
     background-color: var(--table-header-background-color);
     font-weight: bold;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
     .hero h1 {
-        font-size: 2em;
+        font-size: 2rem;
+    }
+
+    /* Fix for content padding and h1 on mobile */
+    .content {
+        padding: 1.25rem;
+        /* 20px */
+    }
+
+    h1 {
+        font-size: 2rem;
+        /* 32px */
     }
 
     nav {
-        margin-left: 0; /* Remove margin on smaller screens */
+        margin-left: 0;
+        /* Remove margin on smaller screens */
+        margin-right: 0;
+        padding: 0.625rem 1.25rem;
+        /* Add some padding */
+        position: relative;
+        /* For absolute positioning of menu */
+        flex-wrap: wrap;
+        /* Allow wrapping */
     }
 
-    nav ul {
+    /* Hamburger Menu Button */
+    .menu-toggle {
+        display: flex;
         flex-direction: column;
+        justify-content: space-between;
+        width: 1.875rem;
+        height: 1.3125rem;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 1001;
+        /* Above the menu */
+    }
+
+    .menu-toggle span {
+        width: 100%;
+        height: 0.1875rem;
+        background-color: var(--nav-link-text-color);
+        border-radius: 0.1875rem;
+        transition: all 0.3s ease;
+    }
+
+    /* Mobile Navigation List */
+    nav ul {
+        display: none;
+        /* Hidden by default */
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--header-background-color);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+        padding: 0.625rem 0;
+        box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
+    }
+
+    nav ul.show {
+        display: flex;
+        /* Show when toggled */
     }
 
     nav ul li {
-        margin: 10px 0;
+        margin: 0;
+        width: 100%;
     }
+
+    nav ul li a {
+        display: block;
+        padding: 0.9375rem 1.25rem;
+        border-bottom: 0.0625rem solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Adjust dropdowns for mobile */
+    .site-options {
+        margin-left: 0;
+        /* Reset margin */
+    }
+
+    .dropdown-content {
+        position: static;
+        /* Stack naturally */
+        box-shadow: none;
+        background-color: var(--dropdown-background-color);
+        /* Slightly darker for contrast */
+        width: 100%;
+        padding-left: 1.25rem;
+        /* Indent dropdown items */
+    }
+
+    .dropdown-content ul {
+        position: static;
+        padding-left: 1.25rem;
+    }
+
+    /* Ensure dropdowns are visible on mobile or clickable */
+    /* For simplicity in this pass, we'll let them hover or click as per existing JS, 
+       but we might need to ensure they don't fly out to the right */
+    .dropdown-content ul {
+        left: 0;
+    }
+
+    /* Hide the site options dropdown content by default, show on hover/click logic */
+    /* The existing hover logic might be tricky on touch, but let's stick to structure first */
 }
 
 .wrapper {
@@ -517,27 +689,29 @@ footer {
     color: var(--footer-text-color);
     text-align: center;
     width: 100%;
-    box-shadow: 0 -1px 40px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    padding: 0 1.25rem;
+    box-shadow: 0 -0.0625rem 2.5rem rgba(0, 0, 0, 0.2);
 }
 
 /* Back to top button */
 #back-to-top {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 1.25rem;
+    right: 1.25rem;
     background-color: var(--header-background-color);
     color: var(--nav-link-text-color);
     border: none;
     border-radius: 20%;
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.25rem;
     cursor: pointer;
     display: none;
     opacity: 0;
     transition: opacity 0.3s, background-color 0.3s;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.2);
 }
 
 #back-to-top:hover {
