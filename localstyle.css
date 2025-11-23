@@ -581,6 +581,11 @@ a:hover {
         /* 32px */
     }
 
+    h2 {
+        font-size: 1.5rem;
+        /* 24px */
+    }
+
     nav {
         margin-left: 0;
         /* Remove margin on smaller screens */
@@ -614,6 +619,23 @@ a:hover {
         background-color: var(--nav-link-text-color);
         border-radius: 0.1875rem;
         transition: all 0.3s ease;
+    }
+
+    /* Mobile Menu Overlay */
+    .menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        display: none;
+        backdrop-filter: blur(2px);
+    }
+
+    .menu-overlay.visible {
+        display: block;
     }
 
     /* Mobile Navigation List */
@@ -674,6 +696,15 @@ a:hover {
        but we might need to ensure they don't fly out to the right */
     .dropdown-content ul {
         left: 0;
+    }
+
+    /* Fix for floating images on mobile */
+    .float-right,
+    .float-left {
+        float: none;
+        display: block;
+        margin: 0 auto 1.25rem auto;
+        max-width: 100%;
     }
 
     /* Hide the site options dropdown content by default, show on hover/click logic */

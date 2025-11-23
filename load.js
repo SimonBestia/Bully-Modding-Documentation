@@ -46,15 +46,29 @@ fetch(`${baseURL}/header.html`)
         // Mobile Menu Toggle
         const menuToggle = document.querySelector('.menu-toggle');
         const navUl = document.querySelector('nav ul');
+        const menuOverlay = document.querySelector('.menu-overlay');
 
         if (menuToggle && navUl) {
             menuToggle.addEventListener('click', () => {
                 navUl.classList.toggle('show');
+                if (menuOverlay) menuOverlay.classList.toggle('visible');
             });
         }
 
-        // Add hover delay functionality to dropdowns
-        setupDropdownDelays();
+        // Close menu when clicking overlay
+        if (menuOverlay) {
+            menuOverlay.addEventListener('click', () => {
+                navUl.classList.remove('show');
+                menuOverlay.classList.remove('visible');
+                // Also close any open dropdowns
+                document.querySelectorAll('.dropdown-content').forEach(content => {
+                    content.style.display = 'none';
+                });
+            });
+        }
+
+        // Add dropdown functionality (hover for desktop, click for mobile)
+        setupDropdowns();
 
         // Run the active link logic after updating the href attributes
         var currentPath = window.location.pathname;
@@ -138,37 +152,69 @@ function toggleTableBody(tbodyId) {
     }
 }
 
-// Dropdown Hover Delay Functionality
-function setupDropdownDelays() {
+// Dropdown Functionality
+function setupDropdowns() {
     const dropdowns = document.querySelectorAll('.dropdown');
     const delay = 200; // hover delay ms
+    const isMobile = window.matchMedia('(max-width: 48rem)').matches;
 
     dropdowns.forEach(dropdown => {
-        let showTimeout;
-        let hideTimeout;
+        const dropdownContent = dropdown.querySelector('.dropdown-content');
+        if (!dropdownContent) return;
 
-        // Mouse enter - show dropdown after delay
-        dropdown.addEventListener('mouseenter', () => {
-            clearTimeout(hideTimeout);
-            showTimeout = setTimeout(() => {
-                const dropdownContent = dropdown.querySelector('.dropdown-content');
-                if (dropdownContent) {
+        if (isMobile) {
+            // Mobile: Click to toggle
+            const link = dropdown.querySelector('a');
+            if (link) {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    const isVisible = dropdownContent.style.display === 'block';
+
+                    // Close siblings to avoid clutter
+                    const parent = dropdown.parentElement;
+                    if (parent) {
+                        const siblings = parent.querySelectorAll(':scope > .dropdown > .dropdown-content');
+                        siblings.forEach(sib => {
+                            if (sib !== dropdownContent) sib.style.display = 'none';
+                        });
+                    }
+
+                    dropdownContent.style.display = isVisible ? 'none' : 'block';
+                });
+            }
+        } else {
+            // Desktop: Hover with delay
+            let showTimeout;
+            let hideTimeout;
+
+            dropdown.addEventListener('mouseenter', () => {
+                clearTimeout(hideTimeout);
+                showTimeout = setTimeout(() => {
                     dropdownContent.style.display = 'block';
-                }
-            }, delay);
-        });
+                }, delay);
+            });
 
-        // Mouse leave - hide dropdown after delay
-        dropdown.addEventListener('mouseleave', () => {
-            clearTimeout(showTimeout);
-            hideTimeout = setTimeout(() => {
-                const dropdownContent = dropdown.querySelector('.dropdown-content');
-                if (dropdownContent) {
+            dropdown.addEventListener('mouseleave', () => {
+                clearTimeout(showTimeout);
+                hideTimeout = setTimeout(() => {
                     dropdownContent.style.display = 'none';
-                }
-            }, delay);
-        });
+                }, delay);
+            });
+        }
     });
+
+    // Mobile: Close when clicking outside
+    if (isMobile) {
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.dropdown')) {
+                document.querySelectorAll('.dropdown-content').forEach(content => {
+                    content.style.display = 'none';
+                });
+            }
+        });
+    }
 }
 
 // Update Last Modified Date
