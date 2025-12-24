@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="referrer" content="no-referrer">
+
+    <script src="../../../../load.js" defer></script>
+    <script src="../../../../pickstyle.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" sizes="64x64" href="../../../../favicon.ico">
+    <link rel="stylesheet" href="../../../../localstyle.css" />
+    <style>
+        
+      .section-title {
+        margin-top: 24px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        user-select: none;
+      }
+      .section-title::before {
+        content: "►";
+        font-size: 14px;
+        margin-right: 6px;
+        color: #ffbd5b;
+      }
+      .section-title.expanded::before {
+        content: "▼";
+      }
+      .platform-content.collapsed {
+        display: none;
+      }
+    </style>
+    <title>Models</title>
+    <script defer>
+      document.addEventListener('DOMContentLoaded', () => {
+        const target = document.querySelector('section.content');
+        target.innerHTML = document.getElementById('preloaded-content').innerHTML;
+
+        // Add collapse functionality
+        const titles = target.querySelectorAll('.section-title');
+        titles.forEach(h2 => {
+          h2.addEventListener('click', () => {
+             h2.classList.toggle('expanded');
+             // The next element should be the content div
+             const content = h2.nextElementSibling;
+             if (content && content.classList.contains('platform-content')) {
+               content.classList.toggle('collapsed');
+             }
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <header></header>
+    <section class="hero">
+      <img alt="Bully Modding Documentation" src="../../../../Assets/Comics.png" />
+    </section>
+    <div class="wrapper">
+      <!-- Placeholder -->
+      <section class="content">
+        <h1>Loading…</h1>
+      </section>
+    </div>
+    <!-- Hidden real content -->
+    <template id="preloaded-content">
+        <h1>Models</h1>
+        <hr />
+        <p>This tutorial assumes you already know the <a href="https://www.youtube.com/playlist?list=PLa1F2ddGya_-UvuAqHAksYnB0qL9yWDO6" target="_blank">Blender Fundamentals</a> and will only focus on the export process.<br>
+        Refer to each platform's Basics page for which file formats you'll be working with and which tools to use.</p>
+        
+        <h2 class="section-title">PlayStation 2</h2>
+        <div class="platform-content collapsed">
+          <p>No documentation as of yet.<br>
+          Support for <strong>BULLY</strong> is currently limited with <a href="https://github.com/Parik27/DragonFF" target="_blank">DragonFF</a>.</p>
+        </div>
+        
+        <h2 class="section-title">Xbox 360/PC</h2>
+        <div class="platform-content collapsed">
+          <p>Models are stored as <strong>.nif</strong> files.<br>
+          Importing/Exporting requires the <a href="https://github.com/niftools/blender_niftools_addon/releases" target="_blank">Blender Niftools Addon</a>, but you should use this modified one by <a href="https://discord.com/channels/575387010399993889/1096178790469730336/1096180505600335913" target="_blank">VicLourenco</a>.<br>
+          (For Blender versions ≥4.0, see <a href="https://github.com/niftools/blender_niftools_addon/pull/639" target="_blank">here</a>. Note that support for <strong>BULLY</strong> is even more limited with this)<br>
+          For further tweaks, use <a href="https://github.com/niftools/nifskope" target="_blank">NifSkope</a>.</p>
+          <h2>Preparing Your Model for Export</h2>
+          <ol>
+            <li>
+                <p>In <strong>Object Properties</strong>, make sure the model's Location, Rotation and Scale are <strong>0, 0</strong> and <strong>1</strong>, respectively. If they're not, while in Object Mode, select your model: <strong>Object > Apply > All Transforms</strong>.</p>
+            </li>
+            <li>
+                <p>In <strong>Object Data Properties</strong>:</p>
+                <ul>
+                    <li>Make sure your UV Map is called <strong>"UV0"</strong>.</li>
+                    <li>In Color Attributes, make sure yours is called <strong>"RGBA"</strong>. If you don't already have one, set:
+                        <ul>
+                            <li>Domain to <strong>Face Corner</strong></li>
+                            <li>Data Type to <strong>Byte Color</strong></li>
+                            <li>Color to <strong>"BCBCBC"</strong> (Hex)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>In <strong>Material Properties</strong>, make sure your model is using a BULLY material. Just use any that came with the <strong>.nif</strong> you're trying to replace. (E.g., all Torso clothes for Jimmy will come with the <strong>"brownjacket_MS"</strong> material)</p>
+            </li>
+          </ol>
+        
+          <h2>Exporting Your Model</h2>
+          <ol>
+            <li>
+                <p>In the export menu, make sure to turn off <strong>"Force DDS"</strong> and <strong>"Optimise Materials"</strong>, then export.<br>
+                <em>(If you get either "failed to rename material to ''." or "lost [...] in vertex weights..." error, ignore it)</em></p>
+            </li>
+            <li>
+                <p>Open the exported <strong>.nif</strong>, expand your model's <strong>NiTriShape > NiTexturingProperty</strong>, in Block Details at the bottom, find <strong>Base Texture</strong> and set <strong>"Flags"</strong> to <strong>12800</strong>.<br>
+                <strong>Not doing this will make the game crash, and needs to be done for every mesh of your model using a different material.</strong></p>
+            </li>
+          </ol>
+          <p><strong>You're done!</strong></p>
+        
+          <hr />
+          <h2>Notes:</h2>
+          <ul>
+            <li>
+                <p>Rigged clothes/peds have certain bones which don't need vertex groups, but Blender will generate them when you attach your model to their armature. Use the original <strong>.nif</strong> as a reference to check which groups you can delete. (E.g., gameplay clothes models for Jimmy don't need <strong>"Root"</strong> and <strong>"Root01"</strong>, so those can safely be deleted)</p>
+            </li>
+            <li>
+                <p>Jimmy's clothes refuse to load any more than 1 texture when in-game. As such, make sure your whole model uses a single material.</p>
+            </li>
+            <li>
+                <p>Do not use multiple materials for a single mesh.</p>
+            </li>
+            <li>
+                <p>Most models in the game have backface culling turned on. To disable it:</p>
+                <ul>
+                    <li>Open your exported <strong>.nif</strong> with <strong>NifSkope</strong></li>
+                    <li>Expand your model's <strong>NiTriShape</strong></li>
+                    <li>Add a <strong>"NiStencilProperty"</strong> if you don't have it</li>
+                    <li>In Block Details at the bottom, scroll all the way down and set <strong>"Flags"</strong> to <strong>19840</strong></li>
+                </ul>
+            </li>
+            <li>
+                <p>Some models are stored in big endian on <strong>PC</strong>, for some reason. While the game works fine with either, <strong>NifSkope</strong> does not. Either:</p>
+                <ul>
+                    <li>Install the <a href="https://www.mediafire.com/folder/l4pmjlxrexazq/Gamebryo_2.3_Evaluation" target="_blank">Gamebryo SDK</a> and convert them using <strong>NifConvert.exe</strong>, OR</li>
+                    <li>Import the model into Blender and export it</li>
+                </ul>
+            </li>
+          </ul>
+        </div>
+    </template>
+    <footer></footer>
+  </body>
+</html>

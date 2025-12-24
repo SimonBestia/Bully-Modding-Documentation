@@ -1,4 +1,4 @@
-![Jimmy standing by the pathway leading to the fountain at the back of the school. First-ever released BULLY screenshot.](../Assets/YVOXCIu.jpeg){width=400 float-right}
+![Jimmy standing by the pathway leading to the fountain at the back of the school. First-ever released BULLY screenshot.](http://imgur.com/YVOXCIu.jpg){width=400 float-right}
 
 I've been wanting to make something like this for a while!<br>
 This could be a good spot to write about what I feel isn't worth dedicating an entire video on [YouTube](https://www.youtube.com/@SimonBestia) or is too much of a hassle to write about on [Twitter](https://x.com/SimoBestia), or even just write a post for occasional updates, whether related to this site or not.

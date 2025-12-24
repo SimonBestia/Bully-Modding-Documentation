@@ -20,10 +20,10 @@ So then, "lost" screenshots here refer to those screenshots that are NOT availab
 Examples:
 
 <figure style="text-align: center; margin: 0;">
-    <img src="../Assets/268_-_lYP1Qh3.jpg" alt="A screenshot of Jimmy pulling the fire alarm inside the school. Has a Players4Players logo." style="width: 300px; margin: 0 5px; border: 4px solid var(--image-border-color);">
-    <img src="../Assets/f3zRsx8.png" alt="A screenshot taken during the cutscene of Weed Killer, showing a GamesRadar logo." style="width: 250px; margin: 0 5px; border: 4px solid var(--image-border-color);">
-    <img src="../Assets/7HG9ZCw.jpeg" alt="A screenshot of Jimmy on a bike riding away from Bullworth Academy and heading towards Old Bullworth Vale." style="width: 240px; margin: 0 5px; border: 4px solid var(--image-border-color);">
-    <img src="../Assets/hXaajVa.jpg" alt="A screenshot in Bullworth Town featuring a car driving by and some peds around." style="width: 200px; margin: 0 5px; border: 4px solid var(--image-border-color);">
+    <img src="https://imgur.com/lYP1Qh3.jpg" alt="A screenshot of Jimmy pulling the fire alarm inside the school. Has a Players4Players logo." style="width: 300px; margin: 0 5px; border: 4px solid var(--image-border-color);">
+    <img src="https://imgur.com/f3zRsx8.png" alt="A screenshot taken during the cutscene of Weed Killer, showing a GamesRadar logo." style="width: 250px; margin: 0 5px; border: 4px solid var(--image-border-color);">
+    <img src="https://imgur.com/7HG9ZCw.jpeg" alt="A screenshot of Jimmy on a bike riding away from Bullworth Academy and heading towards Old Bullworth Vale." style="width: 240px; margin: 0 5px; border: 4px solid var(--image-border-color);">
+    <img src="https://imgur.com/hXaajVa.jpg" alt="A screenshot in Bullworth Town featuring a car driving by and some peds around." style="width: 200px; margin: 0 5px; border: 4px solid var(--image-border-color);">
     <figcaption style="font-size: 0.85em; color: var(--sidebar-text-color); margin-top: 5px;">
         See more screenshots in the All Screenshots page.
     </figcaption>
