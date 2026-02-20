@@ -27,7 +27,7 @@ I will now proceed to talk about a couple of my favourite findings, starting fro
 ## 1) PlayStation 2 Revista Oficial España
 <hr>
 
-With **BULLY** being made in Canada and taking place within New England, I just naturally assumed the game would be mostly popular in North America rather than here in Europe, for example, so logically I first started looking through US magazines, with plenty to choose from, and while there is plenty to be found in those, I would have never guessed that a magazine from Spain would catch my attention the most.
+With **BULLY** being made in Canada and taking place within New England, I just naturally assumed the game would be mostly popular in North America rather than here in Europe, for starters, so logically I first started looking through US magazines, with plenty to choose from, and while there is plenty to be found in those, I would have never guessed that a magazine from Spain would catch my attention the most.
 
 Back in 2022, I came across a video by [Shaztopia](https://www.youtube.com/@Shaztopia1) called [Bully PS2 Rare Merchandise and Game Collecting Deep Dive](https://www.youtube.com/watch?v=6I3V_XiaxtQ).<br>
 The video pointed out how in the [74th issue](https://datassette.org/revistas/playstation-revista-oficial-espana-es-espanha-videogames-revistas/playstation-2-revista-oficial-espana-074) of the *PlayStation 2 Revista Oficial España* there was a contest to win various **BULLY** merch. All one had to do was send a message with the correct answer to the multiple-choice question "*How was the game called in the US?*". Possible answers were: **A)** Bulla, **B)** Bullfight, and **C)** Bully. (It was this silly likely just to drive engagement)<br>
@@ -37,7 +37,7 @@ Since I didn't know about that magazine, I started to look at its other issues t
     <img src="../Assets/PS2_ROE55014.jpg" alt="Page 14 of PlayStation 2 Revista Oficial España" style="width: 430px; margin: 0 5px; border: 4px solid var(--image-border-color);">
     <img src="../Assets/PS2_ROE55015.jpg" alt="Page 15 of PlayStation 2 Revista Oficial España" style="width: 430px; margin: 0 5px; border: 4px solid var(--image-border-color);">
     <figcaption style="font-size: 0.85em; color: var(--sidebar-text-color); margin-top: 5px;">
-        Pages 14 and 15.
+        Pages 14 and 15 of Issue 55.
     </figcaption>
 </figure>
 

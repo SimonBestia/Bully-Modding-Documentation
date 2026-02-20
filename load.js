@@ -137,21 +137,6 @@ fetch(`${baseURL}/footer.html`)
         });
     });
 
-// Table Body Toggle Functionality
-function toggleTableBody(tbodyId) {
-    const tbody = document.getElementById(tbodyId);
-    const headerRow = tbody.previousElementSibling.querySelector('tr');
-    const toggleLink = headerRow.querySelector('.table-toggle');
-
-    if (tbody.style.display === 'none') {
-        tbody.style.display = 'table-row-group';
-        toggleLink.textContent = 'collapse';
-    } else {
-        tbody.style.display = 'none';
-        toggleLink.textContent = 'expand';
-    }
-}
-
 // Dropdown Functionality
 function setupDropdowns() {
     const dropdowns = document.querySelectorAll('.dropdown');

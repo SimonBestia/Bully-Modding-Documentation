@@ -33,6 +33,10 @@
     --footer-background-color: #3f3f3f;
     --footer-text-color: #fff;
     --sidebar-text-color: #5c5c5c;
+    --code-background-color: #e0e0e0;
+    --tab-text-color: #333;
+    --tab-background-color: #ffffff;
+    --tab-hover-background-color: #e0e0e0;
 }
 
 /* Dark Theme Variables */
@@ -60,6 +64,10 @@
     --footer-background-color: #292929;
     --footer-text-color: #fff;
     --sidebar-text-color: #e0e0e0;
+    --code-background-color: #2e2e2e;
+    --tab-text-color: #ffffff;
+    --tab-background-color: #414141;
+    --tab-hover-background-color: #444444;
 }
 
 
@@ -73,6 +81,46 @@
 .table-toggle:hover {
     color: var(--link-hover-color);
     text-decoration: underline;
+}
+
+/* Details Toggle Styling */
+details > summary {
+    list-style: none;
+    display: inline-block; /* Prevent full-width clickable area */
+    pointer-events: none; /* Make brackets non-clickable */
+    user-select: none;
+}
+
+details > summary::-webkit-details-marker {
+    display: none;
+}
+
+details > summary::before {
+    content: "[";
+}
+
+details > summary::after {
+    content: "]";
+}
+
+.details-toggle {
+    color: var(--link-color);
+    text-decoration: none;
+    cursor: pointer;
+    pointer-events: auto; /* Make ONLY the text inside clickable */
+}
+
+.details-toggle:hover {
+    color: var(--link-hover-color);
+    text-decoration: underline;
+}
+
+.details-toggle::before {
+    content: "Expand";
+}
+
+details[open] > summary .details-toggle::before {
+    content: "Collapse";
 }
 
 html,
@@ -112,6 +160,17 @@ h1 {
 h2 {
     font-size: 2.1875rem;
     margin-top: 0;
+}
+
+pre {
+    background-color: var(--code-background-color);
+    padding: 10px;
+    border-radius: 5px;
+    overflow: auto;
+    font-family: monospace;
+    tab-size: 4;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
 }
 
 header {
@@ -721,7 +780,7 @@ footer {
     text-align: center;
     width: 100%;
     box-sizing: border-box;
-    padding: 0 1.25rem;
+    padding: 0.625rem 1.25rem;
     box-shadow: 0 -0.0625rem 2.5rem rgba(0, 0, 0, 0.2);
 }
 
@@ -753,4 +812,77 @@ footer {
 #back-to-top.visible {
     display: block;
     opacity: 1;
+}
+
+/* Code Block Tabs */
+.code-tabs {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.code-tab-header {
+    display: flex;
+    background-color: var(--table-header-background-color);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    overflow: hidden;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.tab-btn {
+    background-color: var(--tab-background-color);
+    border: 1px solid transparent;
+    border-bottom: none;
+    outline: none;
+    cursor: pointer;
+    padding: 8px 16px;
+    font-family: monospace;
+    font-size: 0.9rem;
+    color: var(--tab-text-color);
+    opacity: 0.9;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-right: 2px;
+}
+
+.tab-btn:hover {
+    opacity: 1;
+    background-color: var(--tab-hover-background-color);
+    border-color: var(--table-border-color);
+}
+
+.tab-btn.active {
+    background-color: var(--code-background-color);
+    border: 1px solid var(--table-border-color);
+    border-bottom: 1px solid var(--code-background-color);
+    margin-bottom: -1px;
+    opacity: 1;
+    font-weight: bold;
+    z-index: 2;
+}
+
+.code-tabs pre {
+    margin-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.code-content {
+    display: none;
+}
+
+.code-content.active {
+    display: block;
+}
+
+.spoiler{
+  background-color: gray;
+  color: transparent;
+  user-select: none;
+}
+
+.spoiler:hover{
+  background-color: inherit;
+  color: inherit;
 }

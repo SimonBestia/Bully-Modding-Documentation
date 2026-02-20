@@ -46,7 +46,7 @@ The store is no longer accessible, even through the Wayback Machine, leaving us 
 </figure>
 
 Strangely, the store was removed some time before 2008.<br>
-I could not find any mention hinting at it being available for a limited only, hence why I wrote "Limited Edition" in quotation marks.<br>
+I could not find any mention hinting at it being available for a limited time only, hence why I wrote "Limited Edition" in quotation marks.<br>
 Perhaps it was removed because of the advent of smartphones?
 
 ### 3) Leipzig Games Convention 2007 Scholarship Edition Trailer
