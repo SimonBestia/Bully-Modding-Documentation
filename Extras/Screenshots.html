@@ -42,24 +42,7 @@
 			box-shadow: 0 4px 32px rgba(0,0,0,0.25), 0 0 0 2.5px var(--image-hover-border-color);
 			z-index: 10;
 		}
-		.section-title {
-			margin-top: 24px;
-			cursor: pointer;
-			display: flex;
-			align-items: center;
-		}
-		.section-title::before {
-			content: "►";
-			font-size: 14px;
-			margin-right: 6px;
-			color: #ffbd5b;
-		}
-		.section-title.expanded::before {
-			content: "▼";
-		}
-		.platform-content.collapsed {
-			display: none;
-		}
+
 		.gallery-note {
 			text-align: center;
 			font-size: 15px;
@@ -415,6 +398,7 @@
 					"https://imgur.com/IKqdono.jpg",
 					"https://imgur.com/8Snj4vg.png",
 					"https://imgur.com/jZm15ff.png",
+					"https://imgur.com/B07eE9l.png",
 					"https://imgur.com/JhASDfV.png",
 					"https://imgur.com/1fs0Hqv.png",
 					"https://imgur.com/fwcvrm8.png",
@@ -747,6 +731,10 @@
 			Object.entries(data).forEach(([platform, groups]) => {
 				const h2 = document.createElement('h2');
 				h2.className = 'section-title';
+				if (platform.includes('PlayStation 2') || platform.includes('PS2')) h2.classList.add('title-ps2');
+				else if (platform.includes('Xbox 360')) h2.classList.add('title-360');
+				else if (platform.includes('PC')) h2.classList.add('title-pc');
+				else if (platform.includes('Wii')) h2.classList.add('title-wii');
 				h2.textContent = platform;
 				root.appendChild(h2);
 

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="referrer" content="no-referrer">
+
+    <script src="../../../load.js" defer></script>
+    <script src="../../../pickstyle.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" sizes="64x64" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../localstyle.css" />
+
+    <title>Stream Basics</title>
+    <script defer>
+      document.addEventListener('DOMContentLoaded', () => {
+        const target = document.querySelector('section.content');
+        target.innerHTML = document.getElementById('preloaded-content').innerHTML;
+
+        const titles = target.querySelectorAll('.section-title');
+        titles.forEach(h2 => {
+          h2.addEventListener('click', () => {
+            h2.classList.toggle('expanded');
+            const content = h2.nextElementSibling;
+            if (content && content.classList.contains('platform-content')) {
+              content.classList.toggle('collapsed');
+            }
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <header></header>
+    <section class="hero">
+      <img alt="Bully Modding Documentation" src="../../../Assets/Comics.png" />
+    </section>
+    <div class="wrapper">
+      <!-- Placeholder -->
+      <section class="content">
+        <h1>Loading…</h1>
+      </section>
+    </div>
+    <!-- Hidden real content -->
+    <template id="preloaded-content">
+      <h1>Stream Basics</h1>
+      <hr />
+      <p>The <strong>World.img</strong> archive for the most part contains the game's assets related to... well... the game's World.<br>
+        Assets being peds, weapons, map props, etc...</p>
+
+      <h2>File Formats</h2>
+      <ul class="file-list">
+        <li><strong>.agr</strong> <span class="badge badge-ps2">PS2</span><span class="badge badge-360">360</span><span class="badge badge-pc">PC</span><span class="badge badge-wii">Wii</span> — N/A</li>
+        <li><strong>.cat</strong> <span class="badge badge-ps2">PS2</span><span class="badge badge-360">360</span><span class="badge badge-pc">PC</span><span class="badge badge-wii">Wii</span> — See <a href="ActionNodesList.html" target="_blank">Action Nodes</a> page.</li>
+        <li><strong>.col</strong> <span class="badge badge-ps2">PS2</span><span class="badge badge-360">360</span><span class="badge badge-pc">PC</span><span class="badge badge-wii">Wii</span> — N/A</li>
+        <li><strong>.ipb</strong> <span class="badge badge-ps2">PS2</span><span class="badge badge-360">360</span><span class="badge badge-pc">PC</span><span class="badge badge-wii">Wii</span> — World Map Objects.</li>
+        <li><strong>.dff</strong> <span class="badge badge-ps2">PS2</span><span class="badge badge-wii">Wii</span> — See <a href="Models.html" target="_blank">Models</a> page.</li>
+        <li><strong>.lip</strong> <span class="badge badge-ps2">PS2</span><span class="badge badge-360">360</span><span class="badge badge-pc">PC</span><span class="badge badge-wii">Wii</span> — Character Quotes Data.</li>
+        <li><strong>.lur</strong> <span class="badge badge-ps2">PS2</span><span class="badge badge-360">360</span><span class="badge badge-pc">PC</span><span class="badge badge-wii">Wii</span> — Scripts.</li>
+        <li><strong>.nft</strong> <span class="badge badge-360">360</span><span class="badge badge-pc">PC</span> — Textures.</li>
+        <li><strong>.nif</strong> <span class="badge badge-360">360</span><span class="badge badge-pc">PC</span> — See <a href="Models.html" target="_blank">Models</a> page.</li>
+      </ul>
+
+      <h2 class="section-title title-ps2">PS2/PC</h2>
+      <div class="platform-content collapsed">
+        <p>File is in Little Endian, so most IMG tools around will work.<br>
+        I recommend <a href="https://gtaforums.com/topic/792411-relall-img-factory-13-now-kgm/" target="blank">IMG Factory</a> for its simplicity over the more popular IMG Tool.</p>
+        <p>For <strong>PC</strong>, editing the archive while the game is running will permanently corrupt it.</p>
+      </div>
+
+      <h2 class="section-title title-wii">Wii/Xbox 360</h2>
+      <div class="platform-content collapsed">
+        <p>File is in Big Endian, so use derpy's <a href="https://www.mediafire.com/file/yrrs2bibb5mrpa5/wii_img.exe/file" target="blank">wii_img tool</a>.<br>
+          Support may be limited.
+        </div>
+
+    </template>
+    <footer></footer>
+  </body>
+</html>

@@ -16,6 +16,16 @@
         target.innerHTML = document.getElementById('preloaded-content').innerHTML;
       });
     </script>
+    <style>
+      .bluebold {
+        color: var(--link-color);
+        font-weight: bold;
+      }
+      .redbold {
+        color: #ff2727;
+        font-weight: bold;
+      }
+    </style>
   </head>
   <body>
     <header></header>
@@ -34,7 +44,7 @@
       <hr />
       <div>
         <h2>Notes:</h2>
-        <p>Some of the IDs are unregistered and as such will not work.</p>
+        <p><strong>Scholarship Edition</strong>-only are in listed in <span class="bluebold">blue</span>, Unused ones are listed in <span class="redbold">red</span> (brackets include their unique internal name for convenience, when there is no official name).</p>
       </div>
       <div>
         <h2>Main Missions</h2>
@@ -55,6 +65,7 @@
             <tr><td>1_02B</td><td>This Is Your School</td></tr>
             <tr><td>1_02C</td><td>Get to Class</td></tr>
             <tr><td>1_03</td><td>The Setup</td></tr>
+            <tr><td>Post_1_03</td><td><span class="redbold">UNKNOWN (Post1.03_Respect Tutorial Mission)</span></td></tr>
             <tr><td>1_04</td><td>Slingshot</td></tr>
             <tr><td>1_05</td><td>Save Algie</td></tr>
             <tr><td>1_06_01</td><td>A Little Help</td></tr>
@@ -80,16 +91,16 @@
             <tr><td>2_08</td><td>Weed Killer</td></tr>
             <tr><td>2_09</td><td>Boxing Challenge</td></tr>
             <tr><td>3_01</td><td>Jealous Johnny</td></tr>
-            <tr><td>3_01A</td><td>Balls of Snow (SE)</td></tr>
-            <tr><td>3_01C</td><td>Nutcrackin' (SE)</td></tr>
-            <tr><td>3_01D</td><td>Rudy the Red Nosed Santa (SE)</td></tr>
+            <tr><td>3_01A</td><td><span class="bluebold">Balls of Snow</span></td></tr>
+            <tr><td>3_01C</td><td><span class="bluebold">Nutcrackin'</span></td></tr>
+            <tr><td>3_01D</td><td><span class="bluebold">Rudy the Red Nosed Santa</span></td></tr>
             <tr><td>3_02</td><td>Bait</td></tr>
-            <tr><td>3_03</td><td>Rendezvous</td></tr>
+            <tr><td>3_03</td><td><span class="redbold">RENDEZVOUS</span></td></tr>
             <tr><td>3_04</td><td>Wrong Part of Town</td></tr>
             <tr><td>3_05</td><td>The Tenements</td></tr>
             <tr><td>3_06</td><td>The Rumble</td></tr>
             <tr><td>3_08</td><td>Christmas is Here</td></tr>
-            <tr><td>3_XM</td><td>Miracle on Bullworth St. (SE)</td></tr>
+            <tr><td>3_XM</td><td><span class="bluebold">Miracle on Bullworth St.</span></td></tr>
             <tr><td>4_01</td><td>Paparazzi</td></tr>
             <tr><td>4_02</td><td>Stronghold Assault</td></tr>
             <tr><td>4_03</td><td>Defender of the Castle</td></tr>
@@ -129,11 +140,11 @@
             <tr><td>2_S04</td><td>Character Sheets</td></tr>
             <tr><td>2_S05</td><td>Cook's Crush/Cook's Date</td></tr>
             <tr><td>2_S06</td><td>Panty Raid</td></tr>
-            <tr><td>2_S07</td><td>Small Offences</td></tr>
-            <tr><td>3_S08</td><td>Mailbox Armageddon</td></tr>
+            <tr><td>2_S07</td><td><span class="bluebold">Small Offences</span></td></tr>
+            <tr><td>3_S08</td><td><span class="bluebold">Mailbox Armageddon</span></td></tr>
             <tr><td>3_S10</td><td>Tagging</td></tr>
             <tr><td>3_S11</td><td>Galloway Away</td></tr>
-            <tr><td>4_S11</td><td>The Paddle</td></tr>
+            <tr><td>4_S11</td><td><span class="redbold">The Paddle</span></td></tr>
             <tr><td>4_S12</td><td>Here's to you Ms. Philips</td></tr>
           </tbody>
         </table>
@@ -171,9 +182,10 @@
             </tr>
           </thead>
           <tbody>
+            <tr><td>1_R01</td><td><span class="redbold">UNKNOWN</span></td></tr>
             <tr><td>2_R03</td><td>Paper Route</td></tr>
-            <tr><td>3_R05B</td><td>Discreet Deliveries</td></tr>
-            <tr><td>3_R07</td><td>The Collector</td></tr>
+            <tr><td>3_R05B</td><td><span class="bluebold">Discreet Deliveries</span></td></tr>
+            <tr><td>3_R07</td><td><span class="bluebold">The Collector</span></td></tr>
             <tr><td>3_R09_P3</td><td>Prep Challenge</td></tr>
             <tr><td>3_R09_N</td><td>Nerd Challenge</td></tr>
             <tr><td>3_R09_G3</td><td>Greasers Challenge</td></tr>
@@ -197,7 +209,7 @@
           </thead>
           <tbody>
             <tr><td>1_G1</td><td>The Diary</td></tr>
-            <tr><td>1_G2</td><td>UNKNOWN (Wii)</td></tr>
+            <tr><td>1_G2</td><td><span class="redbold">UNKNOWN (Wii)</span></td></tr>
             <tr><td>2_G2</td><td>Carnival Date</td></tr>
             <tr><td>3_G3</td><td>Lola's Race</td></tr>
             <tr><td>4_G4</td><td>Discretion Assured</td></tr>
@@ -215,7 +227,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr><td>4_DC</td><td>Off Road Romance (Wii)</td></tr>
+            <tr><td>4_DC</td><td><span class="redbold">Off Road Romance (Wii)</span></td></tr>
           </tbody>
         </table>
       </div>
@@ -239,7 +251,7 @@
       </div>
       <div>
         <h2>Minigames</h2>
-        <p>Most of the Arcade games are just called "Arcade Race". <br />The brackets include their unique internal name for convenience. </p>
+        <p>Most of the Arcade games are just called "Arcade Race".</p>
         <aside>
           <img class="float-right" src="https://i.imgur.com/mpCAPYI.jpeg" />
         </aside>
@@ -333,26 +345,26 @@
             <tr><td>C_Dodgeball_3</td><td>Dodgeball vs Jocks</td></tr>
             <tr><td>C_Dodgeball_4</td><td>Dodgeball vs Townies</td></tr>
             <tr><td>C_Dodgeball_5</td><td>Dodgeball vs random</td></tr>
-            <tr><td>C_Biology_1</td><td>Biology 1</td></tr>
-            <tr><td>C_Biology_2</td><td>Biology 2</td></tr>
-            <tr><td>C_Biology_3</td><td>Biology 3</td></tr>
-            <tr><td>C_Biology_4</td><td>Biology 4</td></tr>
-            <tr><td>C_Biology_5</td><td>Biology 5</td></tr>
-            <tr><td>C_Geography_1</td><td>Geography 1</td></tr>
-            <tr><td>C_Geography_2</td><td>Geography 2</td></tr>
-            <tr><td>C_Geography_3</td><td>Geography 3</td></tr>
-            <tr><td>C_Geography_4</td><td>Geography 4</td></tr>
-            <tr><td>C_Geography_5</td><td>Geography 5</td></tr>
-            <tr><td>C_Math_1</td><td>Math 1</td></tr>
-            <tr><td>C_Math_2</td><td>Math 2</td></tr>
-            <tr><td>C_Math_3</td><td>Math 3</td></tr>
-            <tr><td>C_Math_4</td><td>Math 4</td></tr>
-            <tr><td>C_Math_5</td><td>Math 5</td></tr>
-            <tr><td>C_Music_1</td><td>Music 1</td></tr>
-            <tr><td>C_Music_2</td><td>Music 2</td></tr>
-            <tr><td>C_Music_3</td><td>Music 3</td></tr>
-            <tr><td>C_Music_4</td><td>Music 4</td></tr>
-            <tr><td>C_Music_5</td><td>Music 5</td></tr>
+            <tr><td>C_Biology_1</td><td><span class="bluebold">Biology 1</span></td></tr>
+            <tr><td>C_Biology_2</td><td><span class="bluebold">Biology 2</span></td></tr>
+            <tr><td>C_Biology_3</td><td><span class="bluebold">Biology 3</span></td></tr>
+            <tr><td>C_Biology_4</td><td><span class="bluebold">Biology 4</span></td></tr>
+            <tr><td>C_Biology_5</td><td><span class="bluebold">Biology 5</span></td></tr>
+            <tr><td>C_Geography_1</td><td><span class="bluebold">Geography 1</span></td></tr>
+            <tr><td>C_Geography_2</td><td><span class="bluebold">Geography 2</span></td></tr>
+            <tr><td>C_Geography_3</td><td><span class="bluebold">Geography 3</span></td></tr>
+            <tr><td>C_Geography_4</td><td><span class="bluebold">Geography 4</span></td></tr>
+            <tr><td>C_Geography_5</td><td><span class="bluebold">Geography 5</span></td></tr>
+            <tr><td>C_Math_1</td><td><span class="bluebold">Math 1</span></td></tr>
+            <tr><td>C_Math_2</td><td><span class="bluebold">Math 2</span></td></tr>
+            <tr><td>C_Math_3</td><td><span class="bluebold">Math 3</span></td></tr>
+            <tr><td>C_Math_4</td><td><span class="bluebold">Math 4</span></td></tr>
+            <tr><td>C_Math_5</td><td><span class="bluebold">Math 5</span></td></tr>
+            <tr><td>C_Music_1</td><td><span class="bluebold">Music 1</span></td></tr>
+            <tr><td>C_Music_2</td><td><span class="bluebold">Music 2</span></td></tr>
+            <tr><td>C_Music_3</td><td><span class="bluebold">Music 3</span></td></tr>
+            <tr><td>C_Music_4</td><td><span class="bluebold">Music 4</span></td></tr>
+            <tr><td>C_Music_5</td><td><span class="bluebold">Music 5</span></td></tr>
           </tbody>
         </table>
         <div>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="referrer" content="no-referrer">
+
+    <script src="../../../load.js" defer></script>
+    <script src="../../../pickstyle.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" sizes="64x64" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../localstyle.css" />
+
+    <title>Graphics</title>
+    <script defer>
+      window.switchTab = function(evt, tabName) {
+        const container = evt.currentTarget.closest('.code-tabs');
+        container.querySelectorAll('.code-content').forEach(c => c.classList.remove('active'));
+        container.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.getElementById(tabName).classList.add('active');
+        evt.currentTarget.classList.add('active');
+      };
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const target = document.querySelector('section.content');
+        target.innerHTML = document.getElementById('preloaded-content').innerHTML;
+
+        const titles = target.querySelectorAll('.section-title');
+        titles.forEach(h2 => {
+          h2.addEventListener('click', () => {
+            h2.classList.toggle('expanded');
+            const content = h2.nextElementSibling;
+            if (content && content.classList.contains('platform-content')) {
+              content.classList.toggle('collapsed');
+            }
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <header></header>
+    <section class="hero">
+      <img alt="Bully Modding Documentation" src="../../../Assets/Comics.png" />
+    </section>
+    <div class="wrapper">
+      <!-- Placeholder -->
+      <section class="content">
+        <h1>Loading…</h1>
+      </section>
+    </div>
+    <!-- Hidden real content -->
+    <template id="preloaded-content">
+      <h1>Graphics</h1>
+      <hr />
+      <aside>
+        <img src="https://imgur.com/pSxqIfA.jpg" width="448" class="float-right">
+      </aside>
+
+      <p>Only present in the Gamebryo-based versions of the game.</p>
+      <p>Pretty much every file in this folder is unused with the exception of <strong>gsa_info.dat.</strong><br>
+      They're all development leftovers, so ignore them.</p>
+
+      <h2>Files</h2>
+      <ul class="file-list">
+        <li><strong>Arial8-16_BA.nff</strong> <span class="badge badge-360">360</span><span class="badge badge-pc">PC</span> — N/A.</li>
+        <li><strong>cube.nif</strong> <span class="badge badge-360">360</span><span class="badge badge-pc">PC</span> — See <a href="../GRAPHICSRelated/Models.html" target="_blank">Models</a> page.</li>
+        <li><strong>gsa_info.dat</strong> <span class="badge badge-360">360</span><span class="badge badge-pc">PC</span> — Controls the new lighting system. Not responsible for the timecycle colours, but can be used to further complement them.</li>
+        <li><strong>NormalizedRandomDirections.tga</strong> <span class="badge badge-360">360</span><span class="badge badge-pc">PC</span> — N/A.</li>
+        <li><strong>tschool.gsa</strong> <span class="badge badge-360">360</span><span class="badge badge-pc">PC</span> — N/A.</li>
+        <li><strong>UISkinFull.bdr</strong> <span class="badge badge-360">360</span><span class="badge badge-pc">PC</span> — N/A.</li>
+        <li><strong>UISkinFull.dds</strong> <span class="badge badge-360">360</span><span class="badge badge-pc">PC</span> — N/A.</li>
+      </ul>
+
+      <h2>Notes:</h2>
+      <p>PC lights seem to be broken compared to Xbox 360.<br>
+      Specifically, the game has a limit of three SpotLights loaded at once, before they start flickering.</p>
+
+      <h2 class="section-title title-360">Xbox 360</h2>
+      <div class="platform-content collapsed">
+        <p>N/A</p>
+      </div>
+
+      <h2 class="section-title title-pc">PC</h2>
+      <div class="platform-content collapsed">
+        <p><strong>gsa_info.dat</strong> can be edited using P3ti's <a href="https://cdn.discordapp.com/attachments/1257583018781048862/1257583149005934622/gsa_info_tool.exe?ex=69f2f613&is=69f1a493&hm=08be7c6bf02f2256e91b46f2866da6682b9c969c35ae86d22abcc3e1623bcb24&" target="_blank">gsa_info_tool.exe</a>.<br>
+        Simply drag and drop the file onto the tool and it will generate an editable <strong>.xml</strong> version, which can then be dragged and dropped back onto the tool to convert it to <strong>.dat</strong>.</p>
+      </div>
+      <hr style="margin-top: 2.5rem;" />
+        <h2>LIGHT Structure Example</h2>
+        <p>
+          The file is structured as a <code>GSA_INFO</code> root containing multiple <code>SCENE</code> elements, one for each area,
+          holding a list of <code>LIGHT</code> entries.<br>
+          Below is an example of a <code>LIGHT</code> from my <a href="https://www.nexusmods.com/bullyscholarshipedition/mods/148" target="_blank">1% Better Project</a>. (Brightens area between the main school building and the entrance gates)
+        </p>
+
+        <div class="code-tabs">
+          <div class="code-tab-header">
+            <button class="tab-btn active" onclick="switchTab(event, 'light-annotated')">Annotated</button>
+            <button class="tab-btn" onclick="switchTab(event, 'light-plain')">Plain</button>
+          </div>
+          <pre id="light-annotated" class="code-content active">
+&lt;LIGHT
+    Type="SpotLight"        &lt;!-- Light type. Known values: PointLight (non-shadow-casting), SpotLight (shadow-casting) --&gt;
+    Name="co_TskoolEast"   &lt;!-- Internal name. Prefix with _N_ to make it night-only (required, or it'll crash when DayTime=0) --&gt;
+    Cutscene="0"           &lt;!-- 1 = Cutscene-only --&gt;
+    _18_="0"               &lt;!-- 1 = light flickers. 0 = steady --&gt;
+    _19_="0"               &lt;!-- Unknown --&gt;
+    CO="1"                 &lt;!-- Unknown, but 1 makes the light more "normal" in winter --&gt;
+    DayTime="1"            &lt;!-- 1 = always on. 0 = night-only. Setting 0 WITHOUT _N_ prefix CRASHES the game! Night lights don't work in Area 0 --&gt;
+&gt;
+    &lt;Radius&gt;107.000000&lt;/Radius&gt;                          &lt;!-- Loading Radius (Range) --&gt;
+    &lt;_4_&gt;0.000000&lt;/_4_&gt;                                  &lt;!-- Unknown --&gt;
+    &lt;_8_&gt;0.000000&lt;/_8_&gt;                                  &lt;!-- Unknown --&gt;
+    &lt;AmbientColor&gt;0.094118 0.145098 0.160784&lt;/AmbientColor&gt;    &lt;!-- RGB ambient colour (0.0–1.0 per channel) --&gt;
+    &lt;DiffuseColor&gt;1.000000 0.752941 0.501961&lt;/DiffuseColor&gt;    &lt;!-- RGB diffuse colour --&gt;
+    &lt;SpecularColor&gt;0.250980 0.250980 0.250980&lt;/SpecularColor&gt;  &lt;!-- RGB specular highlight colour --&gt;
+    &lt;Rotation&gt;                                           &lt;!-- Unknown --&gt;
+        &lt;Row&gt;-0.492844 0.829328 0.263287&lt;/Row&gt;
+        &lt;Row&gt;0.196664 0.400929 -0.894751&lt;/Row&gt;
+        &lt;Row&gt;-0.847601 -0.389194 -0.360694&lt;/Row&gt;
+    &lt;/Rotation&gt;
+    &lt;Translation&gt;286.808197 -94.702507 60.428139&lt;/Translation&gt; &lt;!-- XYZ position --&gt;
+    &lt;Scale&gt;1.000000&lt;/Scale&gt;                              &lt;!-- Uniform scale --&gt;
+    &lt;ConstantAttenuation&gt;1.000000&lt;/ConstantAttenuation&gt;  &lt;!-- Unknown --&gt;
+    &lt;LinearAttenuation&gt;0.000000&lt;/LinearAttenuation&gt;      &lt;!-- Unknown --&gt;
+    &lt;QuadraticAttenuation&gt;0.000000&lt;/QuadraticAttenuation&gt; &lt;!-- Unknown --&gt;
+    &lt;Dimmer&gt;2.300000&lt;/Dimmer&gt;                            &lt;!-- Overall brightness multiplier --&gt;
+    &lt;SpotAngleOuter&gt;75.000000&lt;/SpotAngleOuter&gt;           &lt;!-- Outer cone angle --&gt;
+    &lt;SpotAngleInner&gt;45.000000&lt;/SpotAngleInner&gt;           &lt;!-- Inner cone angle --&gt;
+    &lt;SpotExponent&gt;1.000000&lt;/SpotExponent&gt;                &lt;!-- Unknown --&gt;
+    &lt;CastShadows&gt;1&lt;/CastShadows&gt;                        &lt;!-- Unknown (Doesn't work?) --&gt;
+    &lt;StaticShadows&gt;0&lt;/StaticShadows&gt;                    &lt;!-- Unknown (Doesn't work?) --&gt;
+    &lt;SizeHint&gt;2048&lt;/SizeHint&gt;                           &lt;!-- Shadow map resolution hint (2048 is max.) --&gt;
+    &lt;StrictlyObserveSizeHint&gt;0&lt;/StrictlyObserveSizeHint&gt; &lt;!-- Unknown --&gt;
+    &lt;RenderBackfaces&gt;1&lt;/RenderBackfaces&gt;                &lt;!-- 0 = Cast shadows of model backfaces, even if model culls them --&gt;
+    &lt;UseDefaultDepthBias&gt;1&lt;/UseDefaultDepthBias&gt;        &lt;!-- 1 = Force DepthBias to 1.0 --&gt;
+    &lt;DepthBias&gt;0.000000&lt;/DepthBias&gt;                     &lt;!-- Custom depth bias (do tiny values to fix shadow acne, especially when casting backface shadows) --&gt;
+&lt;/LIGHT&gt;
+          </pre>
+          <pre id="light-plain" class="code-content">
+&lt;LIGHT Type="SpotLight" Name="co_TskoolEast" Cutscene="0" _18_="0" _19_="0" CO="1" DayTime="1"&gt;
+    &lt;Radius&gt;107.000000&lt;/Radius&gt;
+    &lt;_4_&gt;0.000000&lt;/_4_&gt;
+    &lt;_8_&gt;0.000000&lt;/_8_&gt;
+    &lt;AmbientColor&gt;0.094118 0.145098 0.160784&lt;/AmbientColor&gt;
+    &lt;DiffuseColor&gt;1.000000 0.752941 0.501961&lt;/DiffuseColor&gt;
+    &lt;SpecularColor&gt;0.250980 0.250980 0.250980&lt;/SpecularColor&gt;
+    &lt;Rotation&gt;
+        &lt;Row&gt;-0.492844 0.829328 0.263287&lt;/Row&gt;
+        &lt;Row&gt;0.196664 0.400929 -0.894751&lt;/Row&gt;
+        &lt;Row&gt;-0.847601 -0.389194 -0.360694&lt;/Row&gt;
+    &lt;/Rotation&gt;
+    &lt;Translation&gt;286.808197 -94.702507 60.428139&lt;/Translation&gt;
+    &lt;Scale&gt;1.000000&lt;/Scale&gt;
+    &lt;ConstantAttenuation&gt;1.000000&lt;/ConstantAttenuation&gt;
+    &lt;LinearAttenuation&gt;0.000000&lt;/LinearAttenuation&gt;
+    &lt;QuadraticAttenuation&gt;0.000000&lt;/QuadraticAttenuation&gt;
+    &lt;Dimmer&gt;2.300000&lt;/Dimmer&gt;
+    &lt;SpotAngleOuter&gt;75.000000&lt;/SpotAngleOuter&gt;
+    &lt;SpotAngleInner&gt;45.000000&lt;/SpotAngleInner&gt;
+    &lt;SpotExponent&gt;1.000000&lt;/SpotExponent&gt;
+    &lt;CastShadows&gt;1&lt;/CastShadows&gt;
+    &lt;StaticShadows&gt;0&lt;/StaticShadows&gt;
+    &lt;SizeHint&gt;2048&lt;/SizeHint&gt;
+    &lt;StrictlyObserveSizeHint&gt;0&lt;/StrictlyObserveSizeHint&gt;
+    &lt;RenderBackfaces&gt;1&lt;/RenderBackfaces&gt;
+    &lt;UseDefaultDepthBias&gt;1&lt;/UseDefaultDepthBias&gt;
+    &lt;DepthBias&gt;0.000000&lt;/DepthBias&gt;
+&lt;/LIGHT&gt;
+          </pre>
+        </div>
+    </template>
+    <footer></footer>
+  </body>
+</html>

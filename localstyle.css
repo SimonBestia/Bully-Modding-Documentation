@@ -886,3 +886,64 @@ footer {
   background-color: inherit;
   color: inherit;
 }
+
+/* ── Collapsible platform sections ── */
+.section-title {
+  margin-top: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+.section-title::before {
+  content: "►";
+  font-size: 14px;
+  margin-right: 6px;
+  color: #ffbd5b;
+}
+.section-title.title-ps2::before { color: #7ab8f5; }
+.section-title.title-360::before { color: #6fde6f; }
+.section-title.title-pc::before { color: #ffbd5b; }
+.section-title.title-wii::before { color: #c17aee; }
+.section-title.expanded::before {
+  content: "▼";
+}
+.platform-content.collapsed {
+  display: none;
+}
+
+/* ── Platform badges ── */
+.badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 1px 7px;
+  border-radius: 4px;
+  margin: 0 2px;
+  vertical-align: middle;
+  letter-spacing: 0.04em;
+}
+.badge-ps2 { background: #0d2a45; color: #7ab8f5; border: 1px solid #1e4d7a; }
+.badge-360 { background: #0d2e0d; color: #6fde6f; border: 1px solid #1e5c1e; }
+.badge-pc  { background: #2e1f00; color: #ffbd5b; border: 1px solid #5a3e00; }
+.badge-wii { background: #220d36; color: #c17aee; border: 1px solid #4a1a70; }
+
+/* ── File / format list ── */
+.file-list {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 24px;
+}
+.file-list li {
+  padding: 7px 0;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+  line-height: 1.7;
+  color: #bbb; /* description text gray */
+  overflow: hidden;
+}
+.file-list li strong {
+  color: var(--text-color); /* extension name stays normal */
+}
+.file-list li:last-child {
+  border-bottom: none;
+}
