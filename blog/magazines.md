@@ -1,4 +1,4 @@
-<figure style="float: right; margin: 0 0 10px 20px; max-width: 315px; text-align: center;">
+<figure class="float-right" style="border: none; max-width: 315px; text-align: center;">
     <img src="../Assets/JimmyCrabblesnitch3D.png" style="max-width: 100%;">
     <figcaption style="font-size: 0.85em; color: var(--sidebar-text-color);">
         An official, yet funny-looking 3D render of Jimmy and Dr. Crabblesnitch, from
